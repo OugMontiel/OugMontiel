@@ -1,14 +1,14 @@
 Hi ![](https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif)My name is Diego Montiel Florez  
 ======================================================================================================================================================
 
-Data Science
+I'm a Data Science
 ------------
 
 Soy profesional en Economía con énfasis en Ciencia de datos, con conocimientos y experiencia en R, Stata, SQL y Power BI Realizando la Exploración, la trasformación, la visualización y el análisis de Datos, para la toma de decisiones estratégicas a partir de estados financieros. Además, Cuento con habilidades en el manejo Python, PSEInt, Excel y Látex, estoy interesado en robusteces mi trayectoria en el análisis de datos financiero y públicos para facilitar la toma de decisiones que generen valor
 
 * 🌍  I'm based in Bucaramanga Colombia
 * ✉️  You can contact me at [Gogoedy@hotmail.com](mailto:Gogoedy@hotmail.com)
-* 🧠  I'm learning Big Data, Business Intelligence. Advanced Analytics, Data Vizualization
+* 🧠  I'm learning Big Data, Business Intelligence. Advanced Analytics, Data Visualization
 * 🤝  I'm open to collaborating on financial analysis, time series analysis, panel data analysis, Big data
 
 ### Skills
