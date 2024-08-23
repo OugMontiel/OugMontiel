@@ -4,33 +4,49 @@
 
 <template>
     <main>
-        <div>
-            <img src="/public/img/Data Vizualizacion-SQL-R Studio-Power BI.jpg" alt="Data_Science_Backend Developer_Economist.png">
+        <section class="profile">
+            <img class="profile-image" src="/public/img/Data Vizualizacion-SQL-R Studio-Power BI.jpg" alt="Data Science, Backend Developer, Economist">
             <h2>Diego Alejandro</h2>
             <h2>Montiel Florez</h2>
-            <span>
+            <div class="professions">
                 <p>Data Science</p>
                 <p>Backend Developer</p>
                 <p>Economist</p>
-            </span>
-        </div> 
+            </div>
+        </section> 
     </main>
 </template>
 
 <style scoped>
-main{
-    padding: 1em
+main {
+    padding: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Asegura que el contenido ocupe toda la altura de la ventana */
 }
-img {
-  width: 100%;
-  object-fit: cover;
+
+.profile {
+    text-align: center;
+    padding: 2em;
+    border-radius: 10px;
 }
-span{
+
+.profile-image {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 10px; /* Bordes redondeados para la imagen */
+    margin-bottom: 1em; /* Espacio entre la imagen y el texto */
+}
+
+.professions {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
 }
-p{
-    display: block;
+
+.professions p {
+    font-weight: bold; /* Hace que los títulos de las profesiones sean más destacados */
 }
 </style>
