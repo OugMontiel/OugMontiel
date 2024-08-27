@@ -13,9 +13,11 @@ export default {
   setup() {
     const isDarkMode = ref(false);
 
-    const darkModeIcon = computed(() => (isDarkMode.value ? 'pi pi-moon' : 'pi pi-sun'));
+    // Computed para el ícono basado en el modo
+    const darkModeIcon = computed(() => (isDarkMode.value ? 'pi pi-sun' : 'pi pi-moon'));
 
-    const items = ref([
+    // Computed para los ítems del SpeedDial
+    const items = computed(() => [
       {
         label: 'Toggle Dark Mode',
         icon: darkModeIcon.value,
@@ -53,6 +55,7 @@ export default {
   }
 }
 </script>
+
 
 <template>
   <div :class="{ 'my-app-dark': isDarkMode }">
