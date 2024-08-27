@@ -1,5 +1,5 @@
 <script>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import Layout from './components/Layout.vue';
 import izq from './components/izq.vue';
 import der from './components/der.vue';
@@ -12,36 +12,53 @@ export default {
   },
   setup() {
     const isDarkMode = ref(false);
+
+    const darkModeIcon = computed(() => (isDarkMode.value ? 'pi pi-moon' : 'pi pi-sun'));
+
     const items = ref([
       {
         label: 'Toggle Dark Mode',
-        icon: 'pi pi-sun', // O usa pi pi-moon para icono de modo oscuro
+        icon: darkModeIcon.value,
         command: () => {
           isDarkMode.value = !isDarkMode.value;
         }
       },
-      // Agrega otros botones aquí
+      {
+        label: 'Home',
+        icon: 'pi pi-home',
+        command: () => {
+          console.log('Navigating to Home');
+        }
+      },
+      {
+        label: 'Settings',
+        icon: 'pi pi-cog',
+        command: () => {
+          console.log('Opening Settings');
+        }
+      },
+      {
+        label: 'Profile',
+        icon: 'pi pi-user',
+        command: () => {
+          console.log('Opening Profile');
+        }
+      }
     ]);
-
-    const toggleDarkMode = () => {
-      isDarkMode.value = !isDarkMode.value;
-    };
 
     return {
       isDarkMode,
-      toggleDarkMode,
       items
     };
   }
 }
-
 </script>
 
 <template>
   <div :class="{ 'my-app-dark': isDarkMode }">
     <div class="button-container">
       <SpeedDial :model="items" :radius="120" type="quarter-circle" direction="down-left"
-        :style="{ position: 'absolute', left: '10px', top: '10px' }" />
+        :style="{ position: 'absolute', right: '10px', top: '10px' }" />
     </div>
 
     <main>
@@ -61,11 +78,5 @@ export default {
 .my-app-dark {
   background-color: #121212;
   color: #ffffff;
-}
-
-.button-container {
-  position: absolute;
-  left: 10px;
-  top: 10px;
 }
 </style>

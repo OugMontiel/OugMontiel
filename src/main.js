@@ -5,6 +5,7 @@ import Button from 'primevue/button';
 import App from './App.vue'
 import Aura from '@primevue/themes/aura';
 import SpeedDial from 'primevue/speeddial';
+import 'primeicons/primeicons.css';                     // Estilos de PrimeIcons
 
 const app = createApp(App);
 
