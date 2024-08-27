@@ -12,7 +12,12 @@ app.component('Button', Button);
 
 app.use(PrimeVue, {
     theme: {
-        preset: Aura
+        preset: Aura,
+        options: {
+            prefix: 'p',
+            darkModeSelector: '.my-app-dark', // Usando clase personalizada
+            cssLayer: false
+        }
     }
 });
 
