@@ -4,9 +4,12 @@ import InputText from 'primevue/inputtext';
 import Button from 'primevue/button';
 import App from './App.vue'
 import Aura from '@primevue/themes/aura';
+import SpeedDial from 'primevue/speeddial';
 
 const app = createApp(App);
 
+// Registro de componente
+app.component('SpeedDial', SpeedDial);
 app.component('InputText', InputText);
 app.component('Button', Button);
 

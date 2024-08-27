@@ -1,11 +1,27 @@
 <script>
-import izq from './components/izq.vue'
-import der from './components/der.vue'
 import { ref } from 'vue';
+import Layout from './components/Layout.vue';
+import izq from './components/izq.vue';
+import der from './components/der.vue';
 
 export default {
+  components: {
+    Layout,
+    izq,
+    der
+  },
   setup() {
     const isDarkMode = ref(false);
+    const items = ref([
+      {
+        label: 'Toggle Dark Mode',
+        icon: 'pi pi-sun', // O usa pi pi-moon para icono de modo oscuro
+        command: () => {
+          isDarkMode.value = !isDarkMode.value;
+        }
+      },
+      // Agrega otros botones aquí
+    ]);
 
     const toggleDarkMode = () => {
       isDarkMode.value = !isDarkMode.value;
@@ -13,25 +29,30 @@ export default {
 
     return {
       isDarkMode,
-      toggleDarkMode
+      toggleDarkMode,
+      items
     };
   }
 }
+
 </script>
 
 <template>
-
   <div :class="{ 'my-app-dark': isDarkMode }">
-    <Button label="Toggle Dark Mode" @click="toggleDarkMode" />
-    <!-- Aquí puedes agregar más componentes o contenido -->
+    <div class="button-container">
+      <SpeedDial :model="items" :radius="120" type="quarter-circle" direction="down-left"
+        :style="{ position: 'absolute', left: '10px', top: '10px' }" />
+    </div>
 
     <main>
-      <section class="sidebar-left">
-        <izq></izq>
-      </section>
-      <section class="content">
-        <der></der>
-      </section>
+      <Layout>
+        <template #izq>
+          <izq />
+        </template>
+        <template #der>
+          <der />
+        </template>
+      </Layout>
     </main>
   </div>
 </template>
@@ -39,8 +60,12 @@ export default {
 <style>
 .my-app-dark {
   background-color: #121212;
-  /* Fondo oscuro para el modo oscuro */
   color: #ffffff;
-  /* Texto claro para el modo oscuro */
+}
+
+.button-container {
+  position: absolute;
+  left: 10px;
+  top: 10px;
 }
 </style>
