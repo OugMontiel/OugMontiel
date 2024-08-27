@@ -15,12 +15,22 @@
             <p>Economist</p>
         </div>
     </section>
+    <span></span> 
+    <section class="information">
+        <span>
+            <div> icono </div>
+            <div> Dato</div>
+        </span>
+        <span>
+            <div> icono </div>
+            <div> Dato</div>
+        </span>
+    </section>
 
 </template>
 
 <style scoped>
 .profile {
-    padding: 1em;
     text-align: center;
     border-radius: 10px;
 }
