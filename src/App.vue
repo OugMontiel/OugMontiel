@@ -61,11 +61,11 @@ export default {
   <div :class="{ 'my-app-dark': isDarkMode }">
     <div class="button-container">
       <SpeedDial :model="items" :radius="120" type="quarter-circle" direction="down-left"
-        :style="{ position: 'absolute', right: '10px', top: '10px' }" />
+        :style="{ position: 'absolute', right: '1rem', top: '1rem' }" />
     </div>
 
     <main>
-      <Layout>
+      <Layout :isDarkMode="isDarkMode">
         <template #izq>
           <izq />
         </template>
@@ -79,7 +79,7 @@ export default {
 
 <style>
 .my-app-dark {
-  background-color: #121212;
-  color: #ffffff;
+  background-color: var(--dark-bg-color); /* Fondo oscuro para el layout principal */
+  color: var(--dark-text-color); /* Color de texto en modo oscuro */
 }
 </style>
