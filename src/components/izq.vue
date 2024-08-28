@@ -1,50 +1,35 @@
 <template>
   <aside class="sidebar">
     <!-- Sección de perfil con foto y profesiones -->
-    <section class="profile">
-      <img class="profile-image" :src="profileImage" alt="Data Science, Backend Developer, Economist" />
-      <h2 class="name">{{ name }}</h2>
-      <div class="professions">
-        <p v-for="profession in professions" :key="profession">{{ profession }}</p>
-      </div>
-    </section>
-
-    <div class="separator"></div>
-
-    <!-- Información de contacto -->
-    <div class="info_more">
-      <ul class="contacts-list">
-        <a href="mailto:{{email}}" class="contact-item">
-          <div class="icon-box"><ion-icon name="mail-outline" role="img" aria-label="mail outline"></ion-icon></div>
-          <div class="contact-info">
-            <p class="contact-title">Email</p><span class="contact-link">{{ email }}</span>
-          </div>
-        </a>
-        <a href="tel:{{phone}}" class="contact-item">
-          <div class="icon-box"><ion-icon name="phone-portrait-outline" role="img"
-              aria-label="phone portrait outline"></ion-icon></div>
-          <div class="contact-info">
-            <p class="contact-title">Phone</p><span class="contact-link">{{ phone }}</span>
-          </div>
-        </a>
-        <a :href="linkedin.value" class="contact-item" target="_blank">
-          <div class="icon-box"><ion-icon name="logo-linkedin" role="img" aria-label="logo linkedin"></ion-icon></div>
-          <div class="contact-info">
-            <p class="contact-title">Linkedin</p><span class="contact-link">{{ linkedin.label }}</span>
-          </div>
-        </a>
-        <li class="contact-item">
-          <div class="icon-box"><ion-icon name="location-outline" role="img" aria-label="location outline"></ion-icon>
-          </div>
-          <div class="contact-info">
-            <p class="contact-title">Location</p>
-            <address>{{ location.city }}, {{ location.country }}</address>
-          </div>
-        </li>
-      </ul>
-    </div>
-
-    <div class="separator"></div>
+    <Card class="profile-card">
+      <template #header>
+        <img alt="Perfil de Usuario" :src="profileImage" class="profile-header-image" />
+      </template>
+      <template #title>
+        <h2 class="profile-name">{{ name }}</h2>
+      </template>
+      <template #subtitle>
+        <div class="professions">
+          <p v-for="profession in professions" :key="profession">{{ profession }}</p>
+        </div>
+      </template>
+      <template #content>
+        <!-- Información de contacto -->
+        <div class="info_more">
+          <Listbox v-model="selectedContact" :options="contacts" optionLabel="title">
+            <template #option="slotProps">
+              <a :href="slotProps.option.href" class="contact-link">
+                <InputIcon :icon="slotProps.option.icon" class="icon-box" />
+                <div class="contact-info">
+                  <p class="contact-title">{{ slotProps.option.title }}</p>
+                  <span>{{ slotProps.option.value }}</span>
+                </div>
+              </a>
+            </template>
+          </Listbox>
+        </div>
+      </template>
+    </Card>
   </aside>
 </template>
 
@@ -55,16 +40,13 @@ export default {
       profileImage: "/public/img/Data Vizualizacion-SQL-R Studio-Power BI.jpg",
       name: "Diego Alejandro Montiel Florez",
       professions: ["Data Science", "Backend Developer", "Economist"],
-      email: "DiegoAlejandroMontiel@gmail.com",
-      phone: "+57 3186377850",
-      linkedin: {
-        label: "Diego Alejandro Montiel Florez",
-        value: "https://www.linkedin.com/in/diego-alejandro-montiel-florez-data-science/",
-      },
-      location: {
-        city: "Bucaramanga",
-        country: "Colombia" // Corregido de 'contry' a 'country'
-      }
+      contacts: [
+        { type: 'email', icon: 'pi pi-envelope', title: 'Email', value: 'DiegoAlejandroMontiel@gmail.com', href: 'mailto:DiegoAlejandroMontiel@gmail.com' },
+        { type: 'phone', icon: 'pi pi-phone', title: 'Phone', value: '+57 3186377850', href: 'tel:+573186377850' },
+        { type: 'linkedin', icon: 'pi pi-linkedin', title: 'LinkedIn', value: 'Diego Alejandro Montiel Florez', href: 'https://www.linkedin.com/in/diego-alejandro-montiel-florez-data-science/' },
+        { type: 'location', icon: 'pi pi-map-marker', title: 'Location', value: 'Bucaramanga, Colombia', href: '#' },
+      ],
+      selectedContact: null,
     };
   },
 };
@@ -72,21 +54,39 @@ export default {
 
 <style scoped>
 .sidebar {
-  width: 300px;
-  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 400px; /* Limita el ancho máximo de la tarjeta */
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  overflow: hidden;
 }
 
-.profile {
-  text-align: center;
-  border-radius: 10px;
-}
-
-.profile-image {
+.profile-header-image {
   width: 100%;
   object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 1em;
+}
+
+.profile-name {
+  padding: 0;
+  text-align: center;
+  margin: 1em 0;
+  font-size: 1.2em; /* Ajuste de tamaño de fuente para adaptabilidad */
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .professions {
@@ -98,20 +98,35 @@ export default {
 
 .professions p {
   font-weight: bold;
+  margin: 0.5em 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.contacts-list {
-  list-style: none;
-  padding: 0;
+.info_more {
+  margin: 1em 0;
 }
 
-.contact-item {
+.contact-link {
   display: flex;
   align-items: center;
-  margin-top: 10px;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
-.contact-item ion-icon {
-  margin-right: 10px;
+.contact-info {
+  margin-left: 1em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.icon-box {
+  font-size: 1.2em; /* Ajuste de tamaño de ícono */
+  color: #007bff;
 }
 </style>
