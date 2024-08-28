@@ -1,0 +1,25 @@
+/* base.css */
+:root {
+    --font-main: 'Arial, sans-serif';
+  
+    /* Colores base de PrimeVue */
+    --primary-color: #007bff; /* Color principal */
+    --secondary-color: #6c757d; /* Color secundario */
+    --success-color: #28a745; /* Color para éxito */
+    --info-color: #17a2b8; /* Color para información */
+    --warning-color: #ffc107; /* Color para advertencias */
+    --danger-color: #dc3545; /* Color para peligro */
+  
+    /* Colores claros */
+    --light-bg-color: #f8f9fa; /* Fondo claro */
+    --light-text-color: #212529; /* Texto claro */
+    --sidebar-bg-color: #e9ecef; /* Fondo de la barra lateral clara */
+    --content-bg-color: #ffffff; /* Fondo del contenido claro */
+  
+    /* Colores oscuros */
+    --dark-bg-color: #343a40; /* Fondo oscuro */
+    --dark-text-color: #ffffff; /* Texto oscuro */
+    --dark-sidebar-bg-color: #495057; /* Fondo de la barra lateral oscura */
+    --dark-content-bg-color: #6c757d; /* Fondo del contenido oscuro */
+  }
+  

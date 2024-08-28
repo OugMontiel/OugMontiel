@@ -79,7 +79,8 @@ export default {
 
 <style>
 .my-app-dark {
-  background-color: var(--dark-bg-color); /* Fondo oscuro para el layout principal */
+  background-color: var(--dark-bg-color);
+  /* Fondo oscuro para el layout principal */
   color: var(--dark-text-color); /* Color de texto en modo oscuro */
 }
 </style>

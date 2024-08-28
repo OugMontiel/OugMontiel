@@ -7,6 +7,9 @@ import Aura from '@primevue/themes/aura';
 import SpeedDial from 'primevue/speeddial';
 import 'primeicons/primeicons.css';                     // Estilos de PrimeIcons
 
+// Importar estilos personalizados
+import './assets/styles/base.css';
+
 const app = createApp(App);
 
 // Registro de componente
