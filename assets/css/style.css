@@ -885,7 +885,10 @@ main {
   #PORTFOLIO
 \*-----------------------------------*/
 
-.filter-list { display: none; }
+.filter-list { 
+  display: none; 
+  overflow-y: auto; /* Habilita el desplazamiento vertical */
+}
 
 .filter-select-box {
   position: relative;
@@ -1620,9 +1623,11 @@ textarea.form-input::-webkit-resizer { display: none; }
     gap: 25px;
     padding-left: 5px;
     margin-bottom: 30px;
+    overflow-x: auto; 
   }
 
   .filter-item button {
+    white-space: nowrap;
     color: var(--light-gray);
     font-size: var(--fs-5);
     transition: var(--transition-1);
