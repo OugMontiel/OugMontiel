@@ -967,12 +967,14 @@ main {
 .project-item > a { width: 100%; }
 
 .project-img {
+  padding: 1em;
   position: relative;
   width: 100%;
   height: 200px;
   border-radius: 16px;
   overflow: hidden;
   margin-bottom: 15px;
+  background: hsla(0, 0%, 0%, 0.25);
 }
 
 .project-img::before {
@@ -1519,7 +1521,7 @@ textarea.form-input::-webkit-resizer { display: none; }
    * #PORTFOLIO, BLOG
    */
 
-  .project-img, .blog-banner-box { border-radius: 16px; }
+  .project-img img, .blog-banner-box { border-radius: 16px; }
 
   .blog-posts-list { gap: 30px; }
 
