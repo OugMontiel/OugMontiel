@@ -38,7 +38,7 @@
 export default {
   data() {
     return {
-      profileImage: "/public/img/Data Vizualizacion-SQL-R Studio-Power BI.jpg",
+      profileImage: "/img/DataVizualizacion-SQL-RStudio-PowerBI.jpg",
       name: "Diego Alejandro Montiel Florez",
       professions: ["Data Science", "Backend Developer", "Economist"],
       contacts: [
