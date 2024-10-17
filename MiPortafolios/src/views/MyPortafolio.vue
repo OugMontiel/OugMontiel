@@ -1,3 +1,3 @@
 <template>
-    <div>desde views</div>
+  <div>desde views</div>
 </template>

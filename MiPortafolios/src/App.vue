@@ -1,5 +1,4 @@
 <template>
-  <div>desde views</div>
   <div id="app">
     <SidebarMyPortafolio />
     <div class="main-content">
