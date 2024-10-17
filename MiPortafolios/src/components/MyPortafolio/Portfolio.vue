@@ -5,575 +5,58 @@
     </header>
 
     <section class="projects">
+      <!-- Filter List -->
       <ul class="filter-list has-scrollbar">
-        <li class="filter-item">
-          <button class="active" data-filter-btn>All</button>
-        </li>
-
-        <li class="filter-item">
-          <button data-filter-btn>Web design</button>
-        </li>
-
-        <li class="filter-item">
-          <button data-filter-btn>Web development</button>
-        </li>
-
-        <li class="filter-item">
-          <button data-filter-btn>Econometric Modeling</button>
-        </li>
-
-        <li class="filter-item">
-          <button data-filter-btn>backend developer</button>
-        </li>
-        <!-- 
-    <li class="filter-item">
-      <button data-filter-btn>Machine Learning</button>
-    </li> 
--->
-        <li class="filter-item">
-          <button data-filter-btn>Data Visualization</button>
-        </li>
-
-        <li class="filter-item">
-          <button data-filter-btn>Time Series</button>
-        </li>
-
-        <li class="filter-item">
-          <button data-filter-btn>Pipelines</button>
+        <li class="filter-item" v-for="(filter, index) in filters" :key="index">
+          <button
+            :class="{ active: selectedFilter === filter }"
+            @click="handleFilter(filter)"
+            data-filter-btn
+          >
+            {{ filter }}
+          </button>
         </li>
       </ul>
 
+      <!-- Select Dropdown -->
       <div class="filter-select-box">
-        <button class="filter-select" data-select>
-          <div class="select-value" data-selecct-value>Select category</div>
-
+        <button class="filter-select" @click="toggleSelect" data-select>
+          <div class="select-value" data-selecct-value>{{ selectedValue }}</div>
           <div class="select-icon">
             <ion-icon name="chevron-down"></ion-icon>
           </div>
         </button>
 
-        <ul class="select-list">
-          <li class="select-item">
-            <button data-select-item>All</button>
-          </li>
-
-          <li class="select-item">
-            <button data-select-item>Web design</button>
-          </li>
-
-          <li class="select-item">
-            <button data-select-item>Web development</button>
-          </li>
-
-          <li class="select-item">
-            <button data-select-item>Econometric Modeling</button>
-          </li>
-
-          <li class="select-item">
-            <button data-select-item>backend developer</button>
-          </li>
-          <!--               
-      <li class="select-item">
-        <button data-select-item>Machine Learning</button>
-      </li>
--->
-          <li class="select-item">
-            <button data-select-item>Data Visualization</button>
-          </li>
-
-          <li class="select-item">
-            <button data-select-item>Time Series</button>
-          </li>
-
-          <li class="select-item">
-            <button data-select-item>Pipelines</button>
+        <ul v-if="selectOpen" class="select-list">
+          <li
+            v-for="(filter, index) in filters"
+            :key="index"
+            class="select-item"
+            @click="selectFilter(filter)"
+            data-select-item
+          >
+            <button>{{ filter }}</button>
           </li>
         </ul>
       </div>
 
+      <!-- Project List -->
       <ul class="project-list">
         <li
+          v-for="(project, index) in filteredProjects"
+          :key="index"
           class="project-item active"
-          data-filter-item
-          data-category="time series"
+          :data-category="project.category"
         >
-          <a href="https://github.com/OugMontiel/ModeloARIMA-Fase-2">
+          <a :href="project.link">
             <figure class="project-img">
               <div class="project-item-icon-box">
                 <ion-icon name="eye-outline"></ion-icon>
               </div>
-
-              <img
-                src="./assets/images/project-time-series-1.webp"
-                alt="finance"
-                loading="lazy"
-              />
+              <img :src="project.imgSrc" :alt="project.title" loading="lazy" />
             </figure>
-
-            <h3 class="project-title">Tecnicas de pronostico</h3>
-
-            <p class="project-category">Time Series</p>
-          </a>
-        </li>
-
-        <li
-          class="project-item active"
-          data-filter-item
-          data-category="backend developer"
-        >
-          <a href="https://github.com/OugMontiel/projectTeamSoccer-Campus">
-            <figure class="project-img">
-              <div class="project-item-icon-box">
-                <ion-icon name="eye-outline"></ion-icon>
-              </div>
-
-              <img
-                src="./assets/images/project-backend-developer-1.webp"
-                alt="finance"
-                loading="lazy"
-              />
-            </figure>
-
-            <h3 class="project-title">
-              Control and registration oof all teams that are participation in
-              the BetPlay League.
-            </h3>
-
-            <p class="project-category">backend developer</p>
-          </a>
-        </li>
-
-        <li
-          class="project-item active"
-          data-filter-item
-          data-category="pipelines"
-        >
-          <a href="https://github.com/OugMontiel/Pragma">
-            <figure class="project-img">
-              <div class="project-item-icon-box">
-                <ion-icon name="eye-outline"></ion-icon>
-              </div>
-
-              <img
-                src="./assets/images/project-pipelines-1.webp"
-                alt="finance"
-                loading="lazy"
-              />
-            </figure>
-
-            <h3 class="project-title">Ingeneria de datos</h3>
-
-            <p class="project-category">Pipelines</p>
-          </a>
-        </li>
-
-        <li
-          class="project-item active"
-          data-filter-item
-          data-category="backend developer"
-        >
-          <a href="https://github.com/OugMontiel/proyectoPython-campus">
-            <figure class="project-img">
-              <div class="project-item-icon-box">
-                <ion-icon name="eye-outline"></ion-icon>
-              </div>
-
-              <img
-                src="./assets/images/project-1.jpg"
-                alt="finance"
-                loading="lazy"
-              />
-            </figure>
-
-            <h3 class="project-title">Sistema Gestion Campus</h3>
-
-            <p class="project-category">backend developer</p>
-          </a>
-        </li>
-
-        <li
-          class="project-item active"
-          data-filter-item
-          data-category="backend developer"
-        >
-          <a href="https://github.com/OugMontiel/examenPython-campus">
-            <figure class="project-img">
-              <div class="project-item-icon-box">
-                <ion-icon name="eye-outline"></ion-icon>
-              </div>
-
-              <img
-                src="./assets/images/project-1.jpg"
-                alt="finance"
-                loading="lazy"
-              />
-            </figure>
-
-            <h3 class="project-title">
-              Sistema gestor de peliculas BlockBuster
-            </h3>
-
-            <p class="project-category">backend developer</p>
-          </a>
-        </li>
-
-        <li
-          class="project-item active"
-          data-filter-item
-          data-category="web design"
-        >
-          <a href="https://github.com/OugMontiel/shoeWebsite-campus">
-            <figure class="project-img">
-              <div class="project-item-icon-box">
-                <ion-icon name="eye-outline"></ion-icon>
-              </div>
-
-              <img
-                src="./assets/images/project-1.jpg"
-                alt="finance"
-                loading="lazy"
-              />
-            </figure>
-
-            <h3 class="project-title">shoe Website</h3>
-
-            <p class="project-category">Web design</p>
-          </a>
-        </li>
-
-        <li
-          class="project-item active"
-          data-filter-item
-          data-category="web design"
-        >
-          <a href="https://github.com/OugMontiel/identificacionCajas-campus">
-            <figure class="project-img">
-              <div class="project-item-icon-box">
-                <ion-icon name="eye-outline"></ion-icon>
-              </div>
-
-              <img
-                src="./assets/images/project-1.jpg"
-                alt="finance"
-                loading="lazy"
-              />
-            </figure>
-
-            <h3 class="project-title">Mis primeros Diseños</h3>
-
-            <p class="project-category">Web design</p>
-          </a>
-        </li>
-
-        <li
-          class="project-item active"
-          data-filter-item
-          data-category="web design"
-        >
-          <a href="https://github.com/OugMontiel/foodLover-campus">
-            <figure class="project-img">
-              <div class="project-item-icon-box">
-                <ion-icon name="eye-outline"></ion-icon>
-              </div>
-
-              <img
-                src="./assets/images/project-1.jpg"
-                alt="finance"
-                loading="lazy"
-              />
-            </figure>
-
-            <h3 class="project-title">Food Lover</h3>
-
-            <p class="project-category">Web design</p>
-          </a>
-        </li>
-
-        <li
-          class="project-item active"
-          data-filter-item
-          data-category="web design"
-        >
-          <a href="https://github.com/OugMontiel/gripBasico-campus">
-            <figure class="project-img">
-              <div class="project-item-icon-box">
-                <ion-icon name="eye-outline"></ion-icon>
-              </div>
-
-              <img
-                src="./assets/images/project-1.jpg"
-                alt="finance"
-                loading="lazy"
-              />
-            </figure>
-
-            <h3 class="project-title">Grip Basico</h3>
-
-            <p class="project-category">Web design</p>
-          </a>
-        </li>
-
-        <li
-          class="project-item active"
-          data-filter-item
-          data-category="web design"
-        >
-          <a href="https://github.com/OugMontiel/landigPages-campus">
-            <figure class="project-img">
-              <div class="project-item-icon-box">
-                <ion-icon name="eye-outline"></ion-icon>
-              </div>
-
-              <img
-                src="./assets/images/project-1.jpg"
-                alt="finance"
-                loading="lazy"
-              />
-            </figure>
-
-            <h3 class="project-title">Landing pages</h3>
-
-            <p class="project-category">Web design</p>
-          </a>
-        </li>
-
-        <li
-          class="project-item active"
-          data-filter-item
-          data-category="web design"
-        >
-          <a href="https://github.com/OugMontiel/virtualWallet-campus">
-            <figure class="project-img">
-              <div class="project-item-icon-box">
-                <ion-icon name="eye-outline"></ion-icon>
-              </div>
-
-              <img
-                src="./assets/images/project-1.jpg"
-                alt="finance"
-                loading="lazy"
-              />
-            </figure>
-
-            <h3 class="project-title">Virtual Wallet</h3>
-
-            <p class="project-category">Web design</p>
-          </a>
-        </li>
-
-        <li
-          class="project-item active"
-          data-filter-item
-          data-category="web design"
-        >
-          <a href="https://github.com/OugMontiel/examenHTMLyCSS-campus">
-            <figure class="project-img">
-              <div class="project-item-icon-box">
-                <ion-icon name="eye-outline"></ion-icon>
-              </div>
-
-              <img
-                src="./assets/images/project-1.jpg"
-                alt="finance"
-                loading="lazy"
-              />
-            </figure>
-
-            <h3 class="project-title">Carrillo de compras</h3>
-
-            <p class="project-category">Web design</p>
-          </a>
-        </li>
-
-        <li
-          class="project-item active"
-          data-filter-item
-          data-category="backend developer"
-        >
-          <a href="https://github.com/OugMontiel/disenoDeAlgoritmos-campus">
-            <figure class="project-img">
-              <div class="project-item-icon-box">
-                <ion-icon name="eye-outline"></ion-icon>
-              </div>
-
-              <img
-                src="./assets/images/project-1.jpg"
-                alt="finance"
-                loading="lazy"
-              />
-            </figure>
-
-            <h3 class="project-title">Diseño de algoritmos</h3>
-
-            <p class="project-category">backend developer</p>
-          </a>
-        </li>
-
-        <li
-          class="project-item active"
-          data-filter-item
-          data-category="web development"
-        >
-          <a href="https://github.com/OugMontiel/spaceX">
-            <figure class="project-img">
-              <div class="project-item-icon-box">
-                <ion-icon name="eye-outline"></ion-icon>
-              </div>
-
-              <img
-                src="./assets/images/project-1.jpg"
-                alt="finance"
-                loading="lazy"
-              />
-            </figure>
-
-            <h3 class="project-title">SpaceX-API</h3>
-
-            <p class="project-category">Web development</p>
-          </a>
-        </li>
-
-        <li
-          class="project-item active"
-          data-filter-item
-          data-category="web development"
-        >
-          <a href="https://github.com/OugMontiel/Spotfy">
-            <figure class="project-img">
-              <div class="project-item-icon-box">
-                <ion-icon name="eye-outline"></ion-icon>
-              </div>
-
-              <img
-                src="./assets/images/project-1.jpg"
-                alt="finance"
-                loading="lazy"
-              />
-            </figure>
-
-            <h3 class="project-title">Spotfy</h3>
-
-            <p class="project-category">Web development</p>
-          </a>
-        </li>
-
-        <li
-          class="project-item active"
-          data-filter-item
-          data-category="econometric modeling"
-        >
-          <a href="https://github.com/OugMontiel/AnalisisUnivariado-Fase-4">
-            <figure class="project-img">
-              <div class="project-item-icon-box">
-                <ion-icon name="eye-outline"></ion-icon>
-              </div>
-
-              <img
-                src="./assets/images/project-1.jpg"
-                alt="finance"
-                loading="lazy"
-              />
-            </figure>
-
-            <h3 class="project-title">Páneles de Datos</h3>
-
-            <p class="project-category">Econometric Modeling</p>
-          </a>
-        </li>
-
-        <li
-          class="project-item active"
-          data-filter-item
-          data-category="econometric modeling"
-        >
-          <a href="https://github.com/OugMontiel/AnalisisMultivariado-Fase-5">
-            <figure class="project-img">
-              <div class="project-item-icon-box">
-                <ion-icon name="eye-outline"></ion-icon>
-              </div>
-
-              <img
-                src="./assets/images/project-1.jpg"
-                alt="finance"
-                loading="lazy"
-              />
-            </figure>
-
-            <h3 class="project-title">panel de datos</h3>
-
-            <p class="project-category">Econometric Modeling</p>
-          </a>
-        </li>
-
-        <li
-          class="project-item active"
-          data-filter-item
-          data-category="backend developer"
-        >
-          <a href="https://github.com/OugMontiel/Juegos----POO">
-            <figure class="project-img">
-              <div class="project-item-icon-box">
-                <ion-icon name="eye-outline"></ion-icon>
-              </div>
-
-              <img
-                src="./assets/images/project-1.jpg"
-                alt="finance"
-                loading="lazy"
-              />
-            </figure>
-
-            <h3 class="project-title">Mis primeros Juegos</h3>
-
-            <p class="project-category">backend developer</p>
-          </a>
-        </li>
-
-        <li
-          class="project-item active"
-          data-filter-item
-          data-category="web development"
-        >
-          <a href="https://github.com/OugMontiel/examenEncriptador">
-            <figure class="project-img">
-              <div class="project-item-icon-box">
-                <ion-icon name="eye-outline"></ion-icon>
-              </div>
-
-              <img
-                src="./assets/images/project-1.jpg"
-                alt="finance"
-                loading="lazy"
-              />
-            </figure>
-
-            <h3 class="project-title">Encriptador</h3>
-
-            <p class="project-category">Web development</p>
-          </a>
-        </li>
-
-        <li
-          class="project-item active"
-          data-filter-item
-          data-category="data visualization"
-        >
-          <a href="https://github.com/OugMontiel/BetrMedia">
-            <figure class="project-img">
-              <div class="project-item-icon-box">
-                <ion-icon name="eye-outline"></ion-icon>
-              </div>
-
-              <img
-                src="./assets/images/project-1.jpg"
-                alt="finance"
-                loading="lazy"
-              />
-            </figure>
-
-            <h3 class="project-title">datos de Youtube</h3>
-
-            <p class="project-category">Data Visualization</p>
+            <h3 class="project-title">{{ project.title }}</h3>
+            <p class="project-category">{{ project.category }}</p>
           </a>
         </li>
       </ul>
@@ -584,5 +67,64 @@
 <script>
 export default {
   name: 'PortfolioMyPortafolio',
+  data() {
+    return {
+      filters: [
+        'All',
+        'Web design',
+        'Web development',
+        'Econometric Modeling',
+        'Backend Developer',
+        'Data Visualization',
+        'Time Series',
+        'Pipelines',
+      ],
+      selectedFilter: 'All',
+      selectOpen: false,
+      selectedValue: 'Select category',
+      projects: [
+        {
+          title: 'Tecnicas de pronostico',
+          category: 'Time Series',
+          imgSrc: './assets/images/project-time-series-1.webp',
+          link: 'https://github.com/OugMontiel/ModeloARIMA-Fase-2',
+        },
+        {
+          title: 'Control and registration oof all teams',
+          category: 'Backend Developer',
+          imgSrc: './assets/images/project-backend-developer-1.webp',
+          link: 'https://github.com/OugMontiel/projectTeamSoccer-Campus',
+        },
+        {
+          title: 'Ingeneria de datos',
+          category: 'Pipelines',
+          imgSrc: './assets/images/project-pipelines-1.webp',
+          link: 'https://github.com/OugMontiel/Pragma',
+        },
+        // ... Agrega más proyectos aquí
+      ],
+    }
+  },
+  computed: {
+    filteredProjects() {
+      if (this.selectedFilter === 'All') return this.projects
+      return this.projects.filter(
+        project => project.category === this.selectedFilter,
+      )
+    },
+  },
+  methods: {
+    toggleSelect() {
+      this.selectOpen = !this.selectOpen
+    },
+    handleFilter(filter) {
+      this.selectedFilter = filter
+      this.selectedValue = filter
+      this.selectOpen = false // Cerrar el select después de seleccionar
+    },
+    selectFilter(filter) {
+      this.handleFilter(filter)
+    },
+  },
 }
 </script>

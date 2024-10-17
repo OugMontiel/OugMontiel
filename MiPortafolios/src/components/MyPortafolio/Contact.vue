@@ -25,7 +25,6 @@
             required
             data-form-input
           />
-
           <input
             type="email"
             name="email"
@@ -56,5 +55,29 @@
 <script>
 export default {
   name: 'ContactMyPortafolio',
+
+  mounted() {
+    // Inicia la validación del formulario cuando el DOM esté listo
+    this.initFormValidation()
+  },
+
+  methods: {
+    // Método para inicializar la validación del formulario
+    initFormValidation() {
+      const form = document.querySelector('[data-form]')
+      const formInputs = document.querySelectorAll('[data-form-input]')
+      const formBtn = document.querySelector('[data-form-btn]')
+
+      formInputs.forEach(input => {
+        input.addEventListener('input', () => {
+          if (form.checkValidity()) {
+            formBtn.removeAttribute('disabled')
+          } else {
+            formBtn.setAttribute('disabled', '')
+          }
+        })
+      })
+    },
+  },
 }
 </script>

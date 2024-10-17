@@ -18,27 +18,20 @@
       </p>
     </section>
 
-    <!--
-  - service
--->
-
+    <!-- Service Section -->
     <section class="service">
-      <h3 class="h3 service-title">What i'm doing</h3>
-
+      <h3 class="h3 service-title">What I'm doing</h3>
       <ul class="service-list">
         <li class="service-item">
           <div class="service-icon-box">
             <img
-              src="./assets/images/icon-design.svg
-        "
+              src="./assets/images/icon-design.svg"
               alt="design icon"
               width="40"
             />
           </div>
-
           <div class="service-content-box">
             <h4 class="h4 service-item-title">Web design</h4>
-
             <p class="service-item-text">
               The most modern and high-quality design made at a professional
               level.
@@ -290,7 +283,6 @@
         <button class="modal-close-btn" data-modal-close-btn>
           <ion-icon name="close-outline"></ion-icon>
         </button>
-
         <div class="modal-img-wrapper">
           <figure class="modal-avatar-box">
             <img
@@ -303,7 +295,6 @@
 
           <img src="./assets/images/icon-quote.svg" alt="quote icon" />
         </div>
-
         <div class="modal-content">
           <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
 
@@ -378,5 +369,58 @@
 <script>
 export default {
   name: 'AboutMyPortafolio',
+
+  mounted() {
+    this.initTestimonialsModal()
+  },
+
+  methods: {
+    // Toggle class for elements
+    elementToggleFunc(elem) {
+      elem.classList.toggle('active')
+    },
+
+    // Function to handle modal toggling
+    testimonialsModalFunc() {
+      const modalContainer = document.querySelector('[data-modal-container]')
+      const overlay = document.querySelector('[data-overlay]')
+      this.elementToggleFunc(modalContainer)
+      this.elementToggleFunc(overlay)
+    },
+
+    // Initialize event listeners for testimonial modals
+    initTestimonialsModal() {
+      const testimonialsItems = document.querySelectorAll(
+        '[data-testimonials-item]',
+      )
+      const modalImg = document.querySelector('[data-modal-img]')
+      const modalTitle = document.querySelector('[data-modal-title]')
+      const modalText = document.querySelector('[data-modal-text]')
+      const modalCloseBtn = document.querySelector('[data-modal-close-btn]')
+      const overlay = document.querySelector('[data-overlay]')
+
+      // Event listeners for opening modals
+      testimonialsItems.forEach(item => {
+        item.addEventListener('click', () => {
+          modalImg.src = item.querySelector('[data-testimonials-avatar]').src
+          modalImg.alt = item.querySelector('[data-testimonials-avatar]').alt
+          modalTitle.innerHTML = item.querySelector(
+            '[data-testimonials-title]',
+          ).innerHTML
+          modalText.innerHTML = item.querySelector(
+            '[data-testimonials-text]',
+          ).innerHTML
+          this.testimonialsModalFunc()
+        })
+      })
+
+      // Event listeners for closing the modal
+      modalCloseBtn.addEventListener(
+        'click',
+        this.testimonialsModalFunc.bind(this),
+      )
+      overlay.addEventListener('click', this.testimonialsModalFunc.bind(this))
+    },
+  },
 }
 </script>
