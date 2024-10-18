@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <main id="app">
     <SidebarMyPortafolio />
     <div class="main-content">
       <NavbarMyPortafolio />
@@ -9,8 +9,16 @@
       <BlogMyPortafolio />
       <ContactMyPortafolio />
     </div>
-  </div>
+  </main>
 </template>
+
+<style>
+main {
+  margin: 15px 12px;
+  margin-bottom: 75px;
+  min-width: 259px;
+}
+</style>
 
 <script>
 import SidebarMyPortafolio from './components/MyPortafolio/Sidebar.vue'
