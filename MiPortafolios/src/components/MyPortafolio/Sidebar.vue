@@ -128,7 +128,7 @@ export default {
 <style>
 .sidebar {
   margin-bottom: 15px;
-  max-height: 112px;
+  height: 95vh;
   overflow: hidden;
   transition: var(--transition-2);
 }

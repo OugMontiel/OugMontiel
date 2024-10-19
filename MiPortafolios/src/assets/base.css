@@ -154,7 +154,9 @@ html {
 
 body {
   background: var(--smoky-black);
-  margin: 1em;
+  margin: 0;
+  width: 100vw;
+  max-height: 100vh;
 }
 
 @keyframes fade {

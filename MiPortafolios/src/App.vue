@@ -18,7 +18,7 @@ main {
   display: grid; /* Habilitamos el grid */
   grid-template-columns: 1fr; /* Una columna por defecto (para pantallas pequeñas) */
   gap: 2em; /* Espacio entre las columnas */
-  min-width: 259px;
+  padding: 1em;
 }
 
 /* Estilo de la barra lateral */
