@@ -2,11 +2,7 @@
   <aside class="sidebar" data-sidebar>
     <div class="sidebar-info">
       <figure class="avatar-box">
-        <img
-          src="./assets/images/my-avatar.png"
-          alt="Diego Montiel"
-          width="80"
-        />
+        <img src="/my-avatar.png" alt="Diego Montiel" width="80" />
       </figure>
 
       <div class="info-content">
@@ -16,57 +12,21 @@
         <p class="title">Economist</p>
       </div>
 
-      <button class="info_more-btn" data-sidebar-btn>
-        <span>Show Contacts</span>
-        <ion-icon name="chevron-down"></ion-icon>
-      </button>
     </div>
 
-    <div class="sidebar-info_more">
+    <div class="sidebar-info_more" >
       <div class="separator"></div>
 
       <ul class="contacts-list">
-        <li class="contact-item">
-          <div class="icon-box">
-            <ion-icon name="mail-outline"></ion-icon>
-          </div>
-          <div class="contact-info">
-            <p class="contact-title">Email</p>
-            <a href="mailto:montielflorezdiego@gmail.com" class="contact-link">
-              MontielFlorezDiego@gmail.com
-            </a>
-          </div>
-        </li>
-
-        <li class="contact-item">
-          <div class="icon-box">
-            <ion-icon name="phone-portrait-outline"></ion-icon>
-          </div>
-          <div class="contact-info">
-            <p class="contact-title">Phone</p>
-            <a href="tel:+573186377582" class="contact-link">+57 318 6377582</a>
-          </div>
-        </li>
-
-        <li class="contact-item">
-          <div class="icon-box">
-            <ion-icon name="calendar-outline"></ion-icon>
-          </div>
-          <div class="contact-info">
-            <p class="contact-title">Birthday</p>
-            <time datetime="1998-08-12">Aug 12, 1998</time>
-          </div>
-        </li>
-
-        <li class="contact-item">
-          <div class="icon-box">
-            <ion-icon name="location-outline"></ion-icon>
-          </div>
-          <div class="contact-info">
-            <p class="contact-title">Location</p>
-            <address>Bucaramanga, Santander, Colombia</address>
-          </div>
-        </li>
+        <ContactItem icon="mail-outline" title="Email" linkText="MontielFlorezDiego@gmail.com"
+          href="mailto:montielflorezdiego@gmail.com" />
+        <ContactItem icon="phone-portrait-outline" title="Phone" linkText="+57 318 6377582" href="tel:+573186377582" />
+        <ContactItem icon="calendar-outline" title="Birthday">
+          <time datetime="1998-08-12">Aug 12, 1998</time>
+        </ContactItem>
+        <ContactItem icon="location-outline" title="Location">
+          <address>Bucaramanga, Santander, Colombia</address>
+        </ContactItem>
       </ul>
 
       <div class="separator"></div>
@@ -167,55 +127,6 @@ export default {
   padding: 3px 12px;
   border-radius: 8px;
   margin: 2px auto;
-}
-
-.info_more-btn {
-  position: absolute;
-  top: -15px;
-  right: -15px;
-  border-radius: 0 15px;
-  font-size: 13px;
-  color: var(--orange-yellow-crayola);
-  background: var(--border-gradient-onyx);
-  padding: 10px;
-  box-shadow: var(--shadow-2);
-  transition: var(--transition-1);
-  z-index: 1;
-}
-
-.info_more-btn::before {
-  content: '';
-  position: absolute;
-  inset: 1px;
-  border-radius: inherit;
-  background: var(--bg-gradient-jet);
-  transition: var(--transition-1);
-  z-index: -1;
-}
-
-.info_more-btn:hover,
-.info_more-btn:focus {
-  background: var(--bg-gradient-yellow-1);
-}
-
-.info_more-btn:hover::before,
-.info_more-btn:focus::before {
-  background: var(--bg-gradient-yellow-2);
-}
-
-.info_more-btn span {
-  display: none;
-}
-
-.sidebar-info_more {
-  opacity: 0;
-  visibility: hidden;
-  transition: var(--transition-2);
-}
-
-.sidebar.active .sidebar-info_more {
-  opacity: 1;
-  visibility: visible;
 }
 
 .contacts-list {
