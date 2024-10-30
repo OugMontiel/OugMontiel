@@ -1,11 +1,11 @@
 <template>
   <aside class="sidebar" data-sidebar>
-    <div class="sidebar-info">
-      <figure class="avatar-box">
+    <div class="sidebarInfo">
+      <figure class="siderAvatarBox">
         <img src="/my-avatar.png" alt="Diego Montiel" width="80" />
       </figure>
 
-      <div class="info-content">
+      <div class="siderInfoRoles">
         <h1 class="name" title="Diego Montiel">Diego Montiel</h1>
         <p class="title">Data Science</p>
         <p class="title">Backend Developer</p>
@@ -14,7 +14,7 @@
 
     </div>
 
-    <div class="sidebar-info_more" >
+    <div class="sidebarMoreInfo" >
       <div class="separator"></div>
 
       <ul class="contacts-list">
@@ -31,30 +31,30 @@
 
       <div class="separator"></div>
 
-      <ul class="social-list">
-        <li class="social-item">
+      <ul class="sidebarSocial">
+        <li class="sidebarSocialItem">
           <a
             href="https://www.linkedin.com/in/diego-alejandro-montiel-florez-data-science"
-            class="social-link"
+            class="sidebarSocialLink"
           >
             <ion-icon name="logo-linkedin"></ion-icon>
           </a>
         </li>
 
-        <li class="social-item">
-          <a href="https://github.com/OugMontiel" class="social-link">
+        <li class="sidebarSocialItem">
+          <a href="https://github.com/OugMontiel" class="sidebarSocialLink">
             <ion-icon name="logo-github"></ion-icon>
           </a>
         </li>
 
-        <li class="social-item">
-          <a href="https://www.kaggle.com/ougmontiel" class="social-link">
+        <li class="sidebarSocialItem">
+          <a href="https://www.kaggle.com/ougmontiel" class="sidebarSocialLink">
             <img
               src="https://www.kaggle.com/static/images/favicon.ico"
               width="18"
               height="18"
               alt="Kaggle"
-              class="kaggle-icon"
+              class="logo-kaggle"
             />
           </a>
         </li>
@@ -93,11 +93,7 @@ export default {
   transition: var(--transition-2);
 }
 
-.sidebar.active {
-  max-height: 405px;
-}
-
-.sidebar-info {
+.sidebarInfo {
   position: relative;
   display: flex;
   justify-content: flex-start;
@@ -105,12 +101,12 @@ export default {
   gap: 15px;
 }
 
-.avatar-box {
+.siderAvatarBox {
   background: var(--bg-gradient-onyx);
   border-radius: 20px;
 }
 
-.info-content .name {
+.siderInfoRoles .name {
   color: var(--white-2);
   font-size: var(--fs-3);
   font-weight: var(--fw-500);
@@ -118,7 +114,7 @@ export default {
   margin-bottom: 10px;
 }
 
-.info-content .title {
+.siderInfoRoles .title {
   color: var(--white-1);
   background: var(--onyx);
   font-size: var(--fs-8);
@@ -129,41 +125,7 @@ export default {
   margin: 2px auto;
 }
 
-.contacts-list {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
-}
-
-.contact-item {
-  min-width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.contact-info {
-  max-width: calc(100% - 46px);
-  width: calc(100% - 46px);
-}
-
-.contact-title {
-  color: var(--light-gray-70);
-  font-size: var(--fs-8);
-  text-transform: uppercase;
-  margin-bottom: 2px;
-}
-
-.contact-info :is(.contact-link, time, address) {
-  color: var(--white-2);
-  font-size: var(--fs-7);
-}
-
-.contact-info address {
-  font-style: normal;
-}
-
-.social-list {
+.sidebarSocial {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -172,23 +134,23 @@ export default {
   padding-left: 7px;
 }
 
-.social-item .social-link {
+.sidebarSocialItem .sidebarSocialLink {
   color: var(--light-gray-70);
   font-size: 18px;
 }
 
-.social-item .social-link:hover {
+.sidebarSocialItem .sidebarSocialLink:hover {
   color: var(--light-gray);
 }
 
-.kaggle-icon {
+.logo-kaggle {
   filter: grayscale(100%) brightness(0) invert(1); /* Blanco */
   width: 18px;
   height: 18px;
   transition: filter 0.3s ease;
 }
 
-.kaggle-icon:hover {
+.logo-kaggle:hover {
   filter: grayscale(100%) brightness(0); /* Negro al hacer hover */
 }
 </style>
