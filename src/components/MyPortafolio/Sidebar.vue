@@ -14,29 +14,64 @@
 
     </div>
 
-    <div class="sidebarMoreInfo" >
+    <div class="sidebarMoreInfo">
       <div class="separator"></div>
 
       <ul class="contacts-list">
-        <ContactItem icon="mail-outline" title="Email" linkText="MontielFlorezDiego@gmail.com"
-          href="mailto:montielflorezdiego@gmail.com" />
-        <ContactItem icon="phone-portrait-outline" title="Phone" linkText="+57 318 6377582" href="tel:+573186377582" />
-        <ContactItem icon="calendar-outline" title="Birthday">
-          <time datetime="1998-08-12">Aug 12, 1998</time>
-        </ContactItem>
-        <ContactItem icon="location-outline" title="Location">
-          <address>Bucaramanga, Santander, Colombia</address>
-        </ContactItem>
+        <li class="contact-item">
+          <div class="icon-box">
+            <ion-icon name="mail-outline"></ion-icon>
+          </div>
+
+          <div class="contact-info">
+            <p class="contact-title">Email</p>
+
+            <a href="mailto:montielflorezdiego@gmail.com" class="contact-link">MontielFlorezDiego@gmail.com</a>
+          </div>
+        </li>
+
+        <li class="contact-item">
+          <div class="icon-box">
+            <ion-icon name="phone-portrait-outline"></ion-icon>
+          </div>
+
+          <div class="contact-info">
+            <p class="contact-title">Phone</p>
+
+            <a href="tel:+573186377582" class="contact-link">+57 318 6377582</a>
+          </div>
+        </li>
+
+        <li class="contact-item">
+          <div class="icon-box">
+            <ion-icon name="calendar-outline"></ion-icon>
+          </div>
+
+          <div class="contact-info">
+            <p class="contact-title">Birthday</p>
+
+            <time datetime="1998-08-12">Aug 12, 1998</time>
+          </div>
+        </li>
+
+        <li class="contact-item">
+          <div class="icon-box">
+            <ion-icon name="location-outline"></ion-icon>
+          </div>
+
+          <div class="contact-info">
+            <p class="contact-title">Location</p>
+
+            <address>Bucaramanga, Santander, Colombia</address>
+          </div>
+        </li>
       </ul>
 
       <div class="separator"></div>
 
       <ul class="sidebarSocial">
         <li class="sidebarSocialItem">
-          <a
-            href="https://www.linkedin.com/in/diego-alejandro-montiel-florez-data-science"
-            class="sidebarSocialLink"
-          >
+          <a href="https://www.linkedin.com/in/diego-alejandro-montiel-florez-data-science" class="sidebarSocialLink">
             <ion-icon name="logo-linkedin"></ion-icon>
           </a>
         </li>
@@ -49,13 +84,8 @@
 
         <li class="sidebarSocialItem">
           <a href="https://www.kaggle.com/ougmontiel" class="sidebarSocialLink">
-            <img
-              src="https://www.kaggle.com/static/images/favicon.ico"
-              width="18"
-              height="18"
-              alt="Kaggle"
-              class="logo-kaggle"
-            />
+            <img src="https://www.kaggle.com/static/images/favicon.ico" width="18" height="18" alt="Kaggle"
+              class="logo-kaggle" />
           </a>
         </li>
       </ul>
@@ -144,13 +174,15 @@ export default {
 }
 
 .logo-kaggle {
-  filter: grayscale(100%) brightness(0) invert(1); /* Blanco */
+  filter: grayscale(100%) brightness(0) invert(1);
+  /* Blanco */
   width: 18px;
   height: 18px;
   transition: filter 0.3s ease;
 }
 
 .logo-kaggle:hover {
-  filter: grayscale(100%) brightness(0); /* Negro al hacer hover */
+  filter: grayscale(100%) brightness(0);
+  /* Negro al hacer hover */
 }
 </style>
