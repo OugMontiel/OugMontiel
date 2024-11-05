@@ -11,7 +11,6 @@
         <p class="title">Backend Developer</p>
         <p class="title">Economist</p>
       </div>
-
     </div>
 
     <div class="sidebarMoreInfo">
@@ -26,7 +25,9 @@
           <div class="contact-info">
             <p class="contact-title">Email</p>
 
-            <a href="mailto:montielflorezdiego@gmail.com" class="contact-link">MontielFlorezDiego@gmail.com</a>
+            <a href="mailto:montielflorezdiego@gmail.com" class="contact-link"
+              >MontielFlorezDiego@gmail.com</a
+            >
           </div>
         </li>
 
@@ -71,7 +72,10 @@
 
       <ul class="sidebarSocial">
         <li class="sidebarSocialItem">
-          <a href="https://www.linkedin.com/in/diego-alejandro-montiel-florez-data-science" class="sidebarSocialLink">
+          <a
+            href="https://www.linkedin.com/in/diego-alejandro-montiel-florez-data-science"
+            class="sidebarSocialLink"
+          >
             <ion-icon name="logo-linkedin"></ion-icon>
           </a>
         </li>
@@ -83,9 +87,17 @@
         </li>
 
         <li class="sidebarSocialItem">
-          <a href="https://www.kaggle.com/ougmontiel" class="sidebarSocialLink">
-            <img src="https://www.kaggle.com/static/images/favicon.ico" width="18" height="18" alt="Kaggle"
-              class="logo-kaggle" />
+          <a 
+            href="https://www.kaggle.com/ougmontiel" 
+            class="sidebarSocialLink"
+          >
+            <img
+              src="https://www.kaggle.com/static/images/favicon.ico"
+              width="18"
+              height="18"
+              alt="Kaggle"
+              class="logo-kaggle"
+            />
           </a>
         </li>
       </ul>
