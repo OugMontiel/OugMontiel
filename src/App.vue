@@ -3,7 +3,7 @@
     <div class="sidebar">
       <SidebarMyPortafolio />
     </div>
-    <div class="main-content">
+    <div class="mainContent">
       <NavbarMyPortafolio />
       <AboutMyPortafolio />
       <ResumeMyPortafolio />
@@ -29,8 +29,9 @@ main {
 }
 
 /* Estilo para el contenido principal */
-.main-content {
+.mainContent {
   grid-column: 1 / 2; /* También ocupa la primera columna por defecto */
+  position: relative;
 }
 
 /* Para pantallas grandes, aplicamos dos columnas */
@@ -43,7 +44,7 @@ main {
     grid-column: 1 / 2; /* Colocamos la barra lateral en la primera columna */
   }
 
-  .main-content {
+  .mainContent {
     grid-column: 2 / 3; /* Colocamos el contenido principal en la segunda columna */
   }
 }

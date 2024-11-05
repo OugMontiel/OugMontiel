@@ -1,20 +1,20 @@
 <template>
   <nav class="navbar">
-    <ul class="navbar-list">
-      <li class="navbar-item">
-        <button class="navbar-link active" data-nav-link>About</button>
+    <ul class="navbarList">
+      <li class="navbarItem">
+        <button class="navbarLink active" data-nav-link>About</button>
       </li>
-      <li class="navbar-item">
-        <button class="navbar-link" data-nav-link>Resume</button>
+      <li class="navbarItem">
+        <button class="navbarLink" data-nav-link>Resume</button>
       </li>
-      <li class="navbar-item">
-        <button class="navbar-link" data-nav-link>Portfolio</button>
+      <li class="navbarItem">
+        <button class="navbarLink" data-nav-link>Portfolio</button>
       </li>
-      <li class="navbar-item">
-        <button class="navbar-link" data-nav-link>Blog</button>
+      <li class="navbarItem">
+        <button class="navbarLink" data-nav-link>Blog</button>
       </li>
-      <li class="navbar-item">
-        <button class="navbar-link" data-nav-link>Contact</button>
+      <li class="navbarItem">
+        <button class="navbarLink" data-nav-link>Contact</button>
       </li>
     </ul>
   </nav>
@@ -55,39 +55,38 @@ export default {
 
 <style>
 .navbar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 2em;
+  width: auto;
   background: hsla(240, 1%, 17%, 0.75);
   backdrop-filter: blur(10px);
   border: 1px solid var(--jet);
-  border-radius: 12px 12px 0 0;
+  border-radius: 0 0 1em 1em;
   box-shadow: var(--shadow-2);
-  z-index: 5;
 }
 
-.navbar-list {
+.navbarList {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  padding: 0 10px;
+  padding: 0 1em;
+  gap: 1em
 }
 
-.navbar-link {
+.navbarLink {
   color: var(--light-gray);
-  font-size: var(--fs-8);
-  padding: 20px 7px;
+  font-size: var(--fs-7);
+  padding: 1.8em 1em;
   transition: color var(--transition-1);
 }
 
-.navbar-link:hover,
-.navbar-link:focus {
+.navbarLink:hover,
+.navbarLink:focus {
   color: var(--light-gray-70);
 }
 
-.navbar-link.active {
+.navbarLink.active {
   color: var(--orange-yellow-crayola);
 }
 </style>
