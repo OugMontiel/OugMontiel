@@ -2,14 +2,16 @@
   <aside>
     <div class="sidebarInfo">
       <figure class="siderAvatarBox">
-        <img src="/my-avatar.png" alt="Diego Montiel" width="80" />
+        <img src="/my-avatar.png" alt="Diego Montiel" />
       </figure>
 
       <div class="siderInfoRoles">
-        <h1 class="name" title="Diego Montiel">Diego Montiel</h1>
-        <p class="title">Data Science</p>
-        <p class="title">Backend Developer</p>
-        <p class="title">Economist</p>
+        <h1 class="name" title="Diego Montiel">Diego Alejandro Montiel FLorez</h1>
+        <div class="rolesContainer">
+          <p class="title">Data Science</p>
+          <p class="title">Backend Developer</p>
+          <p class="title">Economist</p>
+        </div>
       </div>
     </div>
 
@@ -25,7 +27,9 @@
           <div>
             <p class="sidebarContactTitle">Email</p>
 
-            <a href="mailto:montielflorezdiego@gmail.com" class="sidebarContactLink"
+            <a
+              href="mailto:montielflorezdiego@gmail.com"
+              class="sidebarContactLink"
               >MontielFlorezDiego@gmail.com</a
             >
           </div>
@@ -39,7 +43,9 @@
           <div>
             <p class="sidebarContactTitle">Phone</p>
 
-            <a href="tel:+573186377582" class="sidebarContactLink">+57 318 6377582</a>
+            <a href="tel:+573186377582" class="sidebarContactLink"
+              >+57 318 6377582</a
+            >
           </div>
         </li>
 
@@ -51,7 +57,9 @@
           <div>
             <p class="sidebarContactTitle">Birthday</p>
 
-            <time datetime="1998-08-12" class="sidebarContactLink">Aug 12, 1998</time>
+            <time datetime="1998-08-12" class="sidebarContactLink"
+              >Aug 12</time
+            >
           </div>
         </li>
 
@@ -63,7 +71,9 @@
           <div>
             <p class="sidebarContactTitle">Location</p>
 
-            <address class="sidebarContactLink">Bucaramanga, Santander, Colombia</address>
+            <address class="sidebarContactLink">
+              Bucaramanga, Santander, Colombia
+            </address>
           </div>
         </li>
       </ul>
@@ -76,27 +86,28 @@
             href="https://www.linkedin.com/in/diego-alejandro-montiel-florez-data-science"
             class="sidebarSocialLink"
           >
-            <ion-icon name="logo-linkedin"></ion-icon>
+            <ion-icon
+              name="logo-linkedin"
+              class="sidebarlogoBlackAndWhite"
+            ></ion-icon>
           </a>
         </li>
 
         <li class="sidebarSocialItem">
           <a href="https://github.com/OugMontiel" class="sidebarSocialLink">
-            <ion-icon name="logo-github"></ion-icon>
+            <ion-icon
+              name="logo-github"
+              class="sidebarlogoBlackAndWhite"
+            ></ion-icon>
           </a>
         </li>
 
         <li class="sidebarSocialItem">
-          <a 
-            href="https://www.kaggle.com/ougmontiel" 
-            class="sidebarSocialLink"
-          >
+          <a href="https://www.kaggle.com/ougmontiel" class="sidebarSocialLink">
             <img
               src="https://www.kaggle.com/static/images/favicon.ico"
-              width="18"
-              height="18"
               alt="Kaggle"
-              class="logo-kaggle"
+              class="sidebarlogoBlackAndWhite"
             />
           </a>
         </li>
@@ -128,54 +139,69 @@ export default {
 </script>
 
 <style>
-
 /* parte Superior Foto, Nombre y titulos */
 .sidebarInfo {
-  position: relative;
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
   align-items: center;
   gap: 15px;
+  overflow: cover;
 }
 
 .siderAvatarBox {
   background: var(--bg-gradient-onyx);
-  border-radius: 20px;
+  border-radius: 1rem;
+  overflow: cover;
+}
+.siderAvatarBox img {
+  width: 100%;
+  overflow: cover;
 }
 
+.siderInfoRoles {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 .siderInfoRoles .name {
   color: var(--white-2);
-  font-size: var(--fs-3);
+  font-size: var(--fs-1);
   font-weight: var(--fw-500);
   letter-spacing: -0.25px;
   margin-bottom: 10px;
 }
 
+.rolesContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
 .siderInfoRoles .title {
   color: var(--white-1);
   background: var(--onyx);
-  font-size: var(--fs-8);
+  font-size: var(--fs-6);
   font-weight: var(--fw-300);
   width: max-content;
-  padding: 3px 12px;
-  border-radius: 8px;
-  margin: 2px auto;
+  padding: 1em;
+  border-radius: 1em;
 }
 
 /* parte intermedia, info de contacto  */
-.sidebarContacts{
+.sidebarContacts {
   display: flex;
   flex-direction: column;
-  color: var(--light-gray-70)
+  color: var(--light-gray-70);
 }
 
-.sidebarContactItem{
+.sidebarContactItem {
   display: flex;
-  gap:1em;
+  gap: 1em;
   height: 4em;
 }
 
-.sidebarContactIcon{
+.sidebarContactIcon {
   width: 2em;
   height: 2em;
   border-radius: 1em;
@@ -185,14 +211,14 @@ export default {
   background: var(--border-gradient-onyx);
   color: var(--orange-yellow-crayola);
 }
-.sidebarContactLink{
+.sidebarContactLink {
   color: var(--white-1);
 }
 
 /* parte final, Link de paguinas donde me encuentras  */
 .sidebarSocial {
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   gap: 15px;
   padding-bottom: 4px;
@@ -208,7 +234,7 @@ export default {
   color: var(--light-gray);
 }
 
-.logo-kaggle {
+.sidebarlogoBlackAndWhite {
   filter: grayscale(100%) brightness(0) invert(1);
   /* Blanco */
   width: 18px;
@@ -216,7 +242,7 @@ export default {
   transition: filter 0.3s ease;
 }
 
-.logo-kaggle:hover {
+.sidebarlogoBlackAndWhite:hover {
   filter: grayscale(100%) brightness(0);
   /* Negro al hacer hover */
 }
