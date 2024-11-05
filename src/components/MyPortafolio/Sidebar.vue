@@ -1,5 +1,5 @@
 <template>
-  <aside class="sidebar" data-sidebar>
+  <aside>
     <div class="sidebarInfo">
       <figure class="siderAvatarBox">
         <img src="/my-avatar.png" alt="Diego Montiel" width="80" />
@@ -16,54 +16,54 @@
     <div class="sidebarMoreInfo">
       <div class="separator"></div>
 
-      <ul class="contacts-list">
-        <li class="contact-item">
-          <div class="icon-box">
+      <ul class="sidebarContacts">
+        <li class="sidebarContactItem">
+          <div class="sidebarContactIcon">
             <ion-icon name="mail-outline"></ion-icon>
           </div>
 
-          <div class="contact-info">
-            <p class="contact-title">Email</p>
+          <div>
+            <p class="sidebarContactTitle">Email</p>
 
-            <a href="mailto:montielflorezdiego@gmail.com" class="contact-link"
+            <a href="mailto:montielflorezdiego@gmail.com" class="sidebarContactLink"
               >MontielFlorezDiego@gmail.com</a
             >
           </div>
         </li>
 
-        <li class="contact-item">
-          <div class="icon-box">
+        <li class="sidebarContactItem">
+          <div class="sidebarContactIcon">
             <ion-icon name="phone-portrait-outline"></ion-icon>
           </div>
 
-          <div class="contact-info">
-            <p class="contact-title">Phone</p>
+          <div>
+            <p class="sidebarContactTitle">Phone</p>
 
-            <a href="tel:+573186377582" class="contact-link">+57 318 6377582</a>
+            <a href="tel:+573186377582" class="sidebarContactLink">+57 318 6377582</a>
           </div>
         </li>
 
-        <li class="contact-item">
-          <div class="icon-box">
+        <li class="sidebarContactItem">
+          <div class="sidebarContactIcon">
             <ion-icon name="calendar-outline"></ion-icon>
           </div>
 
-          <div class="contact-info">
-            <p class="contact-title">Birthday</p>
+          <div>
+            <p class="sidebarContactTitle">Birthday</p>
 
-            <time datetime="1998-08-12">Aug 12, 1998</time>
+            <time datetime="1998-08-12" class="sidebarContactLink">Aug 12, 1998</time>
           </div>
         </li>
 
-        <li class="contact-item">
-          <div class="icon-box">
+        <li class="sidebarContactItem">
+          <div class="sidebarContactIcon">
             <ion-icon name="location-outline"></ion-icon>
           </div>
 
-          <div class="contact-info">
-            <p class="contact-title">Location</p>
+          <div>
+            <p class="sidebarContactTitle">Location</p>
 
-            <address>Bucaramanga, Santander, Colombia</address>
+            <address class="sidebarContactLink">Bucaramanga, Santander, Colombia</address>
           </div>
         </li>
       </ul>
@@ -128,13 +128,8 @@ export default {
 </script>
 
 <style>
-.sidebar {
-  margin-bottom: 15px;
-  height: 95vh;
-  overflow: hidden;
-  transition: var(--transition-2);
-}
 
+/* parte Superior Foto, Nombre y titulos */
 .sidebarInfo {
   position: relative;
   display: flex;
@@ -167,6 +162,34 @@ export default {
   margin: 2px auto;
 }
 
+/* parte intermedia, info de contacto  */
+.sidebarContacts{
+  display: flex;
+  flex-direction: column;
+  color: var(--light-gray-70)
+}
+
+.sidebarContactItem{
+  display: flex;
+  gap:1em;
+  height: 4em;
+}
+
+.sidebarContactIcon{
+  width: 2em;
+  height: 2em;
+  border-radius: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--border-gradient-onyx);
+  color: var(--orange-yellow-crayola);
+}
+.sidebarContactLink{
+  color: var(--white-1);
+}
+
+/* parte final, Link de paguinas donde me encuentras  */
 .sidebarSocial {
   display: flex;
   justify-content: flex-start;

@@ -1,6 +1,8 @@
 <template>
   <main id="app">
-    <SidebarMyPortafolio />
+    <div class="sidebar">
+      <SidebarMyPortafolio />
+    </div>
     <div class="main-content">
       <NavbarMyPortafolio />
       <AboutMyPortafolio />
