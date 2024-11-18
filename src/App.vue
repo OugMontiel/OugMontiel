@@ -4,12 +4,8 @@
       <SidebarMyPortafolio />
     </div>
     <div class="mainContent">
-      <NavbarMyPortafolio />
-      <AboutMyPortafolio />
-      <ResumeMyPortafolio />
-      <PortfolioMyPortafolio />
-      <BlogMyPortafolio />
-      <ContactMyPortafolio />
+      <NavbarMyPortafolio @change-page="setActiveComponent" />
+      <component :is="activeComponent" />
     </div>
   </main>
 </template>
@@ -75,6 +71,16 @@ export default {
     PortfolioMyPortafolio,
     BlogMyPortafolio,
     ContactMyPortafolio,
+  },
+  data() {
+    return {
+      activeComponent: 'AboutMyPortafolio', // Componente inicial
+    };
+  },
+  methods: {
+    setActiveComponent(componentName) {
+      this.activeComponent = componentName;
+    },
   },
 }
 </script>

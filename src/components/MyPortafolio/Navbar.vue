@@ -18,22 +18,23 @@
 export default {
   name: 'NavbarMyPortafolio',
   
-  data() {
+    data() {
     return {
       navLinks: [
-        { name: 'about', label: 'About' },
-        { name: 'resume', label: 'Resume' },
-        { name: 'portfolio', label: 'Portfolio' },
-        { name: 'blog', label: 'Blog' },
-        { name: 'contact', label: 'Contact' },
+        { name: 'AboutMyPortafolio', label: 'About' },
+        { name: 'ResumeMyPortafolio', label: 'Resume' },
+        { name: 'PortfolioMyPortafolio', label: 'Portfolio' },
+        { name: 'BlogMyPortafolio', label: 'Blog' },
+        { name: 'ContactMyPortafolio', label: 'Contact' },
       ],
-      activePage: 'about', // Página activa inicial
+      activePage: 'AboutMyPortafolio', // Página activa inicial
     }
   },
 
   methods: {
     setActivePage(pageName) {
-      this.activePage = pageName
+      this.activePage = pageName;
+      this.$emit('change-page', pageName); // Emitir evento al padre
     },
   },
 }
