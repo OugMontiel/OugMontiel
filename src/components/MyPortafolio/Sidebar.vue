@@ -6,7 +6,9 @@
       </figure>
 
       <div class="siderInfoRoles">
-        <h1 class="name" title="Diego Montiel">Diego Alejandro Montiel FLorez</h1>
+        <h1 class="name" title="Diego Montiel">
+          Diego Alejandro Montiel FLorez
+        </h1>
         <div class="rolesContainer">
           <p class="title">Data Science</p>
           <p class="title">Backend Developer</p>
@@ -57,9 +59,7 @@
           <div>
             <p class="sidebarContactTitle">Birthday</p>
 
-            <time datetime="1998-08-12" class="sidebarContactLink"
-              >Aug 12</time
-            >
+            <time datetime="1998-08-12" class="sidebarContactLink">Aug 12</time>
           </div>
         </li>
 

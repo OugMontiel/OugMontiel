@@ -1,20 +1,14 @@
 <template>
   <nav class="navbar">
     <ul class="navbarList">
-      <li class="navbarItem">
-        <button class="navbarLink active" data-nav-link>About</button>
-      </li>
-      <li class="navbarItem">
-        <button class="navbarLink" data-nav-link>Resume</button>
-      </li>
-      <li class="navbarItem">
-        <button class="navbarLink" data-nav-link>Portfolio</button>
-      </li>
-      <li class="navbarItem">
-        <button class="navbarLink" data-nav-link>Blog</button>
-      </li>
-      <li class="navbarItem">
-        <button class="navbarLink" data-nav-link>Contact</button>
+      <li v-for="(link, index) in navLinks" :key="index">
+        <button
+          class="navbarLink"
+          :class="{ active: activePage === link.name }"
+          @click="setActivePage(link.name)"
+        >
+          {{ link.label }}
+        </button>
       </li>
     </ul>
   </nav>
@@ -23,31 +17,23 @@
 <script>
 export default {
   name: 'NavbarMyPortafolio',
-
-  mounted() {
-    // Inicializa la navegación de la página cuando el componente esté montado
-    this.initPageNavigation()
+  
+  data() {
+    return {
+      navLinks: [
+        { name: 'about', label: 'About' },
+        { name: 'resume', label: 'Resume' },
+        { name: 'portfolio', label: 'Portfolio' },
+        { name: 'blog', label: 'Blog' },
+        { name: 'contact', label: 'Contact' },
+      ],
+      activePage: 'about', // Página activa inicial
+    }
   },
 
   methods: {
-    initPageNavigation() {
-      const navigationLinks = document.querySelectorAll('[data-nav-link]')
-      const pages = document.querySelectorAll('[data-page]')
-
-      navigationLinks.forEach((link, index) => {
-        link.addEventListener('click', () => {
-          pages.forEach((page, idx) => {
-            if (link.innerHTML.toLowerCase() === page.dataset.page) {
-              page.classList.add('active')
-              navigationLinks[idx].classList.add('active')
-              window.scrollTo(0, 0)
-            } else {
-              page.classList.remove('active')
-              navigationLinks[idx].classList.remove('active')
-            }
-          })
-        })
-      })
+    setActivePage(pageName) {
+      this.activePage = pageName
     },
   },
 }
@@ -71,7 +57,7 @@ export default {
   justify-content: center;
   align-items: center;
   padding: 0 1em;
-  gap: 1em
+  gap: 1em;
 }
 
 .navbarLink {
