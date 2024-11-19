@@ -1,6 +1,8 @@
 <template>
   <nav class="navbar" :class="{ open: isMenuOpen }">
-    <button class="toggleButton" @click="toggleMenu">Menu</button>
+    <button v-if="!isMenuOpen" class="toggleButton" @click="toggleMenu">
+      Menu
+    </button>
     <ul class="navbarList">
       <li v-for="(link, index) in navLinks" :key="index">
         <button
@@ -56,6 +58,7 @@ export default {
   border: 1px solid var(--jet);
   border-radius: 0 0 1em 1em;
   box-shadow: var(--shadow-2);
+  z-index: 10;
 }
 
 .navbarList {
@@ -81,12 +84,13 @@ export default {
 .navbarLink.active {
   color: var(--orange-yellow-crayola);
 }
+
 .toggleButton {
   display: none;
 }
 
 /* Menos de 1000px a 800px: Espacios reducidos */
-@media (max-width: 1000px) and (min-width: 800px) {
+@media (max-width: 950px) and (min-width: 800px) {
   .navbarList {
     gap: 0.5em;
   }
@@ -134,9 +138,8 @@ export default {
     display: block;
     position: absolute;
     top: 0;
-    right: 2em;
-    padding: 0.5em 1em;
-    width: auto;
+    right: 0;
+    padding: 0.5em 1.8em;
     background: hsla(240, 1%, 17%, 0.75);
     backdrop-filter: blur(10px);
     border: 1px solid var(--jet);
