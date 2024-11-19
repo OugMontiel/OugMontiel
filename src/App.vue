@@ -19,7 +19,7 @@ main {
   padding: 1em;
 }
 
-.mainContent{
+.mainContent {
   animation: fade 0.5s ease backwards;
 }
 
@@ -79,11 +79,11 @@ export default {
   data() {
     return {
       activeComponent: 'AboutMyPortafolio', // Componente inicial
-    };
+    }
   },
   methods: {
     setActiveComponent(componentName) {
-      this.activeComponent = componentName;
+      this.activeComponent = componentName
     },
   },
 }
