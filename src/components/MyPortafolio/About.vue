@@ -1,10 +1,10 @@
 <template>
   <article class="about" data-page="about">
     <header>
-      <h2 class="h2 article-title">About me</h2>
+      <h2 class="articleTitle">About me</h2>
     </header>
 
-    <section class="about-text">
+    <section class="aboutText">
       <p>
         Focused on transforming business problems and needs into data-driven
         products and solutions using econometric models, API development, and
@@ -20,155 +20,20 @@
 
     <!-- Service Section -->
     <section class="service">
-      <h3 class="h3 service-title">What I'm doing</h3>
-      <ul class="service-list">
-        <li class="service-item">
-          <div class="service-icon-box">
-            <img
-              src="./assets/images/icon-design.svg"
-              alt="design icon"
-              width="40"
-            />
-          </div>
-          <div class="service-content-box">
-            <h4 class="h4 service-item-title">Web design</h4>
-            <p class="service-item-text">
-              The most modern and high-quality design made at a professional
-              level.
-            </p>
-          </div>
-        </li>
+    <h3 class="service-title">What I'm doing</h3>
 
-        <li class="service-item">
-          <div class="service-icon-box">
-            <img
-              src="./assets/images/icon-dev.svg"
-              alt="Web development icon"
-              width="40"
-            />
-          </div>
-
-          <div class="service-content-box">
-            <h4 class="h4 service-item-title">Web development</h4>
-
-            <p class="service-item-text">
-              High-quality development of sites at the professional level.
-            </p>
-          </div>
-        </li>
-
-        <li class="service-item">
-          <div class="service-icon-box">
-            <img
-              src="./assets/images/icon-economi.svg"
-              alt="camera icon"
-              width="40"
-            />
-          </div>
-
-          <div class="service-content-box">
-            <h4 class="h4 service-item-title">Econometric Modeling</h4>
-
-            <p class="service-item-text">
-              Design and analysis of econometric models for forecasting and data
-              analysis.
-            </p>
-          </div>
-        </li>
-
-        <li class="service-item">
-          <div class="service-icon-box">
-            <img
-              src="./assets/images/icon-api.svg"
-              alt="camera icon"
-              width="40"
-            />
-          </div>
-
-          <div class="service-content-box">
-            <h4 class="h4 service-item-title">API Development</h4>
-
-            <p class="service-item-text">
-              Creation of efficient and scalable APIs for web and mobile
-              applications.
-            </p>
-          </div>
-        </li>
-        <!-- 
-    <li class="service-item">
-
-      <div class="service-icon-box">
-        <img src="./assets/images/icon-maching.svg" alt="camera icon" width="40">
-      </div>
-
-      <div class="service-content-box">
-        <h4 class="h4 service-item-title">Machine Learning</h4>
-
-        <p class="service-item-text">
-          Development of machine learning models to automate and enhance processes.
-        </p>
-      </div>
-
-    </li>
--->
-        <li class="service-item">
-          <div class="service-icon-box">
-            <img
-              src="./assets/images/icon-visualization.svg"
-              alt="camera icon"
-              width="40"
-            />
-          </div>
-
-          <div class="service-content-box">
-            <h4 class="h4 service-item-title">Data Visualization</h4>
-
-            <p class="service-item-text">
-              Creation of dashboards and visual reports to interpret complex
-              data.
-            </p>
-          </div>
-        </li>
-
-        <li class="service-item">
-          <div class="service-icon-box">
-            <img
-              src="./assets/images/icon-time-serie.svg"
-              alt="camera icon"
-              width="40"
-            />
-          </div>
-
-          <div class="service-content-box">
-            <h4 class="h4 service-item-title">Time Series</h4>
-
-            <p class="service-item-text">
-              Developing models to predict trends and patterns in time-series
-              data.
-            </p>
-          </div>
-        </li>
-
-        <li class="service-item">
-          <div class="service-icon-box">
-            <img
-              src="./assets/images/icon-pipeline.svg"
-              alt="camera icon"
-              width="40"
-            />
-          </div>
-
-          <div class="service-content-box">
-            <h4 class="h4 service-item-title">Creation of Data Pipelines</h4>
-
-            <p class="service-item-text">
-              Building pipelines to automate data extraction, transformation,
-              and loading processes.
-            </p>
-          </div>
-        </li>
-      </ul>
-    </section>
+    <ul class="service-list">
+      <li v-for="(service, index) in services" :key="index" class="service-item">
+        <div class="service-icon-box">
+          <img :src="`${imageBaseService}${service.icon}`" :alt="service.alt" width="40" />
+        </div>
+        <div class="service-content-box">
+          <h4 class="h4 service-item-title">{{ service.title }}</h4>
+          <p class="service-item-text">{{ service.description }}</p>
+        </div>
+      </li>
+    </ul>
+  </section>
 
     <!--
   - testimonials
@@ -370,6 +235,64 @@
 export default {
   name: 'AboutMyPortafolio',
 
+  data() {
+    return {
+      // Ruta base para las imágenes
+      imageBaseService: "./assets/images/",
+      // Lista de servicios
+      services: [
+        {
+          icon: "icon-design.svg",
+          alt: "Design icon",
+          title: "Web design",
+          description: "The most modern and high-quality design made at a professional level.",
+        },
+        {
+          icon: "icon-dev.svg",
+          alt: "Web development icon",
+          title: "Web development",
+          description: "High-quality development of sites at the professional level.",
+        },
+        {
+          icon: "icon-economi.svg",
+          alt: "Econometric modeling icon",
+          title: "Econometric Modeling",
+          description: "Design and analysis of econometric models for forecasting and data analysis.",
+        },
+        {
+          icon: "icon-api.svg",
+          alt: "API development icon",
+          title: "API Development",
+          description: "Creation of efficient and scalable APIs for web and mobile applications.",
+        },
+        {
+          icon: "icon-maching.svg",
+          alt: "Machine learning icon",
+          title: "Machine Learning",
+          description: "Development of machine learning models to automate and enhance processes.",
+        },
+        {
+          icon: "icon-visualization.svg",
+          alt: "Data visualization icon",
+          title: "Data Visualization",
+          description: "Creation of dashboards and visual reports to interpret complex data.",
+        },
+        {
+          icon: "icon-time-serie.svg",
+          alt: "Time series icon",
+          title: "Time Series",
+          description: "Developing models to predict trends and patterns in time-series data.",
+        },
+        {
+          icon: "icon-pipeline.svg",
+          alt: "Data pipeline icon",
+          title: "Creation of Data Pipelines",
+          description: "Building pipelines to automate data extraction, transformation, and loading processes.",
+        },
+      ],
+    };
+  },
+  
   mounted() {
     this.initTestimonialsModal()
   },
@@ -426,18 +349,15 @@ export default {
 </script>
 
 <style>
-.about .article-title {
-  margin-bottom: 15px;
-}
 
-.about-text {
+.aboutText {
   color: var(--light-gray);
-  font-size: var(--fs-6);
+  font-size: var(--fs-5);
   font-weight: var(--fw-300);
   line-height: 1.6;
 }
 
-.about-text p {
+.aboutText p {
   margin-bottom: 15px;
 }
 
