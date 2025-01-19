@@ -1,7 +1,7 @@
 <template>
   <article class="portfolio" data-page="portfolio">
     <header>
-      <h2 class="h2 article-title">Portfolio</h2>
+      <h2 class="h2 articleTitle">Portfolio</h2>
     </header>
 
     <section class="projects">

@@ -20,214 +20,73 @@
 
     <!-- Service Section -->
     <section class="service">
-    <h3 class="service-title">What I'm doing</h3>
+      <h3 class="service-title">What I'm doing</h3>
 
-    <ul class="service-list">
-      <li v-for="(service, index) in services" :key="index" class="service-item">
-        <div class="service-icon-box">
-          <img :src="`${imageBaseService}${service.icon}`" :alt="service.alt" width="40" />
-        </div>
-        <div class="service-content-box">
-          <h4 class="h4 service-item-title">{{ service.title }}</h4>
-          <p class="service-item-text">{{ service.description }}</p>
-        </div>
-      </li>
-    </ul>
-  </section>
-
-    <!--
-  - testimonials
--->
-    <!-- 
-<section class="testimonials">
-
-  <h3 class="h3 testimonials-title">Testimonials</h3>
-
-  <ul class="testimonials-list has-scrollbar">
-
-    <li class="testimonials-item">
-      <div class="content-card" data-testimonials-item>
-
-        <figure class="testimonials-avatar-box">
-          <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="60" data-testimonials-avatar>
-        </figure>
-
-        <h4 class="h4 testimonials-item-title" data-testimonials-title>Daniel lewis</h4>
-
-        <div class="testimonials-text" data-testimonials-text>
-          <p>
-            Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-            lot of experience
-            and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-            consectetur adipiscing
-            elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-          </p>
-        </div>
-
-      </div>
-    </li>
-
-    <li class="testimonials-item">
-      <div class="content-card" data-testimonials-item>
-
-        <figure class="testimonials-avatar-box">
-          <img src="./assets/images/avatar-2.png" alt="Jessica miller" width="60" data-testimonials-avatar>
-        </figure>
-
-        <h4 class="h4 testimonials-item-title" data-testimonials-title>Jessica miller</h4>
-
-        <div class="testimonials-text" data-testimonials-text>
-          <p>
-            Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-            lot of experience
-            and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-            consectetur adipiscing
-            elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-          </p>
-        </div>
-
-      </div>
-    </li>
-
-    <li class="testimonials-item">
-      <div class="content-card" data-testimonials-item>
-
-        <figure class="testimonials-avatar-box">
-          <img src="./assets/images/avatar-3.png" alt="Emily evans" width="60" data-testimonials-avatar>
-        </figure>
-
-        <h4 class="h4 testimonials-item-title" data-testimonials-title>Emily evans</h4>
-
-        <div class="testimonials-text" data-testimonials-text>
-          <p>
-            Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-            lot of experience
-            and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-            consectetur adipiscing
-            elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-          </p>
-        </div>
-
-      </div>
-    </li>
-
-    <li class="testimonials-item">
-      <div class="content-card" data-testimonials-item>
-
-        <figure class="testimonials-avatar-box">
-          <img src="./assets/images/avatar-4.png" alt="Henry william" width="60" data-testimonials-avatar>
-        </figure>
-
-        <h4 class="h4 testimonials-item-title" data-testimonials-title>Henry william</h4>
-
-        <div class="testimonials-text" data-testimonials-text>
-          <p>
-            Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-            lot of experience
-            and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-            consectetur adipiscing
-            elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
-          </p>
-        </div>
-
-      </div>
-    </li>
-
-  </ul>
-
-</section> -->
-
-    <!--
-  - testimonials modal
--->
-
-    <div class="modal-container" data-modal-container>
-      <div class="overlay" data-overlay></div>
-
-      <section class="testimonials-modal">
-        <button class="modal-close-btn" data-modal-close-btn>
-          <ion-icon name="close-outline"></ion-icon>
-        </button>
-        <div class="modal-img-wrapper">
-          <figure class="modal-avatar-box">
+      <ul class="service-list">
+        <li
+          v-for="(service, index) in services"
+          :key="index"
+          class="service-item"
+        >
+          <div class="service-icon-box">
             <img
-              src="./assets/images/avatar-1.png"
-              alt="Daniel lewis"
-              width="80"
-              data-modal-img
+              :src="`${imageBaseService}${service.icon}`"
+              :alt="service.alt"
+              width="40"
             />
-          </figure>
-
-          <img src="./assets/images/icon-quote.svg" alt="quote icon" />
-        </div>
-        <div class="modal-content">
-          <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-
-          <time datetime="2021-06-14">14 June, 2021</time>
-
-          <div data-modal-text>
-            <p>
-              Richard was hired to create a corporate identity. We were very
-              pleased with the work done. She has a lot of experience and is
-              very concerned about the needs of client. Lorem ipsum dolor sit
-              amet, ullamcous cididt consectetur adipiscing elit, seds do et
-              eiusmod tempor incididunt ut laborels dolore magnarels alia.
-            </p>
           </div>
-        </div>
-      </section>
-    </div>
+          <div class="service-content-box">
+            <h4 class="service-item-title">{{ service.title }}</h4>
+            <p class="service-item-text">{{ service.description }}</p>
+          </div>
+        </li>
+      </ul>
+    </section>
 
-    <!--
-  - clients
--->
-    <!-- 
-<section class="clients">
 
-  <h3 class="h3 clients-title">Clients</h3>
+    <!--- clients-->
 
-  <ul class="clients-list has-scrollbar">
+    <section class="clients">
+      <h3 class="h3 clients-title">Clients</h3>
 
-    <li class="clients-item">
-      <a href="#">
-        <img src="./assets/images/logo-1-color.png" alt="client logo">
-      </a>
-    </li>
+      <ul class="clients-list has-scrollbar">
+        <li class="clients-item">
+          <a href="#">
+            <img src="./assets/images/logo-1-color.png" alt="client logo" />
+          </a>
+        </li>
 
-    <li class="clients-item">
-      <a href="#">
-        <img src="./assets/images/logo-2-color.png" alt="client logo">
-      </a>
-    </li>
+        <li class="clients-item">
+          <a href="#">
+            <img src="./assets/images/logo-2-color.png" alt="client logo" />
+          </a>
+        </li>
 
-    <li class="clients-item">
-      <a href="#">
-        <img src="./assets/images/logo-3-color.png" alt="client logo">
-      </a>
-    </li>
+        <li class="clients-item">
+          <a href="#">
+            <img src="./assets/images/logo-3-color.png" alt="client logo" />
+          </a>
+        </li>
 
-    <li class="clients-item">
-      <a href="#">
-        <img src="./assets/images/logo-4-color.png" alt="client logo">
-      </a>
-    </li>
+        <li class="clients-item">
+          <a href="#">
+            <img src="./assets/images/logo-4-color.png" alt="client logo" />
+          </a>
+        </li>
 
-    <li class="clients-item">
-      <a href="#">
-        <img src="./assets/images/logo-5-color.png" alt="client logo">
-      </a>
-    </li>
+        <li class="clients-item">
+          <a href="#">
+            <img src="./assets/images/logo-5-color.png" alt="client logo" />
+          </a>
+        </li>
 
-    <li class="clients-item">
-      <a href="#">
-        <img src="./assets/images/logo-6-color.png" alt="client logo">
-      </a>
-    </li>
-
-  </ul>
-
-</section>
--->
+        <li class="clients-item">
+          <a href="#">
+            <img src="./assets/images/logo-6-color.png" alt="client logo" />
+          </a>
+        </li>
+      </ul>
+    </section>
   </article>
 </template>
 
@@ -238,61 +97,69 @@ export default {
   data() {
     return {
       // Ruta base para las imágenes
-      imageBaseService: "./assets/images/",
+      imageBaseService: './assets/images/',
       // Lista de servicios
       services: [
         {
-          icon: "icon-design.svg",
-          alt: "Design icon",
-          title: "Web design",
-          description: "The most modern and high-quality design made at a professional level.",
+          icon: 'icon-design.svg',
+          alt: 'Design icon',
+          title: 'Web design',
+          description:
+            'The most modern and high-quality design made at a professional level.',
         },
         {
-          icon: "icon-dev.svg",
-          alt: "Web development icon",
-          title: "Web development",
-          description: "High-quality development of sites at the professional level.",
+          icon: 'icon-dev.svg',
+          alt: 'Web development icon',
+          title: 'Web development',
+          description:
+            'High-quality development of sites at the professional level.',
         },
         {
-          icon: "icon-economi.svg",
-          alt: "Econometric modeling icon",
-          title: "Econometric Modeling",
-          description: "Design and analysis of econometric models for forecasting and data analysis.",
+          icon: 'icon-economi.svg',
+          alt: 'Econometric modeling icon',
+          title: 'Econometric Modeling',
+          description:
+            'Design and analysis of econometric models for forecasting and data analysis.',
         },
         {
-          icon: "icon-api.svg",
-          alt: "API development icon",
-          title: "API Development",
-          description: "Creation of efficient and scalable APIs for web and mobile applications.",
+          icon: 'icon-api.svg',
+          alt: 'API development icon',
+          title: 'API Development',
+          description:
+            'Creation of efficient and scalable APIs for web and mobile applications.',
         },
         {
-          icon: "icon-maching.svg",
-          alt: "Machine learning icon",
-          title: "Machine Learning",
-          description: "Development of machine learning models to automate and enhance processes.",
+          icon: 'icon-maching.svg',
+          alt: 'Machine learning icon',
+          title: 'Machine Learning',
+          description:
+            'Development of machine learning models to automate and enhance processes.',
         },
         {
-          icon: "icon-visualization.svg",
-          alt: "Data visualization icon",
-          title: "Data Visualization",
-          description: "Creation of dashboards and visual reports to interpret complex data.",
+          icon: 'icon-visualization.svg',
+          alt: 'Data visualization icon',
+          title: 'Data Visualization',
+          description:
+            'Creation of dashboards and visual reports to interpret complex data.',
         },
         {
-          icon: "icon-time-serie.svg",
-          alt: "Time series icon",
-          title: "Time Series",
-          description: "Developing models to predict trends and patterns in time-series data.",
+          icon: 'icon-time-serie.svg',
+          alt: 'Time series icon',
+          title: 'Time Series',
+          description:
+            'Developing models to predict trends and patterns in time-series data.',
         },
         {
-          icon: "icon-pipeline.svg",
-          alt: "Data pipeline icon",
-          title: "Creation of Data Pipelines",
-          description: "Building pipelines to automate data extraction, transformation, and loading processes.",
+          icon: 'icon-pipeline.svg',
+          alt: 'Data pipeline icon',
+          title: 'Creation of Data Pipelines',
+          description:
+            'Building pipelines to automate data extraction, transformation, and loading processes.',
         },
       ],
-    };
+    }
   },
-  
+
   mounted() {
     this.initTestimonialsModal()
   },
@@ -349,7 +216,6 @@ export default {
 </script>
 
 <style>
-
 .aboutText {
   color: var(--light-gray);
   font-size: var(--fs-5);

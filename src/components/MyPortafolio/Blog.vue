@@ -1,7 +1,7 @@
 <template>
   <article class="blog" data-page="blog">
     <header>
-      <h2 class="h2 article-title">Blog</h2>
+      <h2 class="h2 articleTitle">Blog</h2>
     </header>
 
     <section class="blog-posts">

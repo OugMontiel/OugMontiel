@@ -1,7 +1,7 @@
 <template>
   <article class="resume" data-page="resume">
     <header>
-      <h2 class="h2 article-title">Resume</h2>
+      <h2 class="h2 articleTitle">Resume</h2>
     </header>
 
     <section class="timeline">
@@ -197,7 +197,7 @@ export default {
 </script>
 
 <style>
-.article-title {
+.articleTitle {
   margin-bottom: 30px;
 }
 

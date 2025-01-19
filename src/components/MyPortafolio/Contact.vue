@@ -1,7 +1,7 @@
 <template>
   <article class="contact" data-page="contact">
     <header>
-      <h2 class="h2 article-title">Contact</h2>
+      <h2 class="h2 articleTitle">Contact</h2>
     </header>
 
     <!-- <section class="mapbox" data-mapbox>
