@@ -6,7 +6,7 @@
 
     <section class="projects">
       <!-- Filter List -->
-      <ul class="filter-list has-scrollbar">
+      <!-- <ul class="filter-list has-scrollbar">
         <li class="filter-item" v-for="(filter, index) in filters" :key="index">
           <button
             :class="{ active: selectedFilter === filter }"
@@ -16,10 +16,10 @@
             {{ filter }}
           </button>
         </li>
-      </ul>
+      </ul> -->
 
       <!-- Select Dropdown -->
-      <div class="filter-select-box">
+      <!-- <div class="filter-select-box">
         <button class="filter-select" @click="toggleSelect" data-select>
           <div class="select-value" data-selecct-value>{{ selectedValue }}</div>
           <div class="select-icon">
@@ -38,7 +38,7 @@
             <button>{{ filter }}</button>
           </li>
         </ul>
-      </div>
+      </div> -->
 
       <!-- Project List -->
       <ul class="project-list">
@@ -131,7 +131,7 @@ export default {
 
 <style>
 .filter-list {
-  display: none;
+  display: none; /* Cambiar de none a flex o block */
   overflow-y: auto; /* Habilita el desplazamiento vertical */
 }
 
@@ -196,7 +196,7 @@ export default {
 
 .project-list {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 30px;
   margin-bottom: 10px;
 }

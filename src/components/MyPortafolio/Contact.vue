@@ -4,46 +4,42 @@
       <h2 class="h2 articleTitle">Contact</h2>
     </header>
 
-    <!-- <section class="mapbox" data-mapbox>
-  <figure>
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d199666.5651251294!2d-121.58334177520186!3d38.56165006739519!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x809ac672b28397f9%3A0x921f6aaa74197fdb!2sSacramento%2C%20CA%2C%20USA!5e0!3m2!1sen!2sbd!4v1647608789441!5m2!1sen!2sbd"
-      width="400" height="300" loading="lazy"></iframe>
-  </figure>
-</section> -->
-
     <section class="contact-form">
       <h3 class="h3 form-title">Contact Form</h3>
 
-      <form action="#" class="form" data-form>
+      <form @submit.prevent="submitForm" class="form">
         <div class="input-wrapper">
           <input
             type="text"
-            name="fullname"
+            v-model="form.fullname"
             class="form-input"
             placeholder="Full name"
             required
-            data-form-input
           />
           <input
             type="email"
-            name="email"
+            v-model="form.email"
             class="form-input"
             placeholder="Email address"
             required
-            data-form-input
           />
         </div>
 
         <textarea
-          name="message"
+          v-model="form.message"
           class="form-input"
           placeholder="Your Message"
           required
-          data-form-input
         ></textarea>
 
-        <button class="form-btn" type="submit" disabled data-form-btn>
+        <!-- Mostrar alerta si el formulario no está disponible -->
+        <Alert
+          v-if="showAlert"
+          :message="alertMessage"
+          @close="showAlert = false"
+        />
+
+        <button class="form-btn" type="submit">
           <ion-icon name="paper-plane"></ion-icon>
           <span>Send Message</span>
         </button>
@@ -53,57 +49,36 @@
 </template>
 
 <script>
+import Alert from '../Utils/Alert.vue'
+
 export default {
   name: 'ContactMyPortafolio',
-
-  mounted() {
-    // Inicia la validación del formulario cuando el DOM esté listo
-    this.initFormValidation()
+  components: {
+    Alert,
   },
-
+  data() {
+    return {
+      form: {
+        fullname: '',
+        email: '',
+        message: '',
+      },
+      showAlert: false,
+      alertMessage:
+        'La funcionalidad de envío no está disponible de momento. Por favor, envíe un correo electrónico a MontielFlorezDiego@gmail.com.',
+    }
+  },
   methods: {
-    // Método para inicializar la validación del formulario
-    initFormValidation() {
-      const form = document.querySelector('[data-form]')
-      const formInputs = document.querySelectorAll('[data-form-input]')
-      const formBtn = document.querySelector('[data-form-btn]')
-
-      formInputs.forEach(input => {
-        input.addEventListener('input', () => {
-          if (form.checkValidity()) {
-            formBtn.removeAttribute('disabled')
-          } else {
-            formBtn.setAttribute('disabled', '')
-          }
-        })
-      })
+    submitForm() {
+      // Mostrar alerta en lugar de enviar el formulario
+      this.showAlert = true
     },
   },
 }
 </script>
 
 <style>
-.mapbox {
-  position: relative;
-  height: 250px;
-  width: 100%;
-  border-radius: 16px;
-  margin-bottom: 30px;
-  border: 1px solid var(--jet);
-  overflow: hidden;
-}
-
-.mapbox figure {
-  height: 100%;
-}
-
-.mapbox iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-  filter: grayscale(1) invert(1);
-}
-
+/* Estilos del formulario y otros elementos */
 .contact-form {
   margin-bottom: 10px;
 }
@@ -149,10 +124,6 @@ textarea.form-input::-webkit-resizer {
   display: none;
 }
 
-.form-input:focus:invalid {
-  border-color: var(--bittersweet-shimmer);
-}
-
 .form-btn {
   position: relative;
   width: 100%;
@@ -191,18 +162,5 @@ textarea.form-input::-webkit-resizer {
 
 .form-btn:hover::before {
   background: var(--bg-gradient-yellow-2);
-}
-
-.form-btn:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
-
-.form-btn:disabled:hover {
-  background: var(--border-gradient-onyx);
-}
-
-.form-btn:disabled:hover::before {
-  background: var(--bg-gradient-jet);
 }
 </style>
