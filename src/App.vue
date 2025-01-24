@@ -19,10 +19,6 @@ main {
   padding: 1em;
 }
 
-.mainContent {
-  animation: fade 0.5s ease backwards;
-}
-
 /* Estilo de la barra lateral */
 .sidebar {
   grid-column: 1 / 2; /* Ocupa la primera columna */
@@ -32,6 +28,7 @@ main {
 .mainContent {
   grid-column: 1 / 2; /* También ocupa la primera columna por defecto */
   position: relative;
+  animation: fade 0.5s ease backwards;
 }
 
 /* Para pantallas grandes, aplicamos dos columnas */
