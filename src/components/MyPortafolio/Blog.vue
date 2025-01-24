@@ -45,7 +45,7 @@ export default {
           category: 'me',
           date: '2024-02-14',
           formattedDate: 'Feb 14, 2024',
-          imgSrc: './assets/images/my-avatar.png',
+          imgSrc: '../../public/my-avatar.png',
           alt: 'Design conferences in 2022',
           link: 'https://medium.com/@OugMontiel/ceasing-to-be-me-a9c0d6d51f51',
           description:
@@ -56,7 +56,7 @@ export default {
           category: 'Data Science',
           date: '2024-03-18',
           formattedDate: 'Mar 18, 2024',
-          imgSrc: './assets/images/blog-2.webp',
+          imgSrc: '../../public/imgBlog/blog-2.webp',
           alt: 'Best fonts every designer',
           link: 'https://medium.com/@OugMontiel/data-science-first-steps-543fdab30cd5',
           description:
@@ -67,7 +67,7 @@ export default {
           category: 'Data Science',
           date: '2022-02-23',
           formattedDate: 'Feb 23, 2022',
-          imgSrc: './assets/images/blog-3.webp',
+          imgSrc: '../../public/imgBlog/blog-3.webp',
           alt: 'Design digest #80',
           link: 'https://medium.com/@OugMontiel/entendiendo-la-ciencia-de-datos-una-guía-para-novatos-7f3da880fe20',
           description:
