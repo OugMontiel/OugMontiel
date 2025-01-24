@@ -86,19 +86,19 @@ export default {
         {
           title: 'Tecnicas de pronostico',
           category: 'Time Series',
-          imgSrc: './assets/images/project-time-series-1.webp',
+          imgSrc: '../../public/imgProyectos/project-time-series-1.webp',
           link: 'https://github.com/OugMontiel/ModeloARIMA-Fase-2',
         },
         {
           title: 'Control and registration oof all teams',
           category: 'Backend Developer',
-          imgSrc: './assets/images/project-backend-developer-1.webp',
+          imgSrc: '../../public/imgProyectos/project-backend-developer-1.webp',
           link: 'https://github.com/OugMontiel/projectTeamSoccer-Campus',
         },
         {
           title: 'Ingeneria de datos',
           category: 'Pipelines',
-          imgSrc: './assets/images/project-pipelines-1.webp',
+          imgSrc: '../../public/imgProyectos/project-pipelines-1.webp',
           link: 'https://github.com/OugMontiel/Pragma',
         },
         // ... Agrega más proyectos aquí

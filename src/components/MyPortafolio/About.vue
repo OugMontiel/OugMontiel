@@ -19,6 +19,7 @@
     </section>
 
     <!-- Service Section -->
+
     <section class="service">
       <h3 class="service-title">What I'm doing</h3>
 
@@ -45,7 +46,7 @@
 
     <!--- clients-->
 
-    <section class="clients">
+    <!-- <section class="clients">
       <h3 class="h3 clients-title">Clients</h3>
 
       <ul class="clients-list has-scrollbar">
@@ -85,7 +86,7 @@
           </a>
         </li>
       </ul>
-    </section>
+    </section> -->
   </article>
 </template>
 
@@ -96,7 +97,7 @@ export default {
   data() {
     return {
       // Ruta base para las imágenes
-      imageBaseService: './assets/images/',
+      imageBaseService: '../../public/iconPortafolio/',
       // Lista de servicios
       services: [
         {

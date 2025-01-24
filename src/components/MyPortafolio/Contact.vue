@@ -4,6 +4,20 @@
       <h2 class="h2 articleTitle">Contact</h2>
     </header>
 
+    <section class="socials-contact">
+      <div class="socials-icons">
+        <a
+          v-for="social in socials"
+          :key="social.name"
+          :href="social.link"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <img :src="social.icon" :alt="social.name" width="32" height="32" />
+        </a>
+      </div>
+    </section>
+
     <section class="contact-form">
       <h3 class="h3 form-title">Contact Form</h3>
 
@@ -66,6 +80,43 @@ export default {
       showAlert: false,
       alertMessage:
         'La funcionalidad de envío no está disponible de momento. Por favor, envíe un correo electrónico a MontielFlorezDiego@gmail.com.',
+      socials: [
+        {
+          name: 'Discord',
+          icon: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/discord.svg',
+          link: 'https://discord.com/users/Oug#6073',
+        },
+        {
+          name: 'GitHub',
+          icon: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github.svg',
+          link: 'https://www.github.com/OugMontiel',
+        },
+        {
+          name: 'LinkedIn',
+          icon: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/linkedin.svg',
+          link: 'https://www.linkedin.com/in/diego-alejandro-montiel-florez-data-science/',
+        },
+        {
+          name: 'Kaggle',
+          icon: 'https://www.kaggle.com/static/images/favicon.ico',
+          link: 'https://www.kaggle.com/ougmontiel',
+        },
+        {
+          name: 'Email',
+          icon: 'https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico',
+          link: 'mailto:montielflorezdiego@gmail.com',
+        },
+        {
+          name: 'Telegram',
+          icon: 'https://web.telegram.org/a/favicon-32x32.png',
+          link: 'https://t.me/OugMontiel',
+        },
+        {
+          name: 'WhatsApp',
+          icon: 'https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png',
+          link: 'https://wa.me/573186377582',
+        },
+      ],
     }
   },
   methods: {
@@ -162,5 +213,24 @@ textarea.form-input::-webkit-resizer {
 
 .form-btn:hover::before {
   background: var(--bg-gradient-yellow-2);
+}
+
+.socials-contact {
+  margin-top: 30px;
+}
+
+.socials-icons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+
+.socials-icons a {
+  transition: transform 0.3s;
+}
+
+.socials-icons a:hover {
+  transform: scale(1.1);
 }
 </style>
