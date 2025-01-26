@@ -97,7 +97,7 @@ export default {
   data() {
     return {
       // Ruta base para las imágenes
-      imageBaseService: '../../public/iconPortafolio/',
+      imageBaseService: '/iconPortafolio/',
       // Lista de servicios
       services: [
         {

@@ -5,16 +5,38 @@
     </header>
 
     <section class="socials-contact">
-      <div class="socials-icons">
-        <a
-          v-for="social in socials"
-          :key="social.name"
-          :href="social.link"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <img :src="social.icon" :alt="social.name" width="32" height="32" />
-        </a>
+      <div class="socials-column">
+        <h3 class="h3">Follow Me</h3>
+        <div class="socials-icons">
+          <a
+            v-for="social in socials"
+            :key="social.name"
+            :href="social.link"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img :src="social.icon" :alt="social.name" width="32" height="32" />
+          </a>
+        </div>
+      </div>
+      <div class="contact-column">
+        <h3 class="h3">Let's Talk</h3>
+        <div class="contact-icons">
+          <a
+            v-for="contact in contacts"
+            :key="contact.name"
+            :href="contact.link"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <img
+              :src="contact.icon"
+              :alt="contact.name"
+              width="32"
+              height="32"
+            />
+          </a>
+        </div>
       </div>
     </section>
 
@@ -101,6 +123,8 @@ export default {
           icon: 'https://www.kaggle.com/static/images/favicon.ico',
           link: 'https://www.kaggle.com/ougmontiel',
         },
+      ],
+      contacts: [
         {
           name: 'Email',
           icon: 'https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico',
@@ -130,6 +154,7 @@ export default {
 
 <style>
 /* Estilos del formulario y otros elementos */
+
 .contact-form {
   margin-bottom: 10px;
 }
@@ -215,22 +240,35 @@ textarea.form-input::-webkit-resizer {
   background: var(--bg-gradient-yellow-2);
 }
 
+/*  Social  */
+
 .socials-contact {
+  display: flex;
+  justify-content: space-between;
   margin-top: 30px;
 }
 
-.socials-icons {
+.socials-column,
+.contact-column {
+  flex: 1;
+  margin: 0 10px;
+}
+
+.socials-icons,
+.contact-icons {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   justify-content: center;
 }
 
-.socials-icons a {
+.socials-icons a,
+.contact-icons a {
   transition: transform 0.3s;
 }
 
-.socials-icons a:hover {
+.socials-icons a:hover,
+.contact-icons a:hover {
   transform: scale(1.1);
 }
 </style>
