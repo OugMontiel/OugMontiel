@@ -1,28 +1,82 @@
-# Hi ![](https://user-images.githubusercontent.com/18350557/176309783-0785949b-9127-417c-8b55-ab5a4333674e.gif)My name is Diego Montiel Florez
+<div align="center">
 
-## I'm a Data Science, Backend Developer and Economist.
+# Hi there, I'm Diego Alejandro Montiel Flórez 👋
 
-Focused on transforming business problems and needs into data-driven products and solutions using econometric models, API development, and pipeline creation
+### **Fullstack Software Engineer | Economist & Data-Driven Architect**
 
-I’m also a judoka, chess player, and entrepreneur. I enjoy the discipline and strategy of judo and chess, and I value time with loved ones and outdoor activities like hiking to recharge.
+📍 *Colombia* &nbsp;•&nbsp; 🌐 **[Portfolio](https://ougmontiel.github.io/OugMontiel/)** &nbsp;•&nbsp; 💼 **[LinkedIn](https://www.linkedin.com/in/diego-alejandro-montiel-florez-data-science/)** &nbsp;•&nbsp; ✉️ **[montielflorezdiego@gmail.com](mailto:montielflorezdiego@gmail.com)**
 
-- 🌍  I'm based in Colombia
-- 🧠  I'm learning Statistical Computing, Software Engineering, Big Data, and Process Modeling and Optimization
-- 🤝  I'm open to collaborating on Econometric Models, Research, and Data Science
+---
 
-### [Visit My Portfolio](https://ougmontiel.github.io/OugMontiel/)
+[![Portfolio](https://img.shields.io/badge/Portfolio-Visit_Site-F59E0B?style=for-the-badge&logo=google-chrome&logoColor=white)](https://ougmontiel.github.io/OugMontiel/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/diego-alejandro-montiel-florez-data-science/)
+[![GitHub](https://img.shields.io/badge/GitHub-OugMontiel-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/OugMontiel)
+[![Kaggle](https://img.shields.io/badge/Kaggle-Profile-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white)](https://www.kaggle.com/ougmontiel)
+[![Email](https://img.shields.io/badge/Email-Contact_Me-EA4335?style=for-the-badge&logo=gmail&logoColor=white)](mailto:montielflorezdiego@gmail.com)
 
-Explore my projects and learn more about my work and skills. 
+</div>
+
+<br />
+
+## 🧠 About Me — *Where Software Engineering Meets Economics*
+
+I am a **Fullstack Developer** with a strong foundation in **Economics (UIS)** and **Data Science**. Unlike traditional software profiles, I approach every line of code through the lens of **business impact, system efficiency, and analytical rigor**.
+
+By combining modern software architecture (**Node.js, NestJS, Vue, Flutter**) with quantitative modeling and data engineering (**Python, SQL, Econometrics**), I bridge the gap between complex business needs and scalable, production-ready digital products. Beyond tech, I practice **Judo** 🥋 and play **Chess** ♟️—disciplines that sharpen my strategic thinking, resilience, and problem-solving under pressure.
 
 
-### Socials and Contact
+## 🛠️ Tech Stack & Tools
+
+### **Core Technologies**
+<p align="left">
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
+  <img src="https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white" alt="NestJS" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker" />
+  <img src="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vuedotjs&logoColor=white" alt="Vue.js" />
+  <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white" alt="Flutter" />
+</p>
+
+### **Databases, Cloud & Analytics**
+<p align="left">
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express.js" />
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white" alt="PostgreSQL" />
+  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
+  <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
+  <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" alt="AWS" />
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
+  <img src="https://img.shields.io/badge/R-276DC3?style=for-the-badge&logo=r&logoColor=white" alt="R" />
+</p>
+
+
+## 📈 GitHub Activity & Metrics
+
+<div align="center">
+  <img height="165em" src="https://github-readme-stats.vercel.app/api?username=OugMontiel&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true" alt="Diego's GitHub Stats" />
+  <img height="165em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=OugMontiel&layout=compact&langs_count=6&theme=tokyonight&hide_border=true" alt="Top Languages" />
+</div>
+
+---
+
+## 🤝 Let's Connect!
+
+I'm always open to discussing **Fullstack Engineering roles**, **scalable backend architectures**, **cross-platform development**, or **data-driven product consulting**.
 
 <p align="left">
-<a href="https://discord.com/users/Oug#6073" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/discord.svg" width="32" height="32" alt="Discord" /></a> 
-<a href="https://www.github.com/OugMontiel" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github.svg" width="32" height="32" alt="GitHub" /></a> 
-<a href="https://www.linkedin.com/in/diego-alejandro-montiel-florez-data-science/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/linkedin.svg" width="32" height="32" alt="LinkedIn" /></a> 
-<a href="https://www.kaggle.com/ougmontiel" target="_blank" rel="noreferrer"><img src="https://www.kaggle.com/static/images/favicon.ico" width="32" height="32" alt="Kaggle" /></a>
-<a href="mailto:montielflorezdiego@gmail.com" target="_blank" rel="noreferrer"><img src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico" width="32" height="32" alt="Email" /></a>
-<a href="https://t.me/OugMontiel" target="_blank" rel="noreferrer"><img src="https://web.telegram.org/a/favicon-32x32.png" width="32" height="32" alt="Telegram" /></a>
-<a href="https://wa.me/573186377582" target="_blank" rel="noreferrer"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png" width="32" height="32" alt="WhatsApp" /></a>
+  <a href="https://www.linkedin.com/in/diego-alejandro-montiel-florez-data-science/" target="_blank" rel="noreferrer">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  <a href="mailto:montielflorezdiego@gmail.com" target="_blank" rel="noreferrer">
+    <img src="https://img.shields.io/badge/Gmail-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  </a>
+  <a href="https://t.me/OugMontiel" target="_blank" rel="noreferrer">
+    <img src="https://img.shields.io/badge/Telegram-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram" />
+  </a>
+  <a href="https://wa.me/573186377582" target="_blank" rel="noreferrer">
+    <img src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" alt="WhatsApp" />
+  </a>
+  <a href="https://discord.com/users/Oug#6073" target="_blank" rel="noreferrer">
+    <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord" />
+  </a>
 </p>
