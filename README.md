@@ -1,7 +1,9 @@
 <div align="center">
 
-# Hola, soy Diego Montiel
-### **Fullstack Software Developer & Economista**
+[🇺🇸 English](README.md) | [🇪🇸 Español](README-es.md)
+
+# Hi, I'm Diego Montiel
+### **Fullstack Software Developer & Economist**
 
 📍 *Colombia* &nbsp;•&nbsp; 🌐 **[Portfolio](https://ougmontiel.github.io/OugMontiel/)** &nbsp;•&nbsp; 💼 **[LinkedIn](https://www.linkedin.com/in/diego-alejandro-montiel-florez-data-science/)** &nbsp;•&nbsp; ✉️ **[montielflorezdiego@gmail.com](mailto:montielflorezdiego@gmail.com)**
 
@@ -17,15 +19,15 @@
 
 <br />
 
-## Sobre mí
+## About Me
 
-Desarrollador Fullstack que combina ingeniería de software con análisis económico. Mi enfoque está en el backend, el diseño de APIs y la automatización de procesos, aprovechando mi base en econometría para estructurar datos complejos. Actualmente trabajo en escalar MonyMonty, mi propio gestor de finanzas. Disfruto discutir sobre arquitectura, mantener repositorios organizados y aprender constantemente del ecosistema y la comunidad.
+Fullstack Developer combining software engineering with economic analysis. My focus lies in backend engineering, API design, and process automation, leveraging my background in econometrics to structure complex data. I am currently scaling MonyMonty, my own finance management platform. I enjoy discussing software architecture, keeping repositories clean and well-organized, and continuously learning from the ecosystem and community.
 
 ---
 
-## Tecnologías
+## Tech Stack
 
-### **Backend & Arquitectura**
+### **Backend & Architecture**
 <p align="left">
   <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="Node.js" />
   <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white" alt="Express.js" />
@@ -47,7 +49,7 @@ Desarrollador Fullstack que combina ingeniería de software con análisis econó
   <img src="https://img.shields.io/badge/Pinia-FFD859?style=for-the-badge&logo=vuedotjs&logoColor=black" alt="Pinia" />
 </p>
 
-### **Bases de Datos, Cloud & DevOps**
+### **Databases, Cloud & DevOps**
 <p align="left">
   <img src="https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
   <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
@@ -69,7 +71,7 @@ Desarrollador Fullstack que combina ingeniería de software con análisis econó
   <img src="https://img.shields.io/badge/Excel-217346?style=for-the-badge&logo=microsoft-excel&logoColor=white" alt="Excel" />
 </p>
 
-### **Gestión & Metodologías**
+### **Management & Methodologies**
 <p align="left">
   <img src="https://img.shields.io/badge/Scrum-009FDA?style=for-the-badge&logo=scrumalliance&logoColor=white" alt="Scrum" />
   <img src="https://img.shields.io/badge/Jira-0052CC?style=for-the-badge&logo=jira&logoColor=white" alt="Jira" />
@@ -78,7 +80,7 @@ Desarrollador Fullstack que combina ingeniería de software con análisis econó
 
 ---
 
-## Métricas
+## Metrics
 
 <div align="center">
   <img height="165em" src="https://github-readme-stats.vercel.app/api?username=OugMontiel&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true" alt="GitHub Stats" />
@@ -87,11 +89,11 @@ Desarrollador Fullstack que combina ingeniería de software con análisis econó
 
 ---
 
-## 🌐 Redes y Contacto
+## Socials & Contact
 
 <div align="center">
   <a href="https://ougmontiel.github.io/OugMontiel/" target="_blank" rel="noreferrer">
-    <img src="https://img.shields.io/badge/Portafolio-F59E0B?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Portafolio" />
+    <img src="https://img.shields.io/badge/Portfolio-F59E0B?style=for-the-badge&logo=google-chrome&logoColor=white" alt="Portfolio" />
   </a>
   <a href="https://www.linkedin.com/in/diego-alejandro-montiel-florez-data-science/" target="_blank" rel="noreferrer">
     <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
