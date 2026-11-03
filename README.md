@@ -7,8 +7,6 @@
 
 📍 *Colombia* &nbsp;•&nbsp; 🌐 **[Portfolio](https://ougmontiel.github.io/OugMontiel/)** &nbsp;•&nbsp; 💼 **[LinkedIn](https://www.linkedin.com/in/diego-alejandro-montiel-florez-data-science/)** &nbsp;•&nbsp; ✉️ **[montielflorezdiego@gmail.com](mailto:montielflorezdiego@gmail.com)**
 
----
-
 [![Portfolio](https://img.shields.io/badge/Portfolio-Visit_Site-F59E0B?style=for-the-badge&logo=google-chrome&logoColor=white)](https://ougmontiel.github.io/OugMontiel/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/diego-alejandro-montiel-florez-data-science/)
 [![GitHub](https://img.shields.io/badge/GitHub-OugMontiel-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/OugMontiel)
@@ -22,8 +20,6 @@
 ## About Me
 
 Fullstack Developer combining software engineering with economic analysis. My focus lies in backend engineering, API design, and process automation, leveraging my background in econometrics to structure complex data. I am currently scaling MonyMonty, my own finance management platform. I enjoy discussing software architecture, keeping repositories clean and well-organized, and continuously learning from the ecosystem and community.
-
----
 
 ## Tech Stack
 
@@ -78,16 +74,12 @@ Fullstack Developer combining software engineering with economic analysis. My fo
   <img src="https://img.shields.io/badge/Trello-0052CC?style=for-the-badge&logo=trello&logoColor=white" alt="Trello" />
 </p>
 
----
-
 ## Metrics
 
 <div align="center">
   <img height="165em" src="https://github-readme-stats.vercel.app/api?username=OugMontiel&show_icons=true&theme=tokyonight&include_all_commits=true&count_private=true&hide_border=true" alt="GitHub Stats" />
   <img height="165em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=OugMontiel&layout=compact&langs_count=6&theme=tokyonight&hide_border=true" alt="Top Languages" />
 </div>
-
----
 
 ## Socials & Contact
 
