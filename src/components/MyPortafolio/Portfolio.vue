@@ -53,7 +53,11 @@
               <div class="project-item-icon-box">
                 <ion-icon name="eye-outline"></ion-icon>
               </div>
-              <img :src="project.imgSrc" :alt="project.title" loading="lazy" />
+              <img
+                :src="getPath(project.imgSrc)"
+                :alt="project.title"
+                loading="lazy"
+              />
             </figure>
             <h3 class="project-title">{{ project.title }}</h3>
             <p class="project-category">{{ project.category }}</p>
@@ -65,6 +69,8 @@
 </template>
 
 <script>
+const getPath = (path) => import.meta.env.BASE_URL + path.replace(/^\//, '')
+
 export default {
   name: 'PortfolioMyPortafolio',
   data() {
@@ -114,6 +120,7 @@ export default {
     },
   },
   methods: {
+    getPath,
     toggleSelect() {
       this.selectOpen = !this.selectOpen
     },

@@ -31,7 +31,7 @@
         >
           <div class="service-icon-box">
             <img
-              :src="`${imageBaseService}${service.icon}`"
+              :src="getPath(`${imageBaseService}${service.icon}`)"
               :alt="service.alt"
               width="40"
             />
@@ -91,6 +91,8 @@
 </template>
 
 <script>
+const getPath = (path) => import.meta.env.BASE_URL + path.replace(/^\//, '')
+
 export default {
   name: 'AboutMyPortafolio',
 
@@ -165,6 +167,8 @@ export default {
   },
 
   methods: {
+    getPath,
+
     // Toggle class for elements
     elementToggleFunc(elem) {
       elem.classList.toggle('active')

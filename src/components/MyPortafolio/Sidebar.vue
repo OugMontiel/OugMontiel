@@ -2,7 +2,7 @@
   <aside>
     <div class="sidebarInfo">
       <figure class="siderAvatarBox">
-        <img src="/my-avatar.png" alt="Diego Montiel" />
+        <img :src="getPath('/my-avatar.png')" alt="Diego Montiel" />
       </figure>
 
       <div class="siderInfoRoles">
@@ -117,6 +117,8 @@
 </template>
 
 <script>
+const getPath = (path) => import.meta.env.BASE_URL + path.replace(/^\//, '')
+
 // Función de utilidad para alternar clases
 const elementToggleFunc = elem => {
   elem.classList.toggle('active')
@@ -125,6 +127,9 @@ const elementToggleFunc = elem => {
 // Inicialización de la funcionalidad del sidebar
 export default {
   name: 'SidebarMyPortafolio',
+  methods: {
+    getPath,
+  },
   mounted() {
     // Seleccionamos los elementos del DOM
     const sidebar = this.$el.querySelector('[data-sidebar]')
