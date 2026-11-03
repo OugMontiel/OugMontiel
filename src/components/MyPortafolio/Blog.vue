@@ -13,7 +13,7 @@
         >
           <a :href="post.link">
             <figure class="blog-banner-box">
-              <img :src="post.imgSrc" :alt="post.alt" loading="lazy" />
+              <img :src="getPath(post.imgSrc)" :alt="post.alt" loading="lazy" />
             </figure>
 
             <div class="blog-content">
@@ -76,6 +76,11 @@ export default {
         // Agrega más publicaciones aquí
       ],
     }
+  },
+  methods: {
+    getPath(path) {
+      return import.meta.env.BASE_URL + path.replace(/^\//, '')
+    },
   },
 }
 </script>
