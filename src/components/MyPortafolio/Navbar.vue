@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar" :class="{ open: isMenuOpen }">
     <button v-if="!isMenuOpen" class="toggleButton" @click="toggleMenu">
-      {{ t('menu') }}
+      {{ t('nav.menu') }}
     </button>
     <ul class="navbarList">
       <li v-for="(link, index) in navLinks" :key="index">
@@ -40,11 +40,11 @@ export default {
     return {
       isMenuOpen: false,
       navLinks: [
-        { name: 'AboutMyPortafolio', key: 'about' },
-        { name: 'ResumeMyPortafolio', key: 'resume' },
-        { name: 'PortfolioMyPortafolio', key: 'portfolio' },
-        { name: 'BlogMyPortafolio', key: 'blog' },
-        { name: 'ContactMyPortafolio', key: 'contact' },
+        { name: 'AboutMyPortafolio', key: 'nav.about' },
+        { name: 'ResumeMyPortafolio', key: 'nav.resume' },
+        { name: 'PortfolioMyPortafolio', key: 'nav.portfolio' },
+        { name: 'BlogMyPortafolio', key: 'nav.blog' },
+        { name: 'ContactMyPortafolio', key: 'nav.contact' },
       ],
       activePage: 'AboutMyPortafolio', // Página activa inicial
     }

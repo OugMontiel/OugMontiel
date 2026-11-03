@@ -1,31 +1,27 @@
 <template>
   <article class="about" data-page="about">
     <header>
-      <h2 class="articleTitle">About me</h2>
+      <h2 class="articleTitle">{{ t('about.title') }}</h2>
     </header>
 
     <section class="aboutText">
       <p>
-        Focused on transforming business problems and needs into data-driven
-        products and solutions using econometric models, API development, and
-        pipeline creation.
+        {{ t('about.bio') }}
       </p>
 
       <p>
-        I’m also a judoka, chess player, and entrepreneur. I enjoy the
-        discipline and strategy of judo and chess, and I value time with loved
-        ones and outdoor activities like hiking to recharge.
+        {{ t('about.bio2') }}
       </p>
     </section>
 
     <!-- Service Section -->
 
     <section class="service">
-      <h3 class="service-title">What I'm doing</h3>
+      <h3 class="service-title">{{ t('about.servicesTitle') }}</h3>
 
       <ul class="service-list">
         <li
-          v-for="(service, index) in services"
+          v-for="(service, index) in t('about.services')"
           :key="index"
           class="service-item"
         >
@@ -91,6 +87,9 @@
 </template>
 
 <script>
+import { mapState } from 'pinia'
+import { useI18nStore } from '../../stores/i18nStore'
+
 const getPath = (path) => import.meta.env.BASE_URL + path.replace(/^\//, '')
 
 export default {
@@ -100,66 +99,11 @@ export default {
     return {
       // Ruta base para las imágenes
       imageBaseService: '/iconPortafolio/',
-      // Lista de servicios
-      services: [
-        {
-          icon: 'icon-design.svg',
-          alt: 'Design icon',
-          title: 'Web design',
-          description:
-            'The most modern and high-quality design made at a professional level.',
-        },
-        {
-          icon: 'icon-dev.svg',
-          alt: 'Web development icon',
-          title: 'Web development',
-          description:
-            'High-quality development of sites at the professional level.',
-        },
-        {
-          icon: 'icon-economi.svg',
-          alt: 'Econometric modeling icon',
-          title: 'Econometric Modeling',
-          description:
-            'Design and analysis of econometric models for forecasting and data analysis.',
-        },
-        {
-          icon: 'icon-api.svg',
-          alt: 'API development icon',
-          title: 'API Development',
-          description:
-            'Creation of efficient and scalable APIs for web and mobile applications.',
-        },
-        {
-          icon: 'icon-maching.svg',
-          alt: 'Machine learning icon',
-          title: 'Machine Learning',
-          description:
-            'Development of machine learning models to automate and enhance processes.',
-        },
-        {
-          icon: 'icon-visualization.svg',
-          alt: 'Data visualization icon',
-          title: 'Data Visualization',
-          description:
-            'Creation of dashboards and visual reports to interpret complex data.',
-        },
-        {
-          icon: 'icon-time-serie.svg',
-          alt: 'Time series icon',
-          title: 'Time Series',
-          description:
-            'Developing models to predict trends and patterns in time-series data.',
-        },
-        {
-          icon: 'icon-pipeline.svg',
-          alt: 'Data pipeline icon',
-          title: 'Creation of Data Pipelines',
-          description:
-            'Building pipelines to automate data extraction, transformation, and loading processes.',
-        },
-      ],
     }
+  },
+
+  computed: {
+    ...mapState(useI18nStore, ['t']),
   },
 
   methods: {

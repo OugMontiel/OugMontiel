@@ -10,9 +10,13 @@
           Diego Alejandro Montiel FLorez
         </h1>
         <div class="rolesContainer">
-          <p class="title">Data Science</p>
-          <p class="title">Backend Developer</p>
-          <p class="title">Economist</p>
+          <p
+            v-for="(role, index) in t('sidebar.roles')"
+            :key="index"
+            class="title"
+          >
+            {{ role }}
+          </p>
         </div>
       </div>
     </div>
@@ -27,7 +31,7 @@
           </div>
 
           <div>
-            <p class="sidebarContactTitle">Email</p>
+            <p class="sidebarContactTitle">{{ t('sidebar.email') }}</p>
 
             <a
               href="mailto:montielflorezdiego@gmail.com"
@@ -43,7 +47,7 @@
           </div>
 
           <div>
-            <p class="sidebarContactTitle">Phone</p>
+            <p class="sidebarContactTitle">{{ t('sidebar.phone') }}</p>
 
             <a href="tel:+573186377582" class="sidebarContactLink"
               >+57 318 6377582</a
@@ -57,9 +61,11 @@
           </div>
 
           <div>
-            <p class="sidebarContactTitle">Birthday</p>
+            <p class="sidebarContactTitle">{{ t('sidebar.birthday') }}</p>
 
-            <time datetime="1998-08-12" class="sidebarContactLink">Aug 12</time>
+            <time datetime="1998-08-12" class="sidebarContactLink">{{
+              t('sidebar.birthdayDate')
+            }}</time>
           </div>
         </li>
 
@@ -69,7 +75,7 @@
           </div>
 
           <div>
-            <p class="sidebarContactTitle">Location</p>
+            <p class="sidebarContactTitle">{{ t('sidebar.location') }}</p>
 
             <address class="sidebarContactLink">
               Bucaramanga, Santander, Colombia
@@ -117,11 +123,17 @@
 </template>
 
 <script>
+import { mapState } from 'pinia'
+import { useI18nStore } from '../../stores/i18nStore'
+
 const getPath = (path) => import.meta.env.BASE_URL + path.replace(/^\//, '')
 
 // Inicialización de la funcionalidad del sidebar
 export default {
   name: 'SidebarMyPortafolio',
+  computed: {
+    ...mapState(useI18nStore, ['t']),
+  },
   methods: {
     getPath,
   },
