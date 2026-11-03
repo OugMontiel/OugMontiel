@@ -1,13 +1,13 @@
 <template>
   <article class="portfolio" data-page="portfolio">
     <header>
-      <h2 class="h2 articleTitle">Portfolio</h2>
+      <h2 class="h2 articleTitle">{{ t('portfolio.title') }}</h2>
     </header>
 
     <section class="projects">
       <!-- Filter List -->
       <!-- <ul class="filter-list has-scrollbar">
-        <li class="filter-item" v-for="(filter, index) in filters" :key="index">
+        <li class="filter-item" v-for="(filter, index) in t('portfolio.filterButtons')" :key="index">
           <button
             :class="{ active: selectedFilter === filter }"
             @click="handleFilter(filter)"
@@ -21,7 +21,7 @@
       <!-- Select Dropdown -->
       <!-- <div class="filter-select-box">
         <button class="filter-select" @click="toggleSelect" data-select>
-          <div class="select-value" data-selecct-value>{{ selectedValue }}</div>
+          <div class="select-value" data-selecct-value>{{ selectedValue || t('portfolio.selectCategory') }}</div>
           <div class="select-icon">
             <ion-icon name="chevron-down"></ion-icon>
           </div>
@@ -29,7 +29,7 @@
 
         <ul v-if="selectOpen" class="select-list">
           <li
-            v-for="(filter, index) in filters"
+            v-for="(filter, index) in t('portfolio.filterButtons')"
             :key="index"
             class="select-item"
             @click="selectFilter(filter)"
@@ -53,7 +53,11 @@
               <div class="project-item-icon-box">
                 <ion-icon name="eye-outline"></ion-icon>
               </div>
-              <img :src="project.imgSrc" :alt="project.title" loading="lazy" />
+              <img
+                :src="getPath(project.imgSrc)"
+                :alt="project.title"
+                loading="lazy"
+              />
             </figure>
             <h3 class="project-title">{{ project.title }}</h3>
             <p class="project-category">{{ project.category }}</p>
@@ -65,55 +69,34 @@
 </template>
 
 <script>
+import { mapState } from 'pinia'
+import { useI18nStore } from '../../stores/i18nStore'
+
+const getPath = (path) => import.meta.env.BASE_URL + path.replace(/^\//, '')
+
 export default {
   name: 'PortfolioMyPortafolio',
   data() {
     return {
-      filters: [
-        'All',
-        'Web design',
-        'Web development',
-        'Econometric Modeling',
-        'Backend Developer',
-        'Data Visualization',
-        'Time Series',
-        'Pipelines',
-      ],
       selectedFilter: 'All',
       selectOpen: false,
-      selectedValue: 'Select category',
-      projects: [
-        {
-          title: 'Tecnicas de pronostico',
-          category: 'Time Series',
-          imgSrc: '/imgProyectos/project-time-series-1.webp',
-          link: 'https://github.com/OugMontiel/ModeloARIMA-Fase-2',
-        },
-        {
-          title: 'Control and registration oof all teams',
-          category: 'Backend Developer',
-          imgSrc: '/imgProyectos/project-backend-developer-1.webp',
-          link: 'https://github.com/OugMontiel/projectTeamSoccer-Campus',
-        },
-        {
-          title: 'Ingeneria de datos',
-          category: 'Pipelines',
-          imgSrc: '/imgProyectos/project-pipelines-1.webp',
-          link: 'https://github.com/OugMontiel/Pragma',
-        },
-        // ... Agrega más proyectos aquí
-      ],
+      selectedValue: '',
     }
   },
   computed: {
+    ...mapState(useI18nStore, ['t']),
     filteredProjects() {
-      if (this.selectedFilter === 'All') return this.projects
-      return this.projects.filter(
+      const projects = this.t('portfolio.projects')
+      if (this.selectedFilter === 'All' || this.selectedFilter === 'Todos') {
+        return projects
+      }
+      return projects.filter(
         project => project.category === this.selectedFilter,
       )
     },
   },
   methods: {
+    getPath,
     toggleSelect() {
       this.selectOpen = !this.selectOpen
     },
