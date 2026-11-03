@@ -1,37 +1,33 @@
 <template>
   <article class="about" data-page="about">
     <header>
-      <h2 class="articleTitle">About me</h2>
+      <h2 class="articleTitle">{{ t('about.title') }}</h2>
     </header>
 
     <section class="aboutText">
       <p>
-        Focused on transforming business problems and needs into data-driven
-        products and solutions using econometric models, API development, and
-        pipeline creation.
+        {{ t('about.bio') }}
       </p>
 
       <p>
-        I’m also a judoka, chess player, and entrepreneur. I enjoy the
-        discipline and strategy of judo and chess, and I value time with loved
-        ones and outdoor activities like hiking to recharge.
+        {{ t('about.bio2') }}
       </p>
     </section>
 
     <!-- Service Section -->
 
     <section class="service">
-      <h3 class="service-title">What I'm doing</h3>
+      <h3 class="service-title">{{ t('about.servicesTitle') }}</h3>
 
       <ul class="service-list">
         <li
-          v-for="(service, index) in services"
+          v-for="(service, index) in t('about.services')"
           :key="index"
           class="service-item"
         >
           <div class="service-icon-box">
             <img
-              :src="`${imageBaseService}${service.icon}`"
+              :src="getPath(`${imageBaseService}${service.icon}`)"
               :alt="service.alt"
               width="40"
             />
@@ -91,6 +87,11 @@
 </template>
 
 <script>
+import { mapState } from 'pinia'
+import { useI18nStore } from '../../stores/i18nStore'
+
+const getPath = (path) => import.meta.env.BASE_URL + path.replace(/^\//, '')
+
 export default {
   name: 'AboutMyPortafolio',
 
@@ -98,119 +99,15 @@ export default {
     return {
       // Ruta base para las imágenes
       imageBaseService: '/iconPortafolio/',
-      // Lista de servicios
-      services: [
-        {
-          icon: 'icon-design.svg',
-          alt: 'Design icon',
-          title: 'Web design',
-          description:
-            'The most modern and high-quality design made at a professional level.',
-        },
-        {
-          icon: 'icon-dev.svg',
-          alt: 'Web development icon',
-          title: 'Web development',
-          description:
-            'High-quality development of sites at the professional level.',
-        },
-        {
-          icon: 'icon-economi.svg',
-          alt: 'Econometric modeling icon',
-          title: 'Econometric Modeling',
-          description:
-            'Design and analysis of econometric models for forecasting and data analysis.',
-        },
-        {
-          icon: 'icon-api.svg',
-          alt: 'API development icon',
-          title: 'API Development',
-          description:
-            'Creation of efficient and scalable APIs for web and mobile applications.',
-        },
-        {
-          icon: 'icon-maching.svg',
-          alt: 'Machine learning icon',
-          title: 'Machine Learning',
-          description:
-            'Development of machine learning models to automate and enhance processes.',
-        },
-        {
-          icon: 'icon-visualization.svg',
-          alt: 'Data visualization icon',
-          title: 'Data Visualization',
-          description:
-            'Creation of dashboards and visual reports to interpret complex data.',
-        },
-        {
-          icon: 'icon-time-serie.svg',
-          alt: 'Time series icon',
-          title: 'Time Series',
-          description:
-            'Developing models to predict trends and patterns in time-series data.',
-        },
-        {
-          icon: 'icon-pipeline.svg',
-          alt: 'Data pipeline icon',
-          title: 'Creation of Data Pipelines',
-          description:
-            'Building pipelines to automate data extraction, transformation, and loading processes.',
-        },
-      ],
     }
   },
 
-  mounted() {
-    this.initTestimonialsModal()
+  computed: {
+    ...mapState(useI18nStore, ['t']),
   },
 
   methods: {
-    // Toggle class for elements
-    elementToggleFunc(elem) {
-      elem.classList.toggle('active')
-    },
-
-    // Function to handle modal toggling
-    testimonialsModalFunc() {
-      const modalContainer = document.querySelector('[data-modal-container]')
-      const overlay = document.querySelector('[data-overlay]')
-      this.elementToggleFunc(modalContainer)
-      this.elementToggleFunc(overlay)
-    },
-
-    // Initialize event listeners for testimonial modals
-    initTestimonialsModal() {
-      const testimonialsItems = document.querySelectorAll(
-        '[data-testimonials-item]',
-      )
-      const modalImg = document.querySelector('[data-modal-img]')
-      const modalTitle = document.querySelector('[data-modal-title]')
-      const modalText = document.querySelector('[data-modal-text]')
-      const modalCloseBtn = document.querySelector('[data-modal-close-btn]')
-      const overlay = document.querySelector('[data-overlay]')
-
-      // Event listeners for opening modals
-      testimonialsItems.forEach(item => {
-        item.addEventListener('click', () => {
-          modalImg.src = item.querySelector('[data-testimonials-avatar]').src
-          modalImg.alt = item.querySelector('[data-testimonials-avatar]').alt
-          modalTitle.innerHTML = item.querySelector(
-            '[data-testimonials-title]',
-          ).innerHTML
-          modalText.innerHTML = item.querySelector(
-            '[data-testimonials-text]',
-          ).innerHTML
-          this.testimonialsModalFunc()
-        })
-      })
-
-      // Event listeners for closing the modal
-      modalCloseBtn.addEventListener(
-        'click',
-        this.testimonialsModalFunc.bind(this),
-      )
-      overlay.addEventListener('click', this.testimonialsModalFunc.bind(this))
-    },
+    getPath,
   },
 }
 </script>

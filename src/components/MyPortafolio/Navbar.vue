@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar" :class="{ open: isMenuOpen }">
     <button v-if="!isMenuOpen" class="toggleButton" @click="toggleMenu">
-      Menu
+      {{ t('nav.menu') }}
     </button>
     <ul class="navbarList">
       <li v-for="(link, index) in navLinks" :key="index">
@@ -10,7 +10,19 @@
           :class="{ active: activePage === link.name }"
           @click="setActivePage(link.name)"
         >
-          {{ link.label }}
+          {{ t(link.key) }}
+        </button>
+      </li>
+      <li>
+        <button
+          class="langButton"
+          type="button"
+          @click="toggleLanguage"
+          aria-label="Toggle language"
+        >
+          <span :class="{ activeLang: currentLanguage === 'en' }">EN</span>
+          <span class="langDivider">/</span>
+          <span :class="{ activeLang: currentLanguage === 'es' }">ES</span>
         </button>
       </li>
     </ul>
@@ -18,6 +30,9 @@
 </template>
 
 <script>
+import { mapState, mapActions } from 'pinia'
+import { useI18nStore } from '../../stores/i18nStore'
+
 export default {
   name: 'NavbarMyPortafolio',
 
@@ -25,16 +40,20 @@ export default {
     return {
       isMenuOpen: false,
       navLinks: [
-        { name: 'AboutMyPortafolio', label: 'About' },
-        { name: 'ResumeMyPortafolio', label: 'Resume' },
-        { name: 'PortfolioMyPortafolio', label: 'Portfolio' },
-        { name: 'BlogMyPortafolio', label: 'Blog' },
-        { name: 'ContactMyPortafolio', label: 'Contact' },
+        { name: 'AboutMyPortafolio', key: 'nav.about' },
+        { name: 'ResumeMyPortafolio', key: 'nav.resume' },
+        { name: 'PortfolioMyPortafolio', key: 'nav.portfolio' },
+        { name: 'BlogMyPortafolio', key: 'nav.blog' },
+        { name: 'ContactMyPortafolio', key: 'nav.contact' },
       ],
       activePage: 'AboutMyPortafolio', // Página activa inicial
     }
   },
+  computed: {
+    ...mapState(useI18nStore, ['currentLanguage', 't']),
+  },
   methods: {
+    ...mapActions(useI18nStore, ['toggleLanguage']),
     toggleMenu() {
       this.isMenuOpen = !this.isMenuOpen // Cambia el estado del menú
     },
@@ -83,6 +102,33 @@ export default {
 
 .navbarLink.active {
   color: var(--orange-yellow-crayola);
+}
+
+.langButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35em;
+  padding: 0.45em 0.85em;
+  border: 1px solid var(--jet);
+  border-radius: 0.6em;
+  background: var(--onyx);
+  color: var(--light-gray-70);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-500);
+  cursor: pointer;
+  transition: border-color var(--transition-1), color var(--transition-1);
+}
+
+.langButton:hover {
+  border-color: var(--orange-yellow-crayola);
+}
+
+.langButton .activeLang {
+  color: var(--orange-yellow-crayola);
+}
+
+.langButton .langDivider {
+  color: var(--jet);
 }
 
 .toggleButton {

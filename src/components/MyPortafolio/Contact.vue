@@ -1,15 +1,15 @@
 <template>
   <article class="contact" data-page="contact">
     <header>
-      <h2 class="h2 articleTitle">Contact</h2>
+      <h2 class="h2 articleTitle">{{ t('contact.title') }}</h2>
     </header>
 
     <section class="socials-contact">
       <div class="socials-column">
-        <h3 class="h3">Follow Me</h3>
+        <h3 class="h3">{{ t('contact.followMe') }}</h3>
         <div class="socials-icons">
           <a
-            v-for="social in socials"
+            v-for="social in t('contact.socials')"
             :key="social.name"
             :href="social.link"
             target="_blank"
@@ -20,10 +20,10 @@
         </div>
       </div>
       <div class="contact-column">
-        <h3 class="h3">Let's Talk</h3>
+        <h3 class="h3">{{ t('contact.letsTalk') }}</h3>
         <div class="contact-icons">
           <a
-            v-for="contact in contacts"
+            v-for="contact in t('contact.contacts')"
             :key="contact.name"
             :href="contact.link"
             target="_blank"
@@ -41,7 +41,7 @@
     </section>
 
     <section class="contact-form">
-      <h3 class="h3 form-title">Contact Form</h3>
+      <h3 class="h3 form-title">{{ t('contact.formTitle') }}</h3>
 
       <form @submit.prevent="submitForm" class="form">
         <div class="input-wrapper">
@@ -49,14 +49,14 @@
             type="text"
             v-model="form.fullname"
             class="form-input"
-            placeholder="Full name"
+            :placeholder="t('contact.fullnamePlaceholder')"
             required
           />
           <input
             type="email"
             v-model="form.email"
             class="form-input"
-            placeholder="Email address"
+            :placeholder="t('contact.emailPlaceholder')"
             required
           />
         </div>
@@ -64,20 +64,20 @@
         <textarea
           v-model="form.message"
           class="form-input"
-          placeholder="Your Message"
+          :placeholder="t('contact.messagePlaceholder')"
           required
         ></textarea>
 
         <!-- Mostrar alerta si el formulario no está disponible -->
         <Alert
           v-if="showAlert"
-          :message="alertMessage"
+          :message="t('contact.alertMessage')"
           @close="showAlert = false"
         />
 
         <button class="form-btn" type="submit">
           <ion-icon name="paper-plane"></ion-icon>
-          <span>Send Message</span>
+          <span>{{ t('contact.sendBtn') }}</span>
         </button>
       </form>
     </section>
@@ -85,6 +85,8 @@
 </template>
 
 <script>
+import { mapState } from 'pinia'
+import { useI18nStore } from '../../stores/i18nStore'
 import Alert from '../Utils/Alert.vue'
 
 export default {
@@ -100,48 +102,10 @@ export default {
         message: '',
       },
       showAlert: false,
-      alertMessage:
-        'La funcionalidad de envío no está disponible de momento. Por favor, envíe un correo electrónico a MontielFlorezDiego@gmail.com.',
-      socials: [
-        {
-          name: 'Discord',
-          icon: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/discord.svg',
-          link: 'https://discord.com/users/Oug#6073',
-        },
-        {
-          name: 'GitHub',
-          icon: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github.svg',
-          link: 'https://www.github.com/OugMontiel',
-        },
-        {
-          name: 'LinkedIn',
-          icon: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/linkedin.svg',
-          link: 'https://www.linkedin.com/in/diego-alejandro-montiel-florez-data-science/',
-        },
-        {
-          name: 'Kaggle',
-          icon: 'https://www.kaggle.com/static/images/favicon.ico',
-          link: 'https://www.kaggle.com/ougmontiel',
-        },
-      ],
-      contacts: [
-        {
-          name: 'Email',
-          icon: 'https://ssl.gstatic.com/ui/v1/icons/mail/rfr/gmail.ico',
-          link: 'mailto:montielflorezdiego@gmail.com',
-        },
-        {
-          name: 'Telegram',
-          icon: 'https://web.telegram.org/a/favicon-32x32.png',
-          link: 'https://t.me/OugMontiel',
-        },
-        {
-          name: 'WhatsApp',
-          icon: 'https://upload.wikimedia.org/wikipedia/commons/5/5e/WhatsApp_icon.png',
-          link: 'https://wa.me/573186377582',
-        },
-      ],
     }
+  },
+  computed: {
+    ...mapState(useI18nStore, ['t']),
   },
   methods: {
     submitForm() {
