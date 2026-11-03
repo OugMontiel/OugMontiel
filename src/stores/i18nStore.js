@@ -131,8 +131,8 @@ export const useI18nStore = defineStore('i18n', {
       },
       about: {
         title: 'About me',
-        bio: 'Focused on transforming business problems and needs into data-driven products and solutions using econometric models, API development, and pipeline creation.',
-        bio2: 'I’m also a judoka, chess player, and entrepreneur. I enjoy the discipline and strategy of judo and chess, and I value time with loved ones and outdoor activities like hiking to recharge.',
+        bio: 'Economist and Backend / Fullstack Developer focused on transforming complex business challenges into scalable data-driven products, robust APIs, and automated pipelines. Currently building MonyMonty, a personal finance SaaS that bridges economic modeling with modern software architecture.',
+        bio2: 'I’m also a judoka, chess player, and entrepreneur. I apply the discipline and strategic thinking of judo and chess to software engineering, while valuing time with loved ones and outdoor activities like hiking to recharge.',
         servicesTitle: "What I'm doing",
         services: [
           {
@@ -198,38 +198,51 @@ export const useI18nStore = defineStore('i18n', {
         skillsTitle: 'My skills',
         resumeSections: [
           {
+            title: 'Experience',
+            icon: 'briefcase-outline',
+            items: [
+              {
+                title: 'Fullstack Developer — Okorum',
+                date: 'Jun 2025 — Present',
+                description:
+                  'Development of key business metrics, internal analytical packages, and end-to-end fullstack features. Responsible for designing scalable APIs, optimizing data processing workflows, and integrating analytical modules for strategic decision-making.',
+              },
+              {
+                title: 'Software Developer (Volunteer) — YMCA Santander',
+                date: 'Oct 2024 — Jul 2026',
+                description:
+                  'Led the redesign of the institutional website and internal management platform, modernizing user experience, digitizing administrative workflows, and improving platform maintainability.',
+              },
+              {
+                title: 'Data Analyst — Clavijo & Asociados SAS',
+                date: 'Feb 2022 — Mar 2023',
+                description:
+                  'Participated in resource optimization through predictive modeling and analytics tools using Python, SQL, and Power BI. Automated reporting workflows, reducing data query time by 80%, monitoring 100% of pending payments, and generating a 30% savings in the annual budget.',
+              },
+            ],
+          },
+          {
             title: 'Education',
             icon: 'book-outline',
             items: [
               {
-                title: 'CampusLand',
-                date: '01/2024',
+                title: 'Software Development Training — Campuslands',
+                date: '2024',
                 description:
-                  'Backend development focused on API creation and SQL and NoSQL database management. Complemented with frontend knowledge (HTML, CSS, JavaScript, Vue) and DevOps practices for application automation and deployment. Qualified to perform in Backend and Full Stack Developer roles, with skills to build complete and scalable solutions.',
+                  'Intensive software engineering training focused on backend architecture, RESTful API development, SQL and NoSQL database management, frontend technologies (HTML, CSS, JavaScript, Vue), and DevOps deployment practices.',
               },
               {
-                title: 'Universidad Industrial de Santander (UIS)',
+                title:
+                  'B.S. in Economics — Universidad Industrial de Santander (UIS)',
                 date: '2016 — 2022',
                 description:
-                  'Economist specialized in the advanced application of econometric techniques to model, predict, and optimize complex economic scenarios. Proficient in data analysis tools such as R, Python, and Stata, integrating cutting-edge statistical methods, machine learning, and big data in economic research. Capable of transforming data into strategic insights for decision-making in dynamic and competitive environments, ranging from public policy analysis to financial consulting and market studies.',
+                  'Economist specialized in advanced econometric modeling, forecasting, and quantitative analysis using R, Python, and Stata. Focused on transforming complex datasets into strategic insights for public policy, financial consulting, and market analysis.',
               },
               {
                 title: 'UNIMINUTO',
                 date: '08/2021 — 12/2021',
                 description:
                   'Excel and Power BI for data analysis and business intelligence. Trained in creating interactive dashboards, efficient data modeling and storage, and managing relational and non-relational databases.',
-              },
-            ],
-          },
-          {
-            title: 'Experience',
-            icon: 'briefcase-outline',
-            items: [
-              {
-                title: 'Data Analyst',
-                date: '02/2022 — 04/2023',
-                description:
-                  'Participated in building resource optimization through predictive modeling and analytics tools using Python, SQL, and Power BI. By automating reports, I reduced data query time by 80% and monitored 100% of pending payments. Additionally, I designed a query system that improved administrative decision-making, generating a 30% savings in the annual budget.',
               },
             ],
           },
@@ -250,6 +263,12 @@ export const useI18nStore = defineStore('i18n', {
           'Pipelines',
         ],
         projects: [
+          {
+            title: 'MonyMonty — Personal Finance SaaS',
+            category: 'Web development',
+            imgSrc: '/imgProyectos/project-1.jpg',
+            link: 'https://github.com/OugMontiel',
+          },
           {
             title: 'Forecasting Techniques',
             category: 'Time Series',
@@ -342,8 +361,8 @@ export const useI18nStore = defineStore('i18n', {
       },
       about: {
         title: 'Sobre mí',
-        bio: 'Enfocado en transformar problemas y necesidades de negocio en productos y soluciones basadas en datos mediante modelos econométricos, desarrollo de APIs y creación de pipelines.',
-        bio2: 'También soy judoca, ajedrecista y emprendedor. Disfruto de la disciplina y la estrategia del judo y el ajedrez, y valoro el tiempo con mis seres queridos y las actividades al aire libre como el senderismo para recargar energías.',
+        bio: 'Economista y Desarrollador Backend / Fullstack enfocado en transformar retos complejos de negocio en productos escalables basados en datos, APIs robustas y pipelines automatizados. Actualmente construyendo MonyMonty, un SaaS de finanzas personales que une el modelado económico con arquitectura de software moderna.',
+        bio2: 'También soy judoca, ajedrecista y emprendedor. Aplico la disciplina y el pensamiento estratégico del judo y el ajedrez a la ingeniería de software, valorando el tiempo con mis seres queridos y las actividades al aire libre como el senderismo para recargar energías.',
         servicesTitle: 'Lo que hago',
         services: [
           {
@@ -409,38 +428,51 @@ export const useI18nStore = defineStore('i18n', {
         skillsTitle: 'Mis habilidades',
         resumeSections: [
           {
+            title: 'Experiencia',
+            icon: 'briefcase-outline',
+            items: [
+              {
+                title: 'Fullstack Developer — Okorum',
+                date: 'Jun 2025 — Presente',
+                description:
+                  'Desarrollo de métricas clave de negocio, paquetes analíticos internos y funcionalidades fullstack de extremo a extremo. Responsable del diseño de APIs escalables, optimización de flujos de procesamiento de datos e integración de módulos analíticos para la toma de decisiones estratégicas.',
+              },
+              {
+                title: 'Desarrollador de Software (Voluntariado) — YMCA Santander',
+                date: 'Oct 2024 — Jul 2026',
+                description:
+                  'Lideré el rediseño de su sitio web institucional y plataforma interna de gestión, modernizando la experiencia de usuario, digitalizando flujos administrativos y mejorando la mantenibilidad del sistema.',
+              },
+              {
+                title: 'Analista de Datos — Clavijo & Asociados SAS',
+                date: 'Feb 2022 — Mar 2023',
+                description:
+                  'Participé en la optimización de recursos mediante modelos predictivos y herramientas de análisis con Python, SQL y Power BI. Automatizando informes, reduje en un 80% el tiempo de consulta de datos, monitoreé el 100% de los pagos pendientes y generé un ahorro del 30% en el presupuesto anual.',
+              },
+            ],
+          },
+          {
             title: 'Educación',
             icon: 'book-outline',
             items: [
               {
-                title: 'CampusLand',
-                date: '01/2024',
+                title: 'Formación en Desarrollo de Software — Campuslands',
+                date: '2024',
                 description:
-                  'Desarrollo backend con un enfoque en la creación de APIs y manejo de bases de datos SQL y NoSQL. Complementado con conocimientos en frontend (HTML, CSS, JavaScript, Vue) y prácticas en DevOps para la automatización y despliegue de aplicaciones. Capacitado para desempeñarme en roles de Desarrollador Backend y Full Stack, con habilidades para construir soluciones completas y escalables.',
+                  'Formación intensiva en ingeniería de software con enfoque en arquitectura backend, creación de APIs RESTful, manejo de bases de datos SQL y NoSQL, tecnologías frontend (HTML, CSS, JavaScript, Vue) y prácticas DevOps de despliegue.',
               },
               {
-                title: 'Universidad Industrial de Santander (UIS)',
+                title:
+                  'Pregrado en Economía — Universidad Industrial de Santander (UIS)',
                 date: '2016 — 2022',
                 description:
-                  'Economista especializado en la aplicación avanzada de técnicas econométricas para modelar, predecir y optimizar escenarios económicos complejos. Dominio de herramientas de análisis de datos como R, Python y Stata, integrando métodos estadísticos de vanguardia, machine learning y big data en la investigación económica. Capaz de transformar datos en insights estratégicos para la toma de decisiones en entornos dinámicos y competitivos, abarcando desde análisis de políticas públicas hasta consultoría financiera y estudios de mercado.',
+                  'Economista especializado en modelado econométrico avanzado, pronósticos y análisis cuantitativo con R, Python y Stata. Enfocado en transformar datos complejos en insights estratégicos para políticas públicas, consultoría financiera y estudios de mercado.',
               },
               {
                 title: 'UNIMINUTO',
                 date: '08/2021 — 12/2021',
                 description:
                   'Excel y Power BI para análisis de datos y business intelligence. Capacitado en la creación de dashboards interactivos, modelado y almacenamiento eficiente de datos, y administración de bases de datos relacionales y no relacionales.',
-              },
-            ],
-          },
-          {
-            title: 'Experiencia',
-            icon: 'briefcase-outline',
-            items: [
-              {
-                title: 'Analista de datos',
-                date: '02/2022 — 04/2023',
-                description:
-                  'Participé en la optimización de recursos de edificios mediante la creación de modelos predictivos y herramientas de análisis con Python, SQL y Power BI. Automatizando informes, logré reducir en un 80% el tiempo de consulta de datos y monitorear el 100% de los pagos pendientes. Además, diseñé un sistema de consulta que mejoró la toma de decisiones administrativas, generando un ahorro del 30% en el presupuesto anual.',
               },
             ],
           },
@@ -461,6 +493,12 @@ export const useI18nStore = defineStore('i18n', {
           'Pipelines',
         ],
         projects: [
+          {
+            title: 'MonyMonty — SaaS de Finanzas Personales',
+            category: 'Desarrollo web',
+            imgSrc: '/imgProyectos/project-1.jpg',
+            link: 'https://github.com/OugMontiel',
+          },
           {
             title: 'Técnicas de pronóstico',
             category: 'Series de Tiempo',
