@@ -162,59 +162,8 @@ export default {
     }
   },
 
-  mounted() {
-    this.initTestimonialsModal()
-  },
-
   methods: {
     getPath,
-
-    // Toggle class for elements
-    elementToggleFunc(elem) {
-      elem.classList.toggle('active')
-    },
-
-    // Function to handle modal toggling
-    testimonialsModalFunc() {
-      const modalContainer = document.querySelector('[data-modal-container]')
-      const overlay = document.querySelector('[data-overlay]')
-      this.elementToggleFunc(modalContainer)
-      this.elementToggleFunc(overlay)
-    },
-
-    // Initialize event listeners for testimonial modals
-    initTestimonialsModal() {
-      const testimonialsItems = document.querySelectorAll(
-        '[data-testimonials-item]',
-      )
-      const modalImg = document.querySelector('[data-modal-img]')
-      const modalTitle = document.querySelector('[data-modal-title]')
-      const modalText = document.querySelector('[data-modal-text]')
-      const modalCloseBtn = document.querySelector('[data-modal-close-btn]')
-      const overlay = document.querySelector('[data-overlay]')
-
-      // Event listeners for opening modals
-      testimonialsItems.forEach(item => {
-        item.addEventListener('click', () => {
-          modalImg.src = item.querySelector('[data-testimonials-avatar]').src
-          modalImg.alt = item.querySelector('[data-testimonials-avatar]').alt
-          modalTitle.innerHTML = item.querySelector(
-            '[data-testimonials-title]',
-          ).innerHTML
-          modalText.innerHTML = item.querySelector(
-            '[data-testimonials-text]',
-          ).innerHTML
-          this.testimonialsModalFunc()
-        })
-      })
-
-      // Event listeners for closing the modal
-      modalCloseBtn.addEventListener(
-        'click',
-        this.testimonialsModalFunc.bind(this),
-      )
-      overlay.addEventListener('click', this.testimonialsModalFunc.bind(this))
-    },
   },
 }
 </script>

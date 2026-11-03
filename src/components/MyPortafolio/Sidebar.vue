@@ -119,26 +119,11 @@
 <script>
 const getPath = (path) => import.meta.env.BASE_URL + path.replace(/^\//, '')
 
-// Función de utilidad para alternar clases
-const elementToggleFunc = elem => {
-  elem.classList.toggle('active')
-}
-
 // Inicialización de la funcionalidad del sidebar
 export default {
   name: 'SidebarMyPortafolio',
   methods: {
     getPath,
-  },
-  mounted() {
-    // Seleccionamos los elementos del DOM
-    const sidebar = this.$el.querySelector('[data-sidebar]')
-    const sidebarBtn = this.$el.querySelector('[data-sidebar-btn]')
-
-    // Agregamos el evento de click para alternar el sidebar
-    sidebarBtn.addEventListener('click', () => {
-      elementToggleFunc(sidebar)
-    })
   },
 }
 </script>
