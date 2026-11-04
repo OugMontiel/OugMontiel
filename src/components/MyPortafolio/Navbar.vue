@@ -90,8 +90,9 @@ export default {
 
 .navbarLink {
   color: var(--light-gray);
-  font-size: var(--fs-7);
-  padding: 1.8em 1em;
+  font-size: var(--fs-6);
+  font-weight: var(--fw-500);
+  padding: 1.4rem 0.9rem;
   transition: color var(--transition-1);
 }
 
@@ -128,7 +129,7 @@ export default {
 }
 
 .langButton .langDivider {
-  color: var(--jet);
+  color: var(--light-gray-70);
 }
 
 .toggleButton {

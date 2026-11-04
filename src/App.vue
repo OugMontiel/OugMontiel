@@ -1,22 +1,25 @@
 <template>
-  <main id="app">
+  <div class="appLayout">
     <div class="sidebar">
       <SidebarMyPortafolio />
     </div>
-    <div class="mainContent">
+    <main class="mainContent">
       <NavbarMyPortafolio @change-page="setActiveComponent" />
       <component :is="activeComponent" />
-    </div>
-  </main>
+    </main>
+  </div>
 </template>
 
 <style>
 /* Estilo general del contenedor principal */
-main {
+.appLayout {
   display: grid; /* Habilitamos el grid */
   grid-template-columns: 1fr; /* Una columna por defecto (para pantallas pequeñas) */
-  gap: 2em; /* Espacio entre las columnas */
-  padding: 1em;
+  gap: 2rem; /* Espacio entre las columnas */
+  width: 100%;
+  max-width: 100%;
+  margin: 2rem auto;
+  padding: 0 2rem;
 }
 
 /* Estilo de la barra lateral */
@@ -28,13 +31,26 @@ main {
 .mainContent {
   grid-column: 1 / 2; /* También ocupa la primera columna por defecto */
   position: relative;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 0;
   animation: fade 0.5s ease backwards;
+}
+
+@media (max-width: 600px) {
+  .appLayout {
+    margin: 1rem auto;
+    padding: 0 1rem;
+    gap: 1.25rem;
+  }
 }
 
 /* Para pantallas grandes, aplicamos dos columnas */
 @media (min-width: 800px) {
-  main {
-    grid-template-columns: 300px 1fr; /* Dos columnas: sidebar (300px) y contenido principal */
+  .appLayout {
+    grid-template-columns: 320px 1fr; /* Dos columnas: sidebar y contenido principal fluido */
   }
 
   .sidebar {
@@ -48,8 +64,9 @@ main {
 
 /* Ajustes adicionales para pantallas aún más grandes */
 @media (min-width: 1200px) {
-  main {
-    grid-template-columns: 400px 1fr; /* Sidebar más ancho en pantallas grandes */
+  .appLayout {
+    grid-template-columns: 380px 1fr; /* Sidebar cómodo y panel derecho 100% fluido */
+    padding: 0 2.5rem;
   }
 }
 </style>

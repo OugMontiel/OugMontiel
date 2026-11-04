@@ -134,9 +134,15 @@ export default {
   margin-bottom: 25px;
 }
 
+@media (min-width: 768px) {
+  .input-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .form-input {
   color: var(--white-2);
-  font-size: var(--fs-6);
+  font-size: var(--fs-5);
   font-weight: var(--fw-400);
   padding: 13px 20px;
   border: 1px solid var(--jet);
@@ -145,7 +151,8 @@ export default {
 }
 
 .form-input::placeholder {
-  font-weight: var(--fw-500);
+  color: var(--light-gray-70);
+  font-weight: var(--fw-400);
 }
 
 .form-input:focus {

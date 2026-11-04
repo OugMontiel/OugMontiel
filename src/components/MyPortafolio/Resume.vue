@@ -79,7 +79,7 @@ export default {
 }
 
 .timeline-list {
-  font-size: var(--fs-6);
+  font-size: var(--fs-5);
   margin-left: 45px;
 }
 
@@ -92,15 +92,17 @@ export default {
 }
 
 .timeline-item-title {
-  font-size: var(--fs-6);
-  line-height: 1.3;
+  font-size: var(--fs-3);
+  line-height: 1.4;
   margin-bottom: 7px;
 }
 
 .timeline-list span {
   color: var(--vegas-gold);
-  font-weight: var(--fw-400);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-500);
   line-height: 1.6;
+  margin-bottom: 6px;
 }
 
 .timeline-item:not(:last-child)::before {
