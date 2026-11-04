@@ -7,17 +7,17 @@
 
       <div class="siderInfoRoles">
         <h1 class="name" title="Diego Montiel">
-          Diego Alejandro Montiel FLorez
+          Diego Alejandro Montiel Flórez
         </h1>
-        <div class="rolesContainer">
-          <p
+        <ul class="rolesContainer">
+          <li
             v-for="(role, index) in t('sidebar.roles')"
             :key="index"
             class="title"
           >
             {{ role }}
-          </p>
-        </div>
+          </li>
+        </ul>
       </div>
     </div>
 
@@ -27,7 +27,7 @@
       <ul class="sidebarContacts">
         <li class="sidebarContactItem">
           <div class="sidebarContactIcon">
-            <ion-icon name="mail-outline"></ion-icon>
+            <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
           </div>
 
           <div>
@@ -43,7 +43,10 @@
 
         <li class="sidebarContactItem">
           <div class="sidebarContactIcon">
-            <ion-icon name="phone-portrait-outline"></ion-icon>
+            <ion-icon
+              name="phone-portrait-outline"
+              aria-hidden="true"
+            ></ion-icon>
           </div>
 
           <div>
@@ -57,7 +60,7 @@
 
         <li class="sidebarContactItem">
           <div class="sidebarContactIcon">
-            <ion-icon name="calendar-outline"></ion-icon>
+            <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
           </div>
 
           <div>
@@ -71,7 +74,7 @@
 
         <li class="sidebarContactItem">
           <div class="sidebarContactIcon">
-            <ion-icon name="location-outline"></ion-icon>
+            <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
           </div>
 
           <div>
@@ -91,25 +94,42 @@
           <a
             href="https://www.linkedin.com/in/diego-alejandro-montiel-florez-data-science"
             class="sidebarSocialLink"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ir a mi perfil de LinkedIn"
           >
             <ion-icon
               name="logo-linkedin"
               class="sidebarlogoBlackAndWhite"
+              aria-hidden="true"
             ></ion-icon>
           </a>
         </li>
 
         <li class="sidebarSocialItem">
-          <a href="https://github.com/OugMontiel" class="sidebarSocialLink">
+          <a
+            href="https://github.com/OugMontiel"
+            class="sidebarSocialLink"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ir a mi perfil de GitHub"
+          >
             <ion-icon
               name="logo-github"
               class="sidebarlogoBlackAndWhite"
+              aria-hidden="true"
             ></ion-icon>
           </a>
         </li>
 
         <li class="sidebarSocialItem">
-          <a href="https://www.kaggle.com/ougmontiel" class="sidebarSocialLink">
+          <a
+            href="https://www.kaggle.com/ougmontiel"
+            class="sidebarSocialLink"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ir a mi perfil de Kaggle"
+          >
             <img
               src="https://www.kaggle.com/static/images/favicon.ico"
               alt="Kaggle"

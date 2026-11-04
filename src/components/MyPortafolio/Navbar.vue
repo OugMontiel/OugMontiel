@@ -1,13 +1,22 @@
 <template>
   <nav class="navbar" :class="{ open: isMenuOpen }">
-    <button v-if="!isMenuOpen" class="toggleButton" @click="toggleMenu">
+    <button
+      v-if="!isMenuOpen"
+      class="toggleButton"
+      type="button"
+      :aria-expanded="isMenuOpen"
+      aria-controls="menu"
+      @click="toggleMenu"
+    >
       {{ t('nav.menu') }}
     </button>
-    <ul class="navbarList">
+    <ul id="menu" class="navbarList">
       <li v-for="(link, index) in navLinks" :key="index">
         <button
           class="navbarLink"
+          type="button"
           :class="{ active: activePage === link.name }"
+          :aria-current="activePage === link.name ? 'page' : undefined"
           @click="setActivePage(link.name)"
         >
           {{ t(link.key) }}

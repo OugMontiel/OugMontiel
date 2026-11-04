@@ -48,10 +48,14 @@
           class="project-item active"
           :data-category="project.category"
         >
-          <a :href="project.link">
+          <a
+            :href="project.link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <figure class="project-img">
               <div class="project-item-icon-box">
-                <ion-icon name="eye-outline"></ion-icon>
+                <ion-icon name="eye-outline" aria-hidden="true"></ion-icon>
               </div>
               <img
                 :src="getPath(project.imgSrc)"

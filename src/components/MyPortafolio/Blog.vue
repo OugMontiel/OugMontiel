@@ -11,7 +11,7 @@
           v-for="(post, index) in t('blog.blogPosts')"
           :key="index"
         >
-          <a :href="post.link">
+          <a :href="post.link" target="_blank" rel="noopener noreferrer">
             <figure class="blog-banner-box">
               <img :src="getPath(post.imgSrc)" :alt="post.alt" loading="lazy" />
             </figure>
