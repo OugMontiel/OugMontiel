@@ -1,8 +1,8 @@
 <!-- Alert.vue -->
 <template>
-  <div class="alert" v-if="visible">
+  <div class="alert" role="alert" aria-live="assertive">
     <p>{{ message }}</p>
-    <button @click="closeAlert">Close</button>
+    <button type="button" @click="$emit('close')">Close</button>
   </div>
 </template>
 
@@ -14,16 +14,7 @@ export default {
       required: true,
     },
   },
-  data() {
-    return {
-      visible: true,
-    }
-  },
-  methods: {
-    closeAlert() {
-      this.visible = false
-    },
-  },
+  emits: ['close'],
 }
 </script>
 

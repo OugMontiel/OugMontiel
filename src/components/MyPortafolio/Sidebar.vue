@@ -7,17 +7,17 @@
 
       <div class="siderInfoRoles">
         <h1 class="name" title="Diego Montiel">
-          Diego Alejandro Montiel FLorez
+          Diego Alejandro Montiel Flórez
         </h1>
-        <div class="rolesContainer">
-          <p
+        <ul class="rolesContainer">
+          <li
             v-for="(role, index) in t('sidebar.roles')"
             :key="index"
             class="title"
           >
             {{ role }}
-          </p>
-        </div>
+          </li>
+        </ul>
       </div>
     </div>
 
@@ -27,7 +27,7 @@
       <ul class="sidebarContacts">
         <li class="sidebarContactItem">
           <div class="sidebarContactIcon">
-            <ion-icon name="mail-outline"></ion-icon>
+            <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
           </div>
 
           <div>
@@ -43,7 +43,10 @@
 
         <li class="sidebarContactItem">
           <div class="sidebarContactIcon">
-            <ion-icon name="phone-portrait-outline"></ion-icon>
+            <ion-icon
+              name="phone-portrait-outline"
+              aria-hidden="true"
+            ></ion-icon>
           </div>
 
           <div>
@@ -57,7 +60,7 @@
 
         <li class="sidebarContactItem">
           <div class="sidebarContactIcon">
-            <ion-icon name="calendar-outline"></ion-icon>
+            <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
           </div>
 
           <div>
@@ -71,7 +74,7 @@
 
         <li class="sidebarContactItem">
           <div class="sidebarContactIcon">
-            <ion-icon name="location-outline"></ion-icon>
+            <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
           </div>
 
           <div>
@@ -91,25 +94,42 @@
           <a
             href="https://www.linkedin.com/in/diego-alejandro-montiel-florez-data-science"
             class="sidebarSocialLink"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ir a mi perfil de LinkedIn"
           >
             <ion-icon
               name="logo-linkedin"
               class="sidebarlogoBlackAndWhite"
+              aria-hidden="true"
             ></ion-icon>
           </a>
         </li>
 
         <li class="sidebarSocialItem">
-          <a href="https://github.com/OugMontiel" class="sidebarSocialLink">
+          <a
+            href="https://github.com/OugMontiel"
+            class="sidebarSocialLink"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ir a mi perfil de GitHub"
+          >
             <ion-icon
               name="logo-github"
               class="sidebarlogoBlackAndWhite"
+              aria-hidden="true"
             ></ion-icon>
           </a>
         </li>
 
         <li class="sidebarSocialItem">
-          <a href="https://www.kaggle.com/ougmontiel" class="sidebarSocialLink">
+          <a
+            href="https://www.kaggle.com/ougmontiel"
+            class="sidebarSocialLink"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Ir a mi perfil de Kaggle"
+          >
             <img
               src="https://www.kaggle.com/static/images/favicon.ico"
               alt="Kaggle"
@@ -147,17 +167,17 @@ export default {
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  overflow: cover;
+  overflow: hidden;
 }
 
 .siderAvatarBox {
   background: var(--bg-gradient-onyx);
   border-radius: 1rem;
-  overflow: cover;
+  overflow: hidden;
 }
 .siderAvatarBox img {
   width: 100%;
-  overflow: cover;
+  object-fit: cover;
 }
 
 .siderInfoRoles {
@@ -169,52 +189,65 @@ export default {
 }
 .siderInfoRoles .name {
   color: var(--white-2);
-  font-size: var(--fs-1);
-  font-weight: var(--fw-500);
+  font-size: var(--fs-2);
+  font-weight: var(--fw-600);
   letter-spacing: -0.25px;
-  margin-bottom: 10px;
+  line-height: 1.3;
+  margin-bottom: 12px;
 }
 
 .rolesContainer {
   width: 100%;
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
 }
 .siderInfoRoles .title {
   color: var(--white-1);
   background: var(--onyx);
-  font-size: var(--fs-6);
-  font-weight: var(--fw-300);
+  font-size: var(--fs-7);
+  font-weight: var(--fw-400);
   width: max-content;
-  padding: 1em;
-  border-radius: 1em;
+  padding: 0.4rem 0.85rem;
+  border-radius: 0.6rem;
 }
 
 /* parte intermedia, info de contacto  */
 .sidebarContacts {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
   color: var(--light-gray-70);
 }
 
 .sidebarContactItem {
   display: flex;
-  gap: 1em;
-  height: 4em;
+  align-items: center;
+  gap: 1rem;
+  min-height: 3.5rem;
 }
 
 .sidebarContactIcon {
-  width: 2em;
-  height: 2em;
-  border-radius: 1em;
+  width: 2.25rem;
+  height: 2.25rem;
+  flex-shrink: 0;
+  border-radius: 0.75rem;
   display: flex;
   justify-content: center;
   align-items: center;
   background: var(--border-gradient-onyx);
   color: var(--orange-yellow-crayola);
 }
+.sidebarContactTitle {
+  font-size: var(--fs-8);
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
 .sidebarContactLink {
   color: var(--white-1);
+  font-size: var(--fs-6);
+  word-break: break-word;
 }
 
 /* parte final, Link de paguinas donde me encuentras  */
@@ -230,22 +263,31 @@ export default {
 .sidebarSocialItem .sidebarSocialLink {
   color: var(--light-gray-70);
   font-size: 18px;
+  transition: color var(--transition-1);
 }
 
 .sidebarSocialItem .sidebarSocialLink:hover {
-  color: var(--light-gray);
+  color: var(--orange-yellow-crayola);
 }
 
 .sidebarlogoBlackAndWhite {
+  width: 20px;
+  height: 20px;
+  color: var(--white-1);
+  transition: color 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+}
+
+img.sidebarlogoBlackAndWhite {
   filter: grayscale(100%) brightness(0) invert(1);
-  /* Blanco */
-  width: 18px;
-  height: 18px;
-  transition: filter 0.3s ease;
 }
 
 .sidebarlogoBlackAndWhite:hover {
-  filter: grayscale(100%) brightness(0);
-  /* Negro al hacer hover */
+  color: var(--orange-yellow-crayola);
+  transform: translateY(-2px);
+}
+
+img.sidebarlogoBlackAndWhite:hover {
+  filter: brightness(0) saturate(100%) invert(86%) sepia(35%) saturate(835%)
+    hue-rotate(345deg) brightness(103%) contrast(102%);
 }
 </style>

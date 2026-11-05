@@ -11,7 +11,7 @@
     >
       <div class="title-wrapper">
         <div class="icon-box">
-          <ion-icon :name="section.icon"></ion-icon>
+          <ion-icon :name="section.icon" aria-hidden="true"></ion-icon>
         </div>
         <h3 class="h3">{{ section.title }}</h3>
       </div>
@@ -23,7 +23,7 @@
           :key="idx"
         >
           <h4 class="h4 timeline-item-title">{{ item.title }}</h4>
-          <span>{{ item.date }}</span>
+          <time>{{ item.date }}</time>
           <p class="timeline-text">{{ item.description }}</p>
         </li>
       </ol>
@@ -37,7 +37,12 @@
           v-for="(skill, index) in t('resume.skills')"
           :key="index"
         >
-          <a :href="skill.link" target="_blank" rel="noreferrer">
+          <a
+            :href="skill.link"
+            target="_blank"
+            rel="noopener noreferrer"
+            :aria-label="skill.name"
+          >
             <img :src="skill.icon" :alt="skill.name" width="36" height="36" />
           </a>
         </li>
@@ -79,7 +84,7 @@ export default {
 }
 
 .timeline-list {
-  font-size: var(--fs-6);
+  font-size: var(--fs-5);
   margin-left: 45px;
 }
 
@@ -92,15 +97,17 @@ export default {
 }
 
 .timeline-item-title {
-  font-size: var(--fs-6);
-  line-height: 1.3;
+  font-size: var(--fs-3);
+  line-height: 1.4;
   margin-bottom: 7px;
 }
 
-.timeline-list span {
+.timeline-list time {
   color: var(--vegas-gold);
-  font-weight: var(--fw-400);
+  font-size: var(--fs-6);
+  font-weight: var(--fw-500);
   line-height: 1.6;
+  margin-bottom: 6px;
 }
 
 .timeline-item:not(:last-child)::before {

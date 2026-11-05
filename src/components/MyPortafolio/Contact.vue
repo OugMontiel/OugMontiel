@@ -7,36 +7,43 @@
     <section class="socials-contact">
       <div class="socials-column">
         <h3 class="h3">{{ t('contact.followMe') }}</h3>
-        <div class="socials-icons">
-          <a
-            v-for="social in t('contact.socials')"
-            :key="social.name"
-            :href="social.link"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img :src="social.icon" :alt="social.name" width="32" height="32" />
-          </a>
-        </div>
+        <ul class="socials-icons">
+          <li v-for="social in t('contact.socials')" :key="social.name">
+            <a
+              :href="social.link"
+              target="_blank"
+              rel="noopener noreferrer"
+              :aria-label="social.name"
+            >
+              <img
+                :src="social.icon"
+                :alt="social.name"
+                width="32"
+                height="32"
+              />
+            </a>
+          </li>
+        </ul>
       </div>
       <div class="contact-column">
         <h3 class="h3">{{ t('contact.letsTalk') }}</h3>
-        <div class="contact-icons">
-          <a
-            v-for="contact in t('contact.contacts')"
-            :key="contact.name"
-            :href="contact.link"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <img
-              :src="contact.icon"
-              :alt="contact.name"
-              width="32"
-              height="32"
-            />
-          </a>
-        </div>
+        <ul class="contact-icons">
+          <li v-for="contact in t('contact.contacts')" :key="contact.name">
+            <a
+              :href="contact.link"
+              target="_blank"
+              rel="noopener noreferrer"
+              :aria-label="contact.name"
+            >
+              <img
+                :src="contact.icon"
+                :alt="contact.name"
+                width="32"
+                height="32"
+              />
+            </a>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -45,28 +52,54 @@
 
       <form @submit.prevent="submitForm" class="form">
         <div class="input-wrapper">
-          <input
-            type="text"
-            v-model="form.fullname"
-            class="form-input"
-            :placeholder="t('contact.fullnamePlaceholder')"
-            required
-          />
-          <input
-            type="email"
-            v-model="form.email"
-            class="form-input"
-            :placeholder="t('contact.emailPlaceholder')"
-            required
-          />
+          <div>
+            <label for="contact-fullname" class="sr-only">
+              {{ t('contact.fullnamePlaceholder') }}
+            </label>
+            <input
+              id="contact-fullname"
+              type="text"
+              name="fullname"
+              autocomplete="name"
+              v-model="form.fullname"
+              class="form-input"
+              :placeholder="t('contact.fullnamePlaceholder')"
+              :aria-label="t('contact.fullnamePlaceholder')"
+              required
+            />
+          </div>
+          <div>
+            <label for="contact-email" class="sr-only">
+              {{ t('contact.emailPlaceholder') }}
+            </label>
+            <input
+              id="contact-email"
+              type="email"
+              name="email"
+              autocomplete="email"
+              v-model="form.email"
+              class="form-input"
+              :placeholder="t('contact.emailPlaceholder')"
+              :aria-label="t('contact.emailPlaceholder')"
+              required
+            />
+          </div>
         </div>
 
-        <textarea
-          v-model="form.message"
-          class="form-input"
-          :placeholder="t('contact.messagePlaceholder')"
-          required
-        ></textarea>
+        <div>
+          <label for="contact-message" class="sr-only">
+            {{ t('contact.messagePlaceholder') }}
+          </label>
+          <textarea
+            id="contact-message"
+            name="message"
+            v-model="form.message"
+            class="form-input"
+            :placeholder="t('contact.messagePlaceholder')"
+            :aria-label="t('contact.messagePlaceholder')"
+            required
+          ></textarea>
+        </div>
 
         <!-- Mostrar alerta si el formulario no está disponible -->
         <Alert
@@ -76,7 +109,7 @@
         />
 
         <button class="form-btn" type="submit">
-          <ion-icon name="paper-plane"></ion-icon>
+          <ion-icon name="paper-plane" aria-hidden="true"></ion-icon>
           <span>{{ t('contact.sendBtn') }}</span>
         </button>
       </form>
@@ -134,9 +167,15 @@ export default {
   margin-bottom: 25px;
 }
 
+@media (min-width: 768px) {
+  .input-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .form-input {
   color: var(--white-2);
-  font-size: var(--fs-6);
+  font-size: var(--fs-5);
   font-weight: var(--fw-400);
   padding: 13px 20px;
   border: 1px solid var(--jet);
@@ -145,7 +184,8 @@ export default {
 }
 
 .form-input::placeholder {
-  font-weight: var(--fw-500);
+  color: var(--light-gray-70);
+  font-weight: var(--fw-400);
 }
 
 .form-input:focus {

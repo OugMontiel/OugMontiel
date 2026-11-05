@@ -11,7 +11,7 @@
           v-for="(post, index) in t('blog.blogPosts')"
           :key="index"
         >
-          <a :href="post.link">
+          <a :href="post.link" target="_blank" rel="noopener noreferrer">
             <figure class="blog-banner-box">
               <img :src="getPath(post.imgSrc)" :alt="post.alt" loading="lazy" />
             </figure>
@@ -58,8 +58,8 @@ export default {
 
 .blog-posts-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(40%, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
 }
 
 .blog-post-item > a {
@@ -99,7 +99,7 @@ export default {
 }
 
 .blog-content {
-  padding: 15px;
+  padding: 1.5rem;
 }
 
 .blog-meta {
@@ -113,7 +113,7 @@ export default {
 .blog-meta :is(.blog-category, time) {
   color: var(--light-gray-70);
   font-size: var(--fs-6);
-  font-weight: var(--fw-300);
+  font-weight: var(--fw-400);
 }
 
 .blog-meta .dot {
@@ -135,8 +135,8 @@ export default {
 
 .blog-text {
   color: var(--light-gray);
-  font-size: var(--fs-6);
-  font-weight: var(--fw-300);
-  line-height: 1.6;
+  font-size: var(--fs-5);
+  font-weight: var(--fw-400);
+  line-height: 1.65;
 }
 </style>
