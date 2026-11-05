@@ -126,7 +126,9 @@ export default {
   font-size: var(--fs-7);
   font-weight: var(--fw-500);
   cursor: pointer;
-  transition: border-color var(--transition-1), color var(--transition-1);
+  transition:
+    border-color var(--transition-1),
+    color var(--transition-1);
 }
 
 .langButton:hover {
