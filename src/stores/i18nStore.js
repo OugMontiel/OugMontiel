@@ -437,21 +437,18 @@ export const useI18nStore = defineStore('i18n', {
                 {
                   title: 'Fullstack Developer — Okorum',
                   date: 'Jun 2025 — Presente',
-                  description:
-                    'Desarrollo de métricas clave de negocio, paquetes analíticos internos y funcionalidades fullstack de extremo a extremo. Responsable del diseño de APIs escalables, optimización de flujos de procesamiento de datos e integración de módulos analíticos para la toma de decisiones estratégicas.',
+                  description: 'Desarrollé un paquete analítico interno (librería privada en NPM) que procesa más de 200,000 interacciones diarias para el ecosistema digital de la compañía. Arquitecté la solución Fullstack con Node.js, MongoDB y React, implementando visualizaciones avanzadas con Plotly.js para agilizar decisiones estratégicas.'
                 },
                 {
                   title:
-                    'Desarrollador de Software (Voluntariado) — YMCA Santander',
+                    'Desarrollador de Software — YMCA Santander',
                   date: 'Oct 2024 — Jul 2026',
-                  description:
-                    'Lideré el rediseño de su sitio web institucional y plataforma interna de gestión, modernizando la experiencia de usuario, digitalizando flujos administrativos y mejorando la mantenibilidad del sistema.',
+                 description: 'Lideré la migración desde WordPress hacia una arquitectura a medida (Vue.js, Node.js, MongoDB), desarrollando una web pública y un sistema de gestión privado. Gestioné el despliegue en servidores Linux con Docker, modernizando la UX y la eficiencia operativa de la ONG.'
                 },
                 {
                   title: 'Analista de Datos — Clavijo & Asociados SAS',
                   date: 'Feb 2022 — Mar 2023',
-                  description:
-                    'Participé en la optimización de recursos mediante modelos predictivos y herramientas de análisis con Python, SQL y Power BI. Automatizando informes, reduje en un 80% el tiempo de consulta de datos, monitoreé el 100% de los pagos pendientes y generé un ahorro del 30% en el presupuesto anual.',
+                 description: 'Transformé procesos contables manuales automatizando el análisis de datos (CSVs) con Python (Pandas, NumPy). Optimicé la gestión de cobranza y el monitoreo del 100% de pagos, reduciendo en un 80% los tiempos de respuesta y ahorrando un 30% del presupuesto anual.'
                 },
               ],
             },
