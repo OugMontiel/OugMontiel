@@ -364,8 +364,8 @@ export const useI18nStore = defineStore('i18n', {
         },
         about: {
           title: 'Sobre mí',
-          bio: 'Economista y Desarrollador Backend / Fullstack enfocado en transformar retos complejos de negocio en productos escalables basados en datos, APIs robustas y pipelines automatizados. Actualmente construyendo MonyMonty, un SaaS de finanzas personales que une el modelado económico con arquitectura de software moderna.',
-          bio2: 'También soy judoca, ajedrecista y emprendedor. Aplico la disciplina y el pensamiento estratégico del judo y el ajedrez a la ingeniería de software, valorando el tiempo con mis seres queridos y las actividades al aire libre como el senderismo para recargar energías.',
+          bio: 'Construyo desde los cimientos. Soy un economista que aprendió a orquestar servidores. Mi enfoque como desarrollador fullstack es directo: tomar los nudos operativos de un negocio y convertirlos en APIs limpias, pipelines fluidos y productos que funcionen de manera impecable. Hoy concentro esa energía en MonyMonty, un SaaS diseñado para que la gestión financiera deje de ser una carga y se convierta en una herramienta real de empoderamiento.',
+          bio2: 'Pero no todo es lógica matemática. Valoro profundamente la empatía, el tiempo bien invertido y el trabajo con personas que saben escuchar. Fuera de la terminal de comandos, recargo mi energía buscando nuevos miradores en la montaña, disfrutando de un buen baile y compartiendo los detalles dulces de la vida con mi gente.',
           servicesTitle: 'Lo que hago',
           services: [
             {
