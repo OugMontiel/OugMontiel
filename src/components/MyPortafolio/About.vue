@@ -115,9 +115,9 @@ export default {
 <style>
 .aboutText {
   color: var(--light-gray);
-  font-size: var(--fs-5);
-  font-weight: var(--fw-300);
-  line-height: 1.6;
+  font-size: var(--fs-4);
+  font-weight: var(--fw-400);
+  line-height: 1.7;
 }
 
 .aboutText p {
@@ -138,14 +138,14 @@ export default {
 
 .service-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 20px;
 }
 
 .service-item {
   position: relative;
   background: var(--border-gradient-onyx);
-  padding: 20px;
+  padding: 24px;
   border-radius: 14px;
   box-shadow: var(--shadow-2);
   z-index: 1;
@@ -178,9 +178,9 @@ export default {
 
 .service-item-text {
   color: var(--light-gray);
-  font-size: var(--fs-6);
-  font-weight: var(--fw-3);
-  line-height: 1.6;
+  font-size: var(--fs-5);
+  font-weight: var(--fw-400);
+  line-height: 1.65;
 }
 
 /**

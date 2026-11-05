@@ -110,9 +110,12 @@ const sharedContacts = [
 ]
 
 export const useI18nStore = defineStore('i18n', {
-  state: () => ({
-    currentLanguage: localStorage.getItem('lang') || 'en',
-    dictionaryEn: {
+  state: () => {
+    const initialLang = localStorage.getItem('lang') || 'en'
+    document.documentElement.lang = initialLang
+    return {
+      currentLanguage: initialLang,
+      dictionaryEn: {
       nav: {
         about: 'About',
         resume: 'Resume',
@@ -572,7 +575,8 @@ export const useI18nStore = defineStore('i18n', {
         contacts: sharedContacts,
       },
     },
-  }),
+    }
+  },
 
   getters: {
     t: state => {
@@ -600,6 +604,7 @@ export const useI18nStore = defineStore('i18n', {
     toggleLanguage() {
       this.currentLanguage = this.currentLanguage === 'en' ? 'es' : 'en'
       localStorage.setItem('lang', this.currentLanguage)
+      document.documentElement.lang = this.currentLanguage
     },
   },
 })

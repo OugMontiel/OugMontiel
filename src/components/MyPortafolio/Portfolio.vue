@@ -48,10 +48,14 @@
           class="project-item active"
           :data-category="project.category"
         >
-          <a :href="project.link">
+          <a
+            :href="project.link"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <figure class="project-img">
               <div class="project-item-icon-box">
-                <ion-icon name="eye-outline"></ion-icon>
+                <ion-icon name="eye-outline" aria-hidden="true"></ion-icon>
               </div>
               <img
                 :src="getPath(project.imgSrc)"
@@ -179,7 +183,7 @@ export default {
 
 .project-list {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 30px;
   margin-bottom: 10px;
 }
@@ -207,7 +211,6 @@ export default {
 }
 
 .project-img {
-  padding: 1em;
   position: relative;
   width: 100%;
   height: 200px;
@@ -277,15 +280,15 @@ export default {
 
 .project-title {
   color: var(--white-2);
-  font-size: var(--fs-5);
-  font-weight: var(--fw-400);
-  text-transform: capitalize;
-  line-height: 1.3;
+  font-size: var(--fs-3);
+  font-weight: var(--fw-500);
+  line-height: 1.4;
+  margin-bottom: 4px;
 }
 
 .project-category {
   color: var(--light-gray-70);
   font-size: var(--fs-6);
-  font-weight: var(--fw-300);
+  font-weight: var(--fw-400);
 }
 </style>
