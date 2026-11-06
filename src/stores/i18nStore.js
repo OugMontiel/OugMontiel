@@ -437,18 +437,26 @@ export const useI18nStore = defineStore('i18n', {
                 {
                   title: 'Fullstack Developer — Okorum',
                   date: 'Jun 2025 — Presente',
-                  description: 'Desarrollé un paquete analítico interno (librería privada en NPM) que procesa más de 200,000 interacciones diarias para el ecosistema digital de la compañía. Arquitecté la solución Fullstack con Node.js, MongoDB y React, implementando visualizaciones avanzadas con Plotly.js para agilizar decisiones estratégicas.'
+                  description:
+                    'Desarrollé un paquete analítico interno (librería privada en NPM) que procesa más de 200,000 interacciones diarias para el ecosistema digital de la compañía. Arquitecté la solución Fullstack con Node.js, MongoDB y React, implementando visualizaciones avanzadas con Plotly.js para agilizar decisiones estratégicas.',
                 },
                 {
-                  title:
-                    'Desarrollador de Software — YMCA Santander',
+                  title: 'Desarrollador de Software — YMCA Santander',
                   date: 'Oct 2024 — Jul 2026',
-                 description: 'Lideré la migración desde WordPress hacia una arquitectura a medida (Vue.js, Node.js, MongoDB), desarrollando una web pública y un sistema de gestión privado. Gestioné el despliegue en servidores Linux con Docker, modernizando la UX y la eficiencia operativa de la ONG.'
+                  description:
+                    'Lideré la migración desde WordPress hacia una arquitectura a medida (Vue.js, Node.js, MongoDB), desarrollando una web pública y un sistema de gestión privado. Gestioné el despliegue en servidores Linux con Docker, modernizando la UX y la eficiencia operativa de la ONG.',
+                },
+                {
+                  title: 'Consultor Técnico & Desarrollador Freelance',
+                  date: '2023 — Presente', // Ajusta la fecha según consideres
+                  description:
+                    'Desarrollo de soluciones tecnológicas a medida. Construcción de modelos econométricos (ARIMA en R) para análisis bursátil, diseño de pipelines de datos para pruebas de concepto empresariales (ETL), y desarrollo de arquitecturas backend para sistemas de gestión privados.',
                 },
                 {
                   title: 'Analista de Datos — Clavijo & Asociados SAS',
                   date: 'Feb 2022 — Mar 2023',
-                 description: 'Transformé procesos contables manuales automatizando el análisis de datos (CSVs) con Python (Pandas, NumPy). Optimicé la gestión de cobranza y el monitoreo del 100% de pagos, reduciendo en un 80% los tiempos de respuesta y ahorrando un 30% del presupuesto anual.'
+                  description:
+                    'Transformé procesos contables manuales automatizando el análisis de datos (CSVs) con Python (Pandas, NumPy). Optimicé la gestión de cobranza y el monitoreo del 100% de pagos, reduciendo en un 80% los tiempos de respuesta y ahorrando un 30% del presupuesto anual.',
                 },
               ],
             },
@@ -497,26 +505,14 @@ export const useI18nStore = defineStore('i18n', {
             {
               title: 'MonyMonty — SaaS de Finanzas Personales',
               category: 'Desarrollo web',
-              imgSrc: '/imgProyectos/project-1.jpg',
-              link: 'https://github.com/OugMontiel',
+              imgSrc: '/imgProyectos/loguinMonyMonty.png',
+              link: 'https://monymonty.monteflor.co/',
             },
             {
-              title: 'Técnicas de pronóstico',
-              category: 'Series de Tiempo',
-              imgSrc: '/imgProyectos/project-time-series-1.webp',
-              link: 'https://github.com/OugMontiel/ModeloARIMA-Fase-2',
-            },
-            {
-              title: 'Control y registro de todos los equipos',
-              category: 'Desarrollador Backend',
-              imgSrc: '/imgProyectos/project-backend-developer-1.webp',
-              link: 'https://github.com/OugMontiel/projectTeamSoccer-Campus',
-            },
-            {
-              title: 'Ingeniería de datos',
-              category: 'Pipelines',
-              imgSrc: '/imgProyectos/project-pipelines-1.webp',
-              link: 'https://github.com/OugMontiel/Pragma',
+              title: 'Sitio Web Público — YMCA Santander',
+              category: 'Desarrollo web',
+              imgSrc: '/imgProyectos/ymcaWeb.png', // Toma un pantallazo de la web de YMCA y guárdalo aquí
+              link: 'https://ymcasantander.org/', // Reemplaza con el enlace real
             },
           ],
         },
