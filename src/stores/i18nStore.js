@@ -511,8 +511,8 @@ export const useI18nStore = defineStore('i18n', {
             {
               title: 'Sitio Web Público — YMCA Santander',
               category: 'Desarrollo web',
-              imgSrc: '/imgProyectos/ymcaWeb.png', // Toma un pantallazo de la web de YMCA y guárdalo aquí
-              link: 'https://ymcasantander.org/', // Reemplaza con el enlace real
+              imgSrc: '/imgProyectos/ymcaWeb.webp',
+              link: 'https://ymcasantander.org/',
             },
           ],
         },
