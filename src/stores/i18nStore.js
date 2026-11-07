@@ -60,6 +60,11 @@ const createSkills = categories => [
         link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
       },
       {
+        name: 'React',
+        icon: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg',
+        link: 'https://reactjs.org/',
+      },
+      {
         name: 'Vue.js',
         icon: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/vuejs-colored.svg',
         link: 'https://vuejs.org/',
@@ -535,8 +540,7 @@ export const useI18nStore = defineStore('i18n', {
                     'Formación intensiva en ingeniería de software con enfoque en arquitectura backend, creación de APIs RESTful, manejo de bases de datos, tecnologías frontend (Vue) y prácticas DevOps de despliegue.',
                 },
                 {
-                  title:
-                    'Economía — Universidad Industrial de Santander (UIS)',
+                  title: 'Economía — Universidad Industrial de Santander (UIS)',
                   date: '2016 — 2022',
                   description:
                     'Economista especializado en modelado econométrico avanzado, pronósticos y análisis cuantitativo con R, Python y Stata. Enfoque en transformar datos en insights estratégicos.',
