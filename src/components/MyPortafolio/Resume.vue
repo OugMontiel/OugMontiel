@@ -31,22 +31,39 @@
 
     <section class="skill">
       <h3 class="h3 skills-title">{{ t('resume.skillsTitle') }}</h3>
-      <ul class="skills-list content-card">
-        <li
-          class="skills-item"
-          v-for="(skill, index) in t('resume.skills')"
+
+      <div class="skills-content content-card">
+        <div
+          class="skill-category"
+          v-for="(group, index) in t('resume.skills')"
           :key="index"
         >
-          <a
-            :href="skill.link"
-            target="_blank"
-            rel="noopener noreferrer"
-            :aria-label="skill.name"
-          >
-            <img :src="skill.icon" :alt="skill.name" width="36" height="36" />
-          </a>
-        </li>
-      </ul>
+          <h4 class="h4 skill-category-title">{{ group.category }}</h4>
+
+          <ul class="skills-list">
+            <li
+              class="skills-item"
+              v-for="(skill, idx) in group.list"
+              :key="idx"
+            >
+              <a
+                :href="skill.link"
+                target="_blank"
+                rel="noopener noreferrer"
+                :aria-label="skill.name"
+                :title="skill.name"
+              >
+                <img
+                  :src="skill.icon"
+                  :alt="skill.name"
+                  width="36"
+                  height="36"
+                />
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </section>
   </article>
 </template>
@@ -146,14 +163,40 @@ export default {
   margin-bottom: 20px;
 }
 
-.skills-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-  padding: 20px;
+.skills-content {
+  padding: 25px;
+  cursor: default;
 }
 
-.skills-item:not(:last-child) {
+.skill-category:not(:last-child) {
+  margin-bottom: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--jet);
+}
+
+.skill-category-title {
+  color: var(--white-2);
+  font-size: var(--fs-4);
+  font-weight: var(--fw-500);
   margin-bottom: 15px;
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 15px;
+  align-items: center;
+}
+
+.skills-item a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform var(--transition-1);
+}
+
+.skills-item a:hover {
+  transform: scale(1.12);
 }
 
 .skill .title-wrapper {

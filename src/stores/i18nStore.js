@@ -2,69 +2,109 @@ import { defineStore } from 'pinia'
 
 const sharedSkills = [
   {
-    name: 'Python',
-    icon: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg',
-    link: 'https://www.python.org/',
+    category: 'Backend, Bases de Datos & DevOps',
+    list: [
+      {
+        name: 'Python',
+        icon: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg',
+        link: 'https://www.python.org/',
+      },
+      {
+        name: 'Node.js',
+        icon: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nodejs-colored.svg',
+        link: 'https://nodejs.org/',
+      },
+      {
+        name: 'Express.js',
+        icon: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/express-colored.svg',
+        link: 'https://expressjs.com/',
+      },
+      {
+        name: 'MongoDB',
+        icon: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mongodb-colored.svg',
+        link: 'https://www.mongodb.com/',
+      },
+      {
+        name: 'MySQL',
+        icon: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mysql-colored.svg',
+        link: 'https://www.mysql.com/',
+      },
+      {
+        name: 'Docker',
+        icon: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/docker-colored.svg',
+        link: 'https://www.docker.com/',
+      },
+      {
+        name: 'Git',
+        icon: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/git-colored.svg',
+        link: 'https://git-scm.com/',
+      },
+      {
+        name: 'GitHub',
+        icon: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/socials/github-dark.svg',
+        link: 'https://github.com/',
+      },
+      {
+        name: 'GitLab',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg',
+        link: 'https://about.gitlab.com/',
+      },
+    ],
   },
   {
-    name: 'Git',
-    icon: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/git-colored.svg',
-    link: 'https://git-scm.com/',
+    category: 'Frontend & UI',
+    list: [
+      {
+        name: 'JavaScript',
+        icon: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg',
+        link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+      },
+      {
+        name: 'Vue.js',
+        icon: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/vuejs-colored.svg',
+        link: 'https://vuejs.org/',
+      },
+      {
+        name: 'HTML5',
+        icon: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/html5-colored.svg',
+        link: 'https://developer.mozilla.org/en-US/docs/Glossary/HTML5',
+      },
+      {
+        name: 'CSS3',
+        icon: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/css3-colored.svg',
+        link: 'https://developer.mozilla.org/en-US/docs/Web/CSS',
+      },
+    ],
   },
   {
-    name: 'Docker',
-    icon: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/docker-colored.svg',
-    link: 'https://www.docker.com/',
-  },
-  {
-    name: 'Node.js',
-    icon: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nodejs-colored.svg',
-    link: 'https://nodejs.org/',
-  },
-  {
-    name: 'Express.js',
-    icon: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/express-colored.svg',
-    link: 'https://expressjs.com/',
-  },
-  {
-    name: 'MongoDB',
-    icon: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mongodb-colored.svg',
-    link: 'https://www.mongodb.com/',
-  },
-  {
-    name: 'MySQL',
-    icon: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mysql-colored.svg',
-    link: 'https://www.mysql.com/',
-  },
-  {
-    name: 'AWS',
-    icon: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/aws-colored.svg',
-    link: 'https://aws.amazon.com/',
-  },
-  {
-    name: 'Tableau',
-    icon: 'https://www.tableau.com//themes/custom/tableau_www/favicon.ico',
-    link: 'https://www.tableau.com/',
-  },
-  {
-    name: 'R',
-    icon: 'https://www.r-project.org/favicon-32x32.png',
-    link: 'https://www.r-project.org/',
-  },
-  {
-    name: 'Stata',
-    icon: 'https://www.stata.com/includes/images/stata-logo-blue.svg',
-    link: 'https://www.stata.com/',
-  },
-  {
-    name: 'Jupyter',
-    icon: 'https://jupyter.org/favicon.ico',
-    link: 'https://jupyter.org/',
-  },
-  {
-    name: 'Matplotlib',
-    icon: 'https://matplotlib.org/_static/favicon.ico',
-    link: 'https://www.matplotlib.org/',
+    category: 'Data & Econometría',
+    list: [
+      {
+        name: 'R',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg',
+        link: 'https://www.r-project.org/',
+      },
+      {
+        name: 'Stata',
+        icon: 'https://www.stata.com/includes/images/stata-logo-blue.svg',
+        link: 'https://www.stata.com/',
+      },
+      {
+        name: 'Power BI',
+        icon: 'https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg',
+        link: 'https://powerbi.microsoft.com/',
+      },
+      {
+        name: 'Tableau',
+        icon: 'https://www.tableau.com/themes/custom/tableau_www/favicon.ico',
+        link: 'https://www.tableau.com/',
+      },
+      {
+        name: 'Excel',
+        icon: 'https://upload.wikimedia.org/wikipedia/commons/e/e3/Microsoft_Office_Excel_%282019%E2%80%932025%29.svg',
+        link: 'https://www.microsoft.com/excel',
+      },
+    ],
   },
 ]
 
