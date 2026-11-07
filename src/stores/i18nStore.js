@@ -465,23 +465,41 @@ export const useI18nStore = defineStore('i18n', {
               icon: 'book-outline',
               items: [
                 {
-                  title: 'Formación en Desarrollo de Software — Campuslands',
+                  title: 'Desarrollador de Software — Campuslands',
                   date: '2024',
                   description:
-                    'Formación intensiva en ingeniería de software con enfoque en arquitectura backend, creación de APIs RESTful, manejo de bases de datos SQL y NoSQL, tecnologías frontend (HTML, CSS, JavaScript, Vue) y prácticas DevOps de despliegue.',
+                    'Formación intensiva en ingeniería de software con enfoque en arquitectura backend, creación de APIs RESTful, manejo de bases de datos, tecnologías frontend (Vue) y prácticas DevOps de despliegue.',
                 },
                 {
                   title:
-                    'Pregrado en Economía — Universidad Industrial de Santander (UIS)',
+                    'Economía — Universidad Industrial de Santander (UIS)',
                   date: '2016 — 2022',
                   description:
-                    'Economista especializado en modelado econométrico avanzado, pronósticos y análisis cuantitativo con R, Python y Stata. Enfocado en transformar datos complejos en insights estratégicos para políticas públicas, consultoría financiera y estudios de mercado.',
+                    'Economista especializado en modelado econométrico avanzado, pronósticos y análisis cuantitativo con R, Python y Stata. Enfoque en transformar datos en insights estratégicos.',
+                },
+              ],
+            },
+            {
+              title: 'Certificaciones y Cursos',
+              icon: 'medal-outline',
+              items: [
+                {
+                  title: 'Power BI & Business Intelligence — UNIMINUTO',
+                  date: '2021',
+                  description:
+                    'Creación de dashboards interactivos, modelado y administración de bases de datos para análisis estratégico.',
                 },
                 {
-                  title: 'UNIMINUTO',
-                  date: '08/2021 — 12/2021',
+                  title: 'Programación Desde Cero Latam — Egg',
+                  date: '2023',
                   description:
-                    'Excel y Power BI para análisis de datos y business intelligence. Capacitado en la creación de dashboards interactivos, modelado y almacenamiento eficiente de datos, y administración de bases de datos relacionales y no relacionales.',
+                    'Fundamentos de programación, algoritmos y lógica computacional.',
+                },
+                {
+                  title: 'Introducción a SQL — Sololearn',
+                  date: '2023',
+                  description:
+                    'Manejo de bases de datos relacionales y consultas estructuradas.',
                 },
               ],
             },
