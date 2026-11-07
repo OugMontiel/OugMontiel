@@ -48,11 +48,7 @@
           class="project-item active"
           :data-category="project.category"
         >
-          <a
-            :href="project.link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a :href="project.link" target="_blank" rel="noopener noreferrer">
             <figure class="project-img">
               <div class="project-item-icon-box">
                 <ion-icon name="eye-outline" aria-hidden="true"></ion-icon>
@@ -76,7 +72,7 @@
 import { mapState } from 'pinia'
 import { useI18nStore } from '../../stores/i18nStore'
 
-const getPath = (path) => import.meta.env.BASE_URL + path.replace(/^\//, '')
+const getPath = path => import.meta.env.BASE_URL + path.replace(/^\//, '')
 
 export default {
   name: 'PortfolioMyPortafolio',
