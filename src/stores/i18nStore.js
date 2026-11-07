@@ -1,8 +1,8 @@
 import { defineStore } from 'pinia'
 
-const sharedSkills = [
+const createSkills = categories => [
   {
-    category: 'Backend, Bases de Datos & DevOps',
+    category: categories.backend,
     list: [
       {
         name: 'Python',
@@ -52,7 +52,7 @@ const sharedSkills = [
     ],
   },
   {
-    category: 'Frontend & UI',
+    category: categories.frontend,
     list: [
       {
         name: 'JavaScript',
@@ -77,7 +77,7 @@ const sharedSkills = [
     ],
   },
   {
-    category: 'Data & Econometría',
+    category: categories.data,
     list: [
       {
         name: 'R',
@@ -107,6 +107,18 @@ const sharedSkills = [
     ],
   },
 ]
+
+const skillsEn = createSkills({
+  backend: 'Backend, Databases & DevOps',
+  frontend: 'Frontend & UI',
+  data: 'Data & Econometrics',
+})
+
+const skillsEs = createSkills({
+  backend: 'Backend, Bases de Datos & DevOps',
+  frontend: 'Frontend & UI',
+  data: 'Data & Econometría',
+})
 
 const sharedSocials = [
   {
@@ -174,8 +186,8 @@ export const useI18nStore = defineStore('i18n', {
         },
         about: {
           title: 'About me',
-          bio: 'Economist and Backend / Fullstack Developer focused on transforming complex business challenges into scalable data-driven products, robust APIs, and automated pipelines. Currently building MonyMonty, a personal finance SaaS that bridges economic modeling with modern software architecture.',
-          bio2: 'I’m also a judoka, chess player, and entrepreneur. I apply the discipline and strategic thinking of judo and chess to software engineering, while valuing time with loved ones and outdoor activities like hiking to recharge.',
+          bio: 'I build from the ground up. I am an economist who learned to orchestrate servers. My approach as a Backend / Fullstack Developer is straightforward: untangling complex operational bottlenecks and turning them into clean APIs, seamless data pipelines, and products that run flawlessly. Today, I channel that energy into MonyMonty, a Personal Finance SaaS designed to turn financial management from a burden into a true tool for empowerment.',
+          bio2: 'Still, not everything comes down to mathematical logic. I deeply value empathy, time well spent, and collaborating with people who truly know how to listen. Away from the command line, I recharge by hiking up to new mountain viewpoints, enjoying a good dance, and sharing life’s sweet moments with the people closest to me.',
           servicesTitle: "What I'm doing",
           services: [
             {
@@ -183,56 +195,56 @@ export const useI18nStore = defineStore('i18n', {
               alt: 'Design icon',
               title: 'Web design',
               description:
-                'The most modern and high-quality design made at a professional level.',
+                'Modern, high-quality design crafted at a professional level.',
             },
             {
               icon: 'icon-dev.svg',
               alt: 'Web development icon',
               title: 'Web development',
               description:
-                'High-quality development of sites at the professional level.',
+                'High-quality development of web applications at a professional level.',
             },
             {
               icon: 'icon-economi.svg',
               alt: 'Econometric modeling icon',
               title: 'Econometric Modeling',
               description:
-                'Design and analysis of econometric models for forecasting and data analysis.',
+                'Design and analysis of econometric models for forecasting and quantitative data analysis.',
             },
             {
               icon: 'icon-api.svg',
               alt: 'API development icon',
               title: 'API Development',
               description:
-                'Creation of efficient and scalable APIs for web and mobile applications.',
+                'Engineering efficient and scalable APIs for web and mobile applications.',
             },
             {
               icon: 'icon-maching.svg',
               alt: 'Machine learning icon',
               title: 'Machine Learning',
               description:
-                'Development of machine learning models to automate and enhance processes.',
+                'Developing machine learning models to automate and optimize business processes.',
             },
             {
               icon: 'icon-visualization.svg',
               alt: 'Data visualization icon',
               title: 'Data Visualization',
               description:
-                'Creation of dashboards and visual reports to interpret complex data.',
+                'Building interactive dashboards and visual reports to interpret complex datasets.',
             },
             {
               icon: 'icon-time-serie.svg',
               alt: 'Time series icon',
               title: 'Time Series',
               description:
-                'Developing models to predict trends and patterns in time-series data.',
+                'Developing forecasting models to predict trends and patterns in time-series data.',
             },
             {
               icon: 'icon-pipeline.svg',
               alt: 'Data pipeline icon',
               title: 'Creation of Data Pipelines',
               description:
-                'Building pipelines to automate data extraction, transformation, and loading processes.',
+                'Building automated pipelines for data extraction, transformation, and loading (ETL).',
             },
           ],
         },
@@ -248,19 +260,25 @@ export const useI18nStore = defineStore('i18n', {
                   title: 'Fullstack Developer — Okorum',
                   date: 'Jun 2025 — Present',
                   description:
-                    'Development of key business metrics, internal analytical packages, and end-to-end fullstack features. Responsible for designing scalable APIs, optimizing data processing workflows, and integrating analytical modules for strategic decision-making.',
+                    'Engineered an internal analytics package (private NPM library) processing over 200,000 daily interactions across the company’s digital ecosystem. Architected the end-to-end Fullstack solution using Node.js, MongoDB, and React, implementing advanced Plotly.js visualizations to accelerate data-driven decision making.',
                 },
                 {
-                  title: 'Software Developer (Volunteer) — YMCA Santander',
+                  title: 'Software Developer — YMCA Santander',
                   date: 'Oct 2024 — Jul 2026',
                   description:
-                    'Led the redesign of the institutional website and internal management platform, modernizing user experience, digitizing administrative workflows, and improving platform maintainability.',
+                    'Led the migration from legacy WordPress to a custom fullstack architecture (Vue.js, Node.js, MongoDB), delivering both a public-facing web platform and a private internal management system. Orchestrated containerized deployments on Linux servers using Docker, modernizing UX and operational efficiency across the NGO.',
+                },
+                {
+                  title: 'Technical Consultant & Freelance Developer',
+                  date: '2023 — Present',
+                  description:
+                    'Architecting and delivering custom technology solutions. Building econometric forecasting models (ARIMA in R) for stock market analysis, designing automated ETL data pipelines for enterprise proofs of concept (PoCs), and engineering backend architectures for private management systems.',
                 },
                 {
                   title: 'Data Analyst — Clavijo & Asociados SAS',
                   date: 'Feb 2022 — Mar 2023',
                   description:
-                    'Participated in resource optimization through predictive modeling and analytics tools using Python, SQL, and Power BI. Automated reporting workflows, reducing data query time by 80%, monitoring 100% of pending payments, and generating a 30% savings in the annual budget.',
+                    'Transformed manual accounting workflows by automating CSV data analysis pipelines using Python (Pandas, NumPy). Streamlined collections management and achieved 100% payment tracking coverage, slashing query turnaround times by 80% and driving a 30% savings in the annual budget.',
                 },
               ],
             },
@@ -269,28 +287,46 @@ export const useI18nStore = defineStore('i18n', {
               icon: 'book-outline',
               items: [
                 {
-                  title: 'Software Development Training — Campuslands',
+                  title: 'Software Developer — Campuslands',
                   date: '2024',
                   description:
-                    'Intensive software engineering training focused on backend architecture, RESTful API development, SQL and NoSQL database management, frontend technologies (HTML, CSS, JavaScript, Vue), and DevOps deployment practices.',
+                    'Intensive software engineering training focused on backend architecture, RESTful API development, database management, frontend technologies (Vue.js), and DevOps deployment practices.',
                 },
                 {
                   title:
-                    'B.S. in Economics — Universidad Industrial de Santander (UIS)',
+                    "Bachelor's Degree in Economics — Universidad Industrial de Santander (UIS)",
                   date: '2016 — 2022',
                   description:
-                    'Economist specialized in advanced econometric modeling, forecasting, and quantitative analysis using R, Python, and Stata. Focused on transforming complex datasets into strategic insights for public policy, financial consulting, and market analysis.',
+                    'Economist specialized in advanced econometric modeling, forecasting, and quantitative analysis using R, Python, and Stata. Focused on transforming complex data into strategic insights for data-driven decision making.',
+                },
+              ],
+            },
+            {
+              title: 'Certifications & Courses',
+              icon: 'medal-outline',
+              items: [
+                {
+                  title: 'Power BI & Business Intelligence — UNIMINUTO',
+                  date: '2021',
+                  description:
+                    'Building interactive dashboards, data modeling, and database administration for strategic analytics.',
                 },
                 {
-                  title: 'UNIMINUTO',
-                  date: '08/2021 — 12/2021',
+                  title: 'Programming from Scratch Latam — Egg',
+                  date: '2023',
                   description:
-                    'Excel and Power BI for data analysis and business intelligence. Trained in creating interactive dashboards, efficient data modeling and storage, and managing relational and non-relational databases.',
+                    'Programming fundamentals, algorithms, and computational logic.',
+                },
+                {
+                  title: 'Introduction to SQL — Sololearn',
+                  date: '2023',
+                  description:
+                    'Relational database management and structured querying.',
                 },
               ],
             },
           ],
-          skills: sharedSkills,
+          skills: skillsEn,
         },
         portfolio: {
           title: 'Portfolio',
@@ -309,26 +345,14 @@ export const useI18nStore = defineStore('i18n', {
             {
               title: 'MonyMonty — Personal Finance SaaS',
               category: 'Web development',
-              imgSrc: '/imgProyectos/project-1.jpg',
-              link: 'https://github.com/OugMontiel',
+              imgSrc: '/imgProyectos/loguinMonyMonty.png',
+              link: 'https://monymonty.monteflor.co/',
             },
             {
-              title: 'Forecasting Techniques',
-              category: 'Time Series',
-              imgSrc: '/imgProyectos/project-time-series-1.webp',
-              link: 'https://github.com/OugMontiel/ModeloARIMA-Fase-2',
-            },
-            {
-              title: 'Control and Registration of All Teams',
-              category: 'Backend Developer',
-              imgSrc: '/imgProyectos/project-backend-developer-1.webp',
-              link: 'https://github.com/OugMontiel/projectTeamSoccer-Campus',
-            },
-            {
-              title: 'Data Engineering',
-              category: 'Pipelines',
-              imgSrc: '/imgProyectos/project-pipelines-1.webp',
-              link: 'https://github.com/OugMontiel/Pragma',
+              title: 'Public Website — YMCA Santander',
+              category: 'Web development',
+              imgSrc: '/imgProyectos/ymcaWeb.webp',
+              link: 'https://ymcasantander.org/',
             },
           ],
         },
@@ -544,7 +568,7 @@ export const useI18nStore = defineStore('i18n', {
               ],
             },
           ],
-          skills: sharedSkills,
+          skills: skillsEs,
         },
         portfolio: {
           title: 'Portafolio',
