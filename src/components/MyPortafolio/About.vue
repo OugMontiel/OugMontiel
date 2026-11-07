@@ -90,7 +90,7 @@
 import { mapState } from 'pinia'
 import { useI18nStore } from '../../stores/i18nStore'
 
-const getPath = (path) => import.meta.env.BASE_URL + path.replace(/^\//, '')
+const getPath = path => import.meta.env.BASE_URL + path.replace(/^\//, '')
 
 export default {
   name: 'AboutMyPortafolio',

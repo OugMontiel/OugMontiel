@@ -146,7 +146,7 @@
 import { mapState } from 'pinia'
 import { useI18nStore } from '../../stores/i18nStore'
 
-const getPath = (path) => import.meta.env.BASE_URL + path.replace(/^\//, '')
+const getPath = path => import.meta.env.BASE_URL + path.replace(/^\//, '')
 
 // Inicialización de la funcionalidad del sidebar
 export default {
@@ -274,7 +274,10 @@ export default {
   width: 20px;
   height: 20px;
   color: var(--white-1);
-  transition: color 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+  transition:
+    color 0.3s ease,
+    filter 0.3s ease,
+    transform 0.3s ease;
 }
 
 img.sidebarlogoBlackAndWhite {
