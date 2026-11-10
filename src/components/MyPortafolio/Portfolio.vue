@@ -42,8 +42,9 @@
                 <ion-icon name="eye-outline" aria-hidden="true"></ion-icon>
               </div>
               <img
-                :src="getPath(project.imgSrc)"
+                :src="getPath(project.logo || project.imgSrc)"
                 :alt="project.title"
+                :class="{ 'is-logo': isLogo(project) }"
                 loading="lazy"
               />
             </figure>
@@ -61,7 +62,21 @@ import { ref, computed, watch } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useI18nStore } from '../../stores/i18nStore'
 
-const getPath = path => import.meta.env.BASE_URL + path.replace(/^\//, '')
+const getPath = path => {
+  if (!path) return ''
+  if (/^https?:\/\//i.test(path)) return path
+  return import.meta.env.BASE_URL + path.replace(/^\//, '')
+}
+
+const isLogo = project => {
+  const src = project.logo || project.imgSrc || ''
+  return (
+    Boolean(project.logo) ||
+    Boolean(project.isLogo) ||
+    src.toLowerCase().endsWith('.svg') ||
+    /^https?:\/\//i.test(src)
+  )
+}
 
 export default {
   name: 'PortfolioMyPortafolio',
@@ -103,6 +118,7 @@ export default {
       filteredProjects,
       setFilter,
       getPath,
+      isLogo,
     }
   },
 }
@@ -280,6 +296,12 @@ export default {
   height: 100%;
   object-fit: cover;
   transition: var(--transition-1);
+}
+
+.project-img img.is-logo {
+  object-fit: contain;
+  padding: 40px;
+  background: var(--eerie-black-1);
 }
 
 .project-item > a:hover img {
