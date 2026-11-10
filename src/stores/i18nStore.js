@@ -547,30 +547,97 @@ export const useI18nStore = defineStore('i18n', {
                 },
               ],
             },
+
             {
-              title: 'Certificaciones y Cursos',
-              icon: 'medal-outline',
-              items: [
-                {
-                  title: 'Power BI & Business Intelligence — UNIMINUTO',
-                  date: '2021',
-                  description:
-                    'Creación de dashboards interactivos, modelado y administración de bases de datos para análisis estratégico.',
-                },
-                {
-                  title: 'Programación Desde Cero Latam — Egg',
-                  date: '2023',
-                  description:
-                    'Fundamentos de programación, algoritmos y lógica computacional.',
-                },
-                {
-                  title: 'Introducción a SQL — Sololearn',
-                  date: '2023',
-                  description:
-                    'Manejo de bases de datos relacionales y consultas estructuradas.',
-                },
-              ],
-            },
+            title: 'Certificaciones y Cursos',
+            icon: 'medal-outline',
+            items: [
+              {
+                title: 'Developing Secure Software (LFD121) — The Linux Foundation',
+                date: 'May 2026',
+                description: 'Desarrollo seguro de software (SDLC), DevSecOps, mitigación de vulnerabilidades y secure coding basado en recomendaciones OWASP.',
+                link: '#',
+                ruta:'#',
+              },
+              {
+                title: 'Building AI-Powered Search with MongoDB Vector Search — MongoDB',
+                date: 'May 2026',
+                description: 'Creación de experiencias de búsqueda impulsadas por IA utilizando Atlas Vector Search, embeddings y estrategias de recuperación.',
+                link: '#',
+                ruta:'#',
+              },
+              {
+                title: 'Building AI Agents with MongoDB — MongoDB',
+                date: 'May 2026',
+                description: 'Creación de agentes inteligentes y Machine Learning automatizado (AutoML).',
+                link: '#',
+                ruta:'#',
+              },
+              {
+                title: 'Gemini Enterprise Essentials for Business and Power Users — Google Cloud',
+                date: 'May 2026',
+                description: 'Arki1. Integración de Inteligencia Artificial Generativa y herramientas de Google Workspace para automatización y productividad.',
+                link: '#',
+                ruta:'#',
+              },
+              {
+                title: 'From Relational Model (SQL) to MongoDB\'s Document Model — MongoDB',
+                date: 'Abr 2026',
+                description: 'Arquitectura de datos y migración estratégica de modelos SQL relacionales a estructuras de documentos NoSQL.',
+                link: '#',
+                ruta:'#',
+              },
+              {
+                title: 'MongoDB Overview: Core Concepts and Architecture — MongoDB',
+                date: 'Mar 2026',
+                description: 'MongoDB. Frameworks de arquitectura de datos y conceptos core del ecosistema MongoDB.',
+                link: '#',
+                ruta:'#',
+              },
+              {
+                title: 'Foundations of Full‑Stack Development with Meteor.js — Meteor Labs (YC S25)',
+                date: 'Jul 2025',
+                description: 'Desarrollo integral de aplicaciones Fullstack, arquitecturas escalables y arquitecturas en tiempo real.',
+                link: '#',
+                ruta:'#',
+              },
+              {
+                title: 'Understanding the OWASP® Top 10 Security Threats (SKF100) — The Linux Foundation.',
+                date: 'Jun 2025',
+                description: 'Identificación, pensamiento crítico y mitigación de las amenazas de seguridad más críticas (Secure Coding).',
+                link: '#',
+                ruta:'#',
+              },
+              {
+                title: 'Introduction to MongoDB — MongoDB',
+                date: 'Jun 2025',
+                description: 'Fundamentos de bases de datos NoSQL, consultas e indexación.',
+                link: '#',
+                ruta:'#',
+              },
+              {
+                title: 'Introduction to SQL — Sololearn',
+                date: '2023',
+                description: 'Fundamentos de bases de datos relacionales, analítica de datos y consultas estructuradas.',
+                link: '#',
+                ruta:'#',
+              },
+              {
+                title: 'Programación Desde Cero Latam — Egg',
+                date: 'Dic 2022',
+                description: 'Fundamentos de programación, algoritmos, lógica computacional y resolución colaborativa de problemas.',
+                link: '#',
+                ruta:'#',
+              },
+              {
+                title: 'Power BI & Business Intelligence — UNIMINUTO',
+                date: 'Ago 2021 — Dic 2021',
+                description: 'Creación de dashboards interactivos, modelado y administración de bases de datos para análisis estratégico.',
+                link: '#',
+                ruta:'#',
+              }
+            ]
+          },
           ],
           skills: skillsEs,
         },
