@@ -347,17 +347,40 @@ export const useI18nStore = defineStore('i18n', {
             'Pipelines',
           ],
           projects: [
+            // --- PUBLIC PROJECTS ---
             {
               title: 'MonyMonty — Personal Finance SaaS',
-              category: 'Web development',
+              categories: ['Web development', 'Backend Developer', 'Pipelines'],
               imgSrc: '/imgProyectos/loguinMonyMonty.png',
               link: 'https://monymonty.monteflor.co/',
             },
             {
               title: 'Public Website — YMCA Santander',
-              category: 'Web development',
+              categories: ['Web development', 'Backend Developer'],
               imgSrc: '/imgProyectos/ymcaWeb.webp',
               link: 'https://ymcasantander.org/',
+            },
+            // --- PRIVATE PROJECTS ---
+            {
+              title: 'Team Management API (Confidential Code)',
+              categories: ['Backend Developer'],
+              imgSrc:
+                'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nodejs-colored.svg',
+              link: '#',
+            },
+            {
+              title: 'ETL Architecture & Data Pipelines (Technical Assessment)',
+              categories: ['Pipelines'],
+              imgSrc:
+                'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg',
+              link: '#',
+            },
+            {
+              title: 'ARIMA/VAR Stock Market Analysis (Consulting)',
+              categories: ['Time Series'],
+              imgSrc:
+                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg',
+              link: '#',
             },
           ],
         },
@@ -673,35 +696,41 @@ export const useI18nStore = defineStore('i18n', {
             'Pipelines',
           ],
           projects: [
+            // --- PROYECTOS PÚBLICOS ---
             {
               title: 'MonyMonty — SaaS de Finanzas Personales',
-              category: 'Desarrollo web',
+              categories: [
+                'Desarrollo web',
+                'Desarrollador Backend',
+                'Pipelines',
+              ],
               imgSrc: '/imgProyectos/loguinMonyMonty.png',
               link: 'https://monymonty.monteflor.co/',
             },
             {
               title: 'Sitio Web Público — YMCA Santander',
-              category: 'Desarrollo web',
+              categories: ['Desarrollo web', 'Desarrollador Backend'],
               imgSrc: '/imgProyectos/ymcaWeb.webp',
               link: 'https://ymcasantander.org/',
             },
+            // --- PROYECTOS PRIVADOS ---
             {
               title: 'API de Gestión de Equipos (Código Confidencial)',
-              category: 'Desarrollador Backend',
+              categories: ['Desarrollador Backend'],
               imgSrc:
                 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nodejs-colored.svg',
               link: '#',
             },
             {
               title: 'Arquitectura ETL & Pipelines de Datos (Prueba Técnica)',
-              category: 'Pipelines',
+              categories: ['Pipelines'],
               imgSrc:
                 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg',
               link: '#',
             },
             {
               title: 'Análisis Bursátil ARIMA/VAR (Consultoría)',
-              category: 'Series de Tiempo',
+              categories: ['Series de Tiempo'],
               imgSrc:
                 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg',
               link: '#',

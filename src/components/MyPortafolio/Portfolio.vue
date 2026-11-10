@@ -34,7 +34,11 @@
           v-for="(project, index) in filteredProjects"
           :key="index"
           class="project-item active"
-          :data-category="project.category"
+          :data-category="
+            Array.isArray(project.categories)
+              ? project.categories.join(', ')
+              : project.category
+          "
         >
           <a :href="project.link" target="_blank" rel="noopener noreferrer">
             <figure class="project-img">
@@ -49,7 +53,13 @@
               />
             </figure>
             <h3 class="project-title">{{ project.title }}</h3>
-            <p class="project-category">{{ project.category }}</p>
+            <p class="project-category">
+              {{
+                Array.isArray(project.categories)
+                  ? project.categories.join(' · ')
+                  : project.category
+              }}
+            </p>
           </a>
         </li>
       </ul>
@@ -90,7 +100,15 @@ export default {
       const projects = t.value('portfolio.projects') || []
       const allLabel = currentLanguage.value === 'es' ? 'Todos' : 'All'
       const uniqueCategories = [
-        ...new Set(projects.map(project => project.category).filter(Boolean)),
+        ...new Set(
+          projects
+            .flatMap(project =>
+              Array.isArray(project.categories)
+                ? project.categories
+                : [project.category],
+            )
+            .filter(Boolean),
+        ),
       ]
       return [allLabel, ...uniqueCategories]
     })
@@ -100,7 +118,11 @@ export default {
       if (activeFilter.value === 'Todos' || activeFilter.value === 'All') {
         return projects
       }
-      return projects.filter(project => project.category === activeFilter.value)
+      return projects.filter(project =>
+        Array.isArray(project.categories)
+          ? project.categories.includes(activeFilter.value)
+          : project.category === activeFilter.value,
+      )
     })
 
     const setFilter = category => {
