@@ -510,16 +510,16 @@ export const useI18nStore = defineStore('i18n', {
                     'Desarrollé un paquete analítico interno (librería privada en NPM) que procesa más de 200,000 interacciones diarias para el ecosistema digital de la compañía. Arquitecté la solución Fullstack con Node.js, MongoDB y React, implementando visualizaciones avanzadas con Plotly.js para agilizar decisiones estratégicas.',
                 },
                 {
+                  title: 'Consultor Técnico & Desarrollador Freelance',
+                  date: '2023 — Presente',
+                  description:
+                    'Desarrollo de soluciones tecnológicas a medida. Construcción de modelos econométricos, diseño de pipelines de datos para pruebas de concepto empresariales (ETL), y desarrollo de arquitecturas backend para sistemas de gestión privados.',
+                },
+                {
                   title: 'Desarrollador de Software — YMCA Santander',
                   date: 'Oct 2024 — Jul 2026',
                   description:
                     'Lideré la migración desde WordPress hacia una arquitectura a medida (Vue.js, Node.js, MongoDB), desarrollando una web pública y un sistema de gestión privado. Gestioné el despliegue en servidores Linux con Docker, modernizando la UX y la eficiencia operativa de la ONG.',
-                },
-                {
-                  title: 'Consultor Técnico & Desarrollador Freelance',
-                  date: '2023 — Presente', // Ajusta la fecha según consideres
-                  description:
-                    'Desarrollo de soluciones tecnológicas a medida. Construcción de modelos econométricos (ARIMA en R) para análisis bursátil, diseño de pipelines de datos para pruebas de concepto empresariales (ETL), y desarrollo de arquitecturas backend para sistemas de gestión privados.',
                 },
                 {
                   title: 'Analista de Datos — Clavijo & Asociados SAS',
