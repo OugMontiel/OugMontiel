@@ -6,39 +6,27 @@
 
     <section class="projects">
       <!-- Filter List -->
-      <!-- <ul class="filter-list has-scrollbar">
-        <li class="filter-item" v-for="(filter, index) in t('portfolio.filterButtons')" :key="index">
+      <ul class="filter-list has-scrollbar">
+        <li
+          class="filter-item"
+          v-for="(category, index) in categories"
+          :key="index"
+        >
           <button
-            :class="{ active: selectedFilter === filter }"
-            @click="handleFilter(filter)"
+            type="button"
+            :class="{
+              active:
+                activeFilter === category ||
+                ((activeFilter === 'Todos' || activeFilter === 'All') &&
+                  (category === 'Todos' || category === 'All')),
+            }"
+            @click="setFilter(category)"
             data-filter-btn
           >
-            {{ filter }}
+            {{ category }}
           </button>
         </li>
-      </ul> -->
-
-      <!-- Select Dropdown -->
-      <!-- <div class="filter-select-box">
-        <button class="filter-select" @click="toggleSelect" data-select>
-          <div class="select-value" data-selecct-value>{{ selectedValue || t('portfolio.selectCategory') }}</div>
-          <div class="select-icon">
-            <ion-icon name="chevron-down"></ion-icon>
-          </div>
-        </button>
-
-        <ul v-if="selectOpen" class="select-list">
-          <li
-            v-for="(filter, index) in t('portfolio.filterButtons')"
-            :key="index"
-            class="select-item"
-            @click="selectFilter(filter)"
-            data-select-item
-          >
-            <button>{{ filter }}</button>
-          </li>
-        </ul>
-      </div> -->
+      </ul>
 
       <!-- Project List -->
       <ul class="project-list">
@@ -69,53 +57,82 @@
 </template>
 
 <script>
-import { mapState } from 'pinia'
+import { ref, computed, watch } from 'vue'
+import { storeToRefs } from 'pinia'
 import { useI18nStore } from '../../stores/i18nStore'
 
 const getPath = path => import.meta.env.BASE_URL + path.replace(/^\//, '')
 
 export default {
   name: 'PortfolioMyPortafolio',
-  data() {
-    return {
-      selectedFilter: 'All',
-      selectOpen: false,
-      selectedValue: '',
-    }
-  },
-  computed: {
-    ...mapState(useI18nStore, ['t']),
-    filteredProjects() {
-      const projects = this.t('portfolio.projects')
-      if (this.selectedFilter === 'All' || this.selectedFilter === 'Todos') {
+  setup() {
+    const i18nStore = useI18nStore()
+    const { currentLanguage, t } = storeToRefs(i18nStore)
+
+    const activeFilter = ref('Todos')
+
+    const categories = computed(() => {
+      const projects = t.value('portfolio.projects') || []
+      const allLabel = currentLanguage.value === 'es' ? 'Todos' : 'All'
+      const uniqueCategories = [
+        ...new Set(projects.map(project => project.category).filter(Boolean)),
+      ]
+      return [allLabel, ...uniqueCategories]
+    })
+
+    const filteredProjects = computed(() => {
+      const projects = t.value('portfolio.projects') || []
+      if (activeFilter.value === 'Todos' || activeFilter.value === 'All') {
         return projects
       }
-      return projects.filter(
-        project => project.category === this.selectedFilter,
-      )
-    },
-  },
-  methods: {
-    getPath,
-    toggleSelect() {
-      this.selectOpen = !this.selectOpen
-    },
-    handleFilter(filter) {
-      this.selectedFilter = filter
-      this.selectedValue = filter
-      this.selectOpen = false // Cerrar el select después de seleccionar
-    },
-    selectFilter(filter) {
-      this.handleFilter(filter)
-    },
+      return projects.filter(project => project.category === activeFilter.value)
+    })
+
+    const setFilter = category => {
+      activeFilter.value = category
+    }
+
+    watch(currentLanguage, newLang => {
+      activeFilter.value = newLang === 'es' ? 'Todos' : 'All'
+    })
+
+    return {
+      t,
+      activeFilter,
+      categories,
+      filteredProjects,
+      setFilter,
+      getPath,
+    }
   },
 }
 </script>
 
 <style>
 .filter-list {
-  display: none; /* Cambiar de none a flex o block */
-  overflow-y: auto; /* Habilita el desplazamiento vertical */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 30px;
+  padding-left: 5px;
+}
+
+.filter-item button {
+  color: var(--light-gray);
+  font-size: var(--fs-5);
+  font-weight: var(--fw-400);
+  transition: color var(--transition-1);
+}
+
+.filter-item button:hover {
+  color: var(--light-gray-70);
+}
+
+.filter-item button.active {
+  color: var(--orange-yellow-crayola);
+  font-weight: var(--fw-500);
 }
 
 .filter-select-box {
