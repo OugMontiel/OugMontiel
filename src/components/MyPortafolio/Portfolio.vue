@@ -40,9 +40,14 @@
               : project.category
           "
         >
-          <a :href="project.link" target="_blank" rel="noopener noreferrer">
+          <a
+            :href="project.link"
+            :target="project.link !== '#' ? '_blank' : undefined"
+            :rel="project.link !== '#' ? 'noopener noreferrer' : undefined"
+            @click="project.link === '#' ? $event.preventDefault() : null"
+          >
             <figure class="project-img">
-              <div class="project-item-icon-box">
+              <div v-if="project.link !== '#'" class="project-item-icon-box">
                 <ion-icon name="eye-outline" aria-hidden="true"></ion-icon>
               </div>
               <img
@@ -51,6 +56,9 @@
                 :class="{ 'is-logo': isLogo(project) }"
                 loading="lazy"
               />
+              <div class="project-overlay" v-if="project.link === '#'">
+                <p>{{ project.description }}</p>
+              </div>
             </figure>
             <h3 class="project-title">{{ project.title }}</h3>
             <p class="project-category">
@@ -146,7 +154,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .filter-list {
   display: flex;
   flex-wrap: wrap;
@@ -347,5 +355,27 @@ export default {
   color: var(--light-gray-70);
   font-size: var(--fs-6);
   font-weight: var(--fw-400);
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(30, 30, 32, 0.9);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  line-height: 1.5;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.project-item:hover .project-overlay {
+  opacity: 1;
 }
 </style>

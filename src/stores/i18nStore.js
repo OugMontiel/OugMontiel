@@ -347,7 +347,6 @@ export const useI18nStore = defineStore('i18n', {
             'Pipelines',
           ],
           projects: [
-            // --- PUBLIC PROJECTS ---
             {
               title: 'MonyMonty — Personal Finance SaaS',
               categories: ['Web development', 'Backend Developer', 'Pipelines'],
@@ -360,13 +359,14 @@ export const useI18nStore = defineStore('i18n', {
               imgSrc: '/imgProyectos/ymcaWeb.webp',
               link: 'https://ymcasantander.org/',
             },
-            // --- PRIVATE PROJECTS ---
             {
               title: 'Team Management API (Confidential Code)',
               categories: ['Backend Developer'],
               imgSrc:
                 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nodejs-colored.svg',
               link: '#',
+              description:
+                'Private backend system for team metrics management. Scalable architecture and optimized database. (Confidential code under NDA).',
             },
             {
               title: 'ETL Architecture & Data Pipelines (Technical Assessment)',
@@ -374,6 +374,8 @@ export const useI18nStore = defineStore('i18n', {
               imgSrc:
                 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg',
               link: '#',
+              description:
+                'Data pipeline built for extraction, transformation, and loading (ETL). (High-performance technical assessment).',
             },
             {
               title: 'ARIMA/VAR Stock Market Analysis (Consulting)',
@@ -381,6 +383,8 @@ export const useI18nStore = defineStore('i18n', {
               imgSrc:
                 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg',
               link: '#',
+              description:
+                'ARIMA/VAR econometric models for financial time-series forecasting. (Consulting project).',
             },
           ],
         },
@@ -696,7 +700,6 @@ export const useI18nStore = defineStore('i18n', {
             'Pipelines',
           ],
           projects: [
-            // --- PROYECTOS PÚBLICOS ---
             {
               title: 'MonyMonty — SaaS de Finanzas Personales',
               categories: [
@@ -713,13 +716,14 @@ export const useI18nStore = defineStore('i18n', {
               imgSrc: '/imgProyectos/ymcaWeb.webp',
               link: 'https://ymcasantander.org/',
             },
-            // --- PROYECTOS PRIVADOS ---
             {
               title: 'API de Gestión de Equipos (Código Confidencial)',
               categories: ['Desarrollador Backend'],
               imgSrc:
                 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nodejs-colored.svg',
               link: '#',
+              description:
+                'Sistema backend privado para la administración de métricas de equipos. Arquitectura escalable y base de datos optimizada. (Código confidencial bajo NDA).',
             },
             {
               title: 'Arquitectura ETL & Pipelines de Datos (Prueba Técnica)',
@@ -727,6 +731,8 @@ export const useI18nStore = defineStore('i18n', {
               imgSrc:
                 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg',
               link: '#',
+              description:
+                'Pipeline de datos construido para extracción, transformación y carga (ETL). (Prueba técnica de alto rendimiento).',
             },
             {
               title: 'Análisis Bursátil ARIMA/VAR (Consultoría)',
@@ -734,6 +740,8 @@ export const useI18nStore = defineStore('i18n', {
               imgSrc:
                 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg',
               link: '#',
+              description:
+                'Modelos econométricos ARIMA/VAR para pronóstico de series de tiempo financieras. (Proyecto de consultoría).',
             },
           ],
         },
