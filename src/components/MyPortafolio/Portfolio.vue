@@ -6,116 +6,225 @@
 
     <section class="projects">
       <!-- Filter List -->
-      <!-- <ul class="filter-list has-scrollbar">
-        <li class="filter-item" v-for="(filter, index) in t('portfolio.filterButtons')" :key="index">
+      <ul class="filter-list has-scrollbar">
+        <li
+          class="filter-item"
+          v-for="(category, index) in categories"
+          :key="index"
+        >
           <button
-            :class="{ active: selectedFilter === filter }"
-            @click="handleFilter(filter)"
+            type="button"
+            :class="{
+              active:
+                activeFilter === category ||
+                ((activeFilter === 'Todos' || activeFilter === 'All') &&
+                  (category === 'Todos' || category === 'All')),
+            }"
+            @click="setFilter(category)"
             data-filter-btn
           >
-            {{ filter }}
+            {{ category }}
           </button>
         </li>
-      </ul> -->
-
-      <!-- Select Dropdown -->
-      <!-- <div class="filter-select-box">
-        <button class="filter-select" @click="toggleSelect" data-select>
-          <div class="select-value" data-selecct-value>{{ selectedValue || t('portfolio.selectCategory') }}</div>
-          <div class="select-icon">
-            <ion-icon name="chevron-down"></ion-icon>
-          </div>
-        </button>
-
-        <ul v-if="selectOpen" class="select-list">
-          <li
-            v-for="(filter, index) in t('portfolio.filterButtons')"
-            :key="index"
-            class="select-item"
-            @click="selectFilter(filter)"
-            data-select-item
-          >
-            <button>{{ filter }}</button>
-          </li>
-        </ul>
-      </div> -->
+      </ul>
 
       <!-- Project List -->
       <ul class="project-list">
         <li
-          v-for="(project, index) in filteredProjects"
+          v-for="(project, index) in displayedProjects"
           :key="index"
           class="project-item active"
-          :data-category="project.category"
+          :data-category="
+            Array.isArray(project.categories)
+              ? project.categories.join(', ')
+              : project.category
+          "
         >
-          <a :href="project.link" target="_blank" rel="noopener noreferrer">
+          <a
+            :href="project.link"
+            :target="project.link !== '#' ? '_blank' : undefined"
+            :rel="project.link !== '#' ? 'noopener noreferrer' : undefined"
+            @click="project.link === '#' ? $event.preventDefault() : null"
+          >
             <figure class="project-img">
-              <div class="project-item-icon-box">
+              <div v-if="project.link !== '#'" class="project-item-icon-box">
                 <ion-icon name="eye-outline" aria-hidden="true"></ion-icon>
               </div>
               <img
-                :src="getPath(project.imgSrc)"
+                :src="getPath(project.logo || project.imgSrc)"
                 :alt="project.title"
+                :class="{ 'is-logo': isLogo(project) }"
                 loading="lazy"
               />
+              <div class="project-overlay" v-if="project.link === '#'">
+                <p>{{ project.description }}</p>
+              </div>
             </figure>
+
             <h3 class="project-title">{{ project.title }}</h3>
-            <p class="project-category">{{ project.category }}</p>
+
+            <div v-if="project.level || project.date" class="project-meta">
+              <span
+                v-if="project.level"
+                class="project-badge project-badge--level"
+              >
+                {{ project.level }}
+              </span>
+              <span
+                v-if="project.date"
+                class="project-badge project-badge--date"
+              >
+                {{ project.date }}
+              </span>
+            </div>
+
+            <p class="project-category">
+              {{
+                Array.isArray(project.categories)
+                  ? project.categories.join(' · ')
+                  : project.category
+              }}
+            </p>
           </a>
         </li>
       </ul>
+
+      <button
+        v-if="filteredProjects.length > 5"
+        type="button"
+        class="portfolio-more-btn"
+        @click="showAllProjects = !showAllProjects"
+      >
+        <ion-icon
+          :name="showAllProjects ? 'chevron-up' : 'chevron-down'"
+          aria-hidden="true"
+        ></ion-icon>
+        <span>{{
+          showAllProjects ? t('portfolio.showLess') : t('portfolio.showMore')
+        }}</span>
+      </button>
     </section>
   </article>
 </template>
 
 <script>
-import { mapState } from 'pinia'
+import { ref, computed, watch } from 'vue'
+import { storeToRefs } from 'pinia'
 import { useI18nStore } from '../../stores/i18nStore'
 
-const getPath = path => import.meta.env.BASE_URL + path.replace(/^\//, '')
+const getPath = path => {
+  if (!path) return ''
+  if (/^https?:\/\//i.test(path)) return path
+  return import.meta.env.BASE_URL + path.replace(/^\//, '')
+}
+
+const isLogo = project => {
+  const src = project.logo || project.imgSrc || ''
+  return (
+    Boolean(project.logo) ||
+    Boolean(project.isLogo) ||
+    src.toLowerCase().endsWith('.svg') ||
+    /^https?:\/\//i.test(src)
+  )
+}
 
 export default {
   name: 'PortfolioMyPortafolio',
-  data() {
-    return {
-      selectedFilter: 'All',
-      selectOpen: false,
-      selectedValue: '',
-    }
-  },
-  computed: {
-    ...mapState(useI18nStore, ['t']),
-    filteredProjects() {
-      const projects = this.t('portfolio.projects')
-      if (this.selectedFilter === 'All' || this.selectedFilter === 'Todos') {
+  setup() {
+    const i18nStore = useI18nStore()
+    const { currentLanguage, t } = storeToRefs(i18nStore)
+
+    const activeFilter = ref(currentLanguage.value === 'es' ? 'Todos' : 'All')
+    const showAllProjects = ref(false)
+
+    const categories = computed(() => {
+      const configuredButtons = t.value('portfolio.filterButtons')
+      if (Array.isArray(configuredButtons) && configuredButtons.length > 0) {
+        return configuredButtons
+      }
+      const projects = t.value('portfolio.projects') || []
+      const allLabel = currentLanguage.value === 'es' ? 'Todos' : 'All'
+      const uniqueCategories = [
+        ...new Set(
+          projects
+            .flatMap(project =>
+              Array.isArray(project.categories)
+                ? project.categories
+                : [project.category],
+            )
+            .filter(Boolean),
+        ),
+      ]
+      return [allLabel, ...uniqueCategories]
+    })
+
+    const filteredProjects = computed(() => {
+      const projects = t.value('portfolio.projects') || []
+      if (activeFilter.value === 'Todos' || activeFilter.value === 'All') {
         return projects
       }
-      return projects.filter(
-        project => project.category === this.selectedFilter,
+      return projects.filter(project =>
+        Array.isArray(project.categories)
+          ? project.categories.includes(activeFilter.value)
+          : project.category === activeFilter.value,
       )
-    },
-  },
-  methods: {
-    getPath,
-    toggleSelect() {
-      this.selectOpen = !this.selectOpen
-    },
-    handleFilter(filter) {
-      this.selectedFilter = filter
-      this.selectedValue = filter
-      this.selectOpen = false // Cerrar el select después de seleccionar
-    },
-    selectFilter(filter) {
-      this.handleFilter(filter)
-    },
+    })
+
+    const displayedProjects = computed(() => {
+      if (!showAllProjects.value) {
+        return filteredProjects.value.slice(0, 5)
+      }
+      return filteredProjects.value
+    })
+
+    const setFilter = category => {
+      activeFilter.value = category
+    }
+
+    watch(currentLanguage, newLang => {
+      activeFilter.value = newLang === 'es' ? 'Todos' : 'All'
+    })
+
+    return {
+      t,
+      activeFilter,
+      showAllProjects,
+      categories,
+      filteredProjects,
+      displayedProjects,
+      setFilter,
+      getPath,
+      isLogo,
+    }
   },
 }
 </script>
 
-<style>
+<style scoped>
 .filter-list {
-  display: none; /* Cambiar de none a flex o block */
-  overflow-y: auto; /* Habilita el desplazamiento vertical */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 30px;
+  padding-left: 5px;
+}
+
+.filter-item button {
+  color: var(--light-gray);
+  font-size: var(--fs-5);
+  font-weight: var(--fw-400);
+  transition: color var(--transition-1);
+}
+
+.filter-item button:hover {
+  color: var(--light-gray-70);
+}
+
+.filter-item button.active {
+  color: var(--orange-yellow-crayola);
+  font-weight: var(--fw-500);
 }
 
 .filter-select-box {
@@ -265,11 +374,18 @@ export default {
   transition: var(--transition-1);
 }
 
+.project-img img.is-logo {
+  object-fit: contain;
+  padding: 40px;
+  background: var(--eerie-black-1);
+}
+
 .project-item > a:hover img {
   transform: scale(1.1);
 }
 
 .project-title,
+.project-meta,
 .project-category {
   margin-left: 10px;
 }
@@ -279,12 +395,104 @@ export default {
   font-size: var(--fs-3);
   font-weight: var(--fw-500);
   line-height: 1.4;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
+}
+
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.project-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--fs-8);
+  font-weight: var(--fw-400);
+  padding: 2px 10px;
+  border-radius: 8px;
+  line-height: 1.5;
+  border: 1px solid var(--jet);
+}
+
+.project-badge--level {
+  background: var(--onyx);
+  color: var(--light-gray);
+}
+
+.project-badge--date {
+  background: hsla(45, 100%, 72%, 0.08);
+  color: var(--vegas-gold);
+  border-color: hsla(45, 100%, 72%, 0.25);
 }
 
 .project-category {
   color: var(--light-gray-70);
   font-size: var(--fs-6);
   font-weight: var(--fw-400);
+}
+
+.portfolio-more-btn {
+  position: relative;
+  width: 100%;
+  margin-top: 25px;
+  padding: 12px 20px;
+  background: var(--border-gradient-onyx);
+  color: var(--orange-yellow-crayola);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 14px;
+  font-size: var(--fs-6);
+  box-shadow: var(--shadow-3);
+  z-index: 1;
+  transition: var(--transition-1);
+}
+
+.portfolio-more-btn::before {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  z-index: -1;
+  transition: var(--transition-1);
+}
+
+.portfolio-more-btn ion-icon {
+  font-size: 16px;
+}
+
+.portfolio-more-btn:hover {
+  background: var(--bg-gradient-yellow-1);
+}
+
+.portfolio-more-btn:hover::before {
+  background: var(--bg-gradient-yellow-2);
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(30, 30, 32, 0.9);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  text-align: center;
+  color: var(--light-gray);
+  font-size: var(--fs-6);
+  line-height: 1.5;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+}
+
+.project-item:hover .project-overlay {
+  opacity: 1;
 }
 </style>

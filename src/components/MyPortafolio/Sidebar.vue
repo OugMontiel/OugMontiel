@@ -96,7 +96,7 @@
             class="sidebarSocialLink"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Ir a mi perfil de LinkedIn"
+            :aria-label="t('sidebar.linkedinAria')"
           >
             <ion-icon
               name="logo-linkedin"
@@ -112,7 +112,7 @@
             class="sidebarSocialLink"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Ir a mi perfil de GitHub"
+            :aria-label="t('sidebar.githubAria')"
           >
             <ion-icon
               name="logo-github"
@@ -128,7 +128,7 @@
             class="sidebarSocialLink"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Ir a mi perfil de Kaggle"
+            :aria-label="t('sidebar.kaggleAria')"
           >
             <img
               src="https://www.kaggle.com/static/images/favicon.ico"
