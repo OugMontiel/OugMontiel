@@ -188,6 +188,9 @@ export const useI18nStore = defineStore('i18n', {
           birthday: 'Birthday',
           birthdayDate: 'Aug 12',
           location: 'Location',
+          linkedinAria: 'Go to my LinkedIn profile',
+          githubAria: 'Go to my GitHub profile',
+          kaggleAria: 'Go to my Kaggle profile',
         },
         about: {
           title: 'About me',
@@ -228,6 +231,8 @@ export const useI18nStore = defineStore('i18n', {
         resume: {
           title: 'Resume',
           skillsTitle: 'My skills',
+          showMore: 'Show more',
+          showLess: 'Show less',
           resumeSections: [
             {
               title: 'Experience',
@@ -240,16 +245,16 @@ export const useI18nStore = defineStore('i18n', {
                     'Engineered an internal analytics package (private NPM library) processing over 200,000 daily interactions across the company’s digital ecosystem. Architected the end-to-end Fullstack solution using Node.js, MongoDB, and React, implementing advanced Plotly.js visualizations to accelerate data-driven decision making.',
                 },
                 {
+                  title: 'Technical Consultant & Freelance Developer',
+                  date: '2023 — Present',
+                  description:
+                    'Architecting and delivering custom technology solutions. Building econometric forecasting models, designing automated ETL data pipelines for enterprise proofs of concept (PoCs), and engineering backend architectures for private management systems.',
+                },
+                {
                   title: 'Software Developer — YMCA Santander',
                   date: 'Oct 2024 — Jul 2026',
                   description:
                     'Led the migration from legacy WordPress to a custom fullstack architecture (Vue.js, Node.js, MongoDB), delivering both a public-facing web platform and a private internal management system. Orchestrated containerized deployments on Linux servers using Docker, modernizing UX and operational efficiency across the NGO.',
-                },
-                {
-                  title: 'Technical Consultant & Freelance Developer',
-                  date: '2023 — Present',
-                  description:
-                    'Architecting and delivering custom technology solutions. Building econometric forecasting models (ARIMA in R) for stock market analysis, designing automated ETL data pipelines for enterprise proofs of concept (PoCs), and engineering backend architectures for private management systems.',
                 },
                 {
                   title: 'Data Analyst — Clavijo & Asociados SAS',
@@ -283,22 +288,107 @@ export const useI18nStore = defineStore('i18n', {
               icon: 'medal-outline',
               items: [
                 {
-                  title: 'Power BI & Business Intelligence — UNIMINUTO',
-                  date: '2021',
+                  title:
+                    'Developing Secure Software (LFD121) — The Linux Foundation',
+                  date: 'May 2026',
                   description:
-                    'Building interactive dashboards, data modeling, and database administration for strategic analytics.',
+                    'Secure software development lifecycle (SDLC), DevSecOps, vulnerability mitigation, and secure coding practices based on OWASP recommendations.',
+                  link: '#',
+                  ruta: '#',
                 },
                 {
-                  title: 'Programming from Scratch Latam — Egg',
-                  date: '2023',
+                  title:
+                    'Building AI-Powered Search with MongoDB Vector Search — MongoDB',
+                  date: 'May 2026',
                   description:
-                    'Programming fundamentals, algorithms, and computational logic.',
+                    'Building AI-powered search experiences using Atlas Vector Search, vector embeddings, and retrieval strategies.',
+                  link: '#',
+                  ruta: '#',
+                },
+                {
+                  title: 'Building AI Agents with MongoDB — MongoDB',
+                  date: 'May 2026',
+                  description:
+                    'Engineering intelligent AI agents and automated Machine Learning (AutoML) workflows.',
+                  link: '#',
+                  ruta: '#',
+                },
+                {
+                  title:
+                    'Gemini Enterprise Essentials for Business and Power Users — Google Cloud',
+                  date: 'May 2026',
+                  description:
+                    'Arki1. Integrating Generative AI and Google Workspace tools for workflow automation and enterprise productivity.',
+                  link: '#',
+                  ruta: '#',
+                },
+                {
+                  title:
+                    "From Relational Model (SQL) to MongoDB's Document Model — MongoDB",
+                  date: 'Apr 2026',
+                  description:
+                    'Data architecture and strategic migration from relational SQL schemas to NoSQL document structures.',
+                  link: '#',
+                  ruta: '#',
+                },
+                {
+                  title:
+                    'MongoDB Overview: Core Concepts and Architecture — MongoDB',
+                  date: 'Mar 2026',
+                  description:
+                    'MongoDB. Data architecture frameworks and core concepts of the MongoDB ecosystem.',
+                  link: '#',
+                  ruta: '#',
+                },
+                {
+                  title:
+                    'Foundations of Full‑Stack Development with Meteor.js — Meteor Labs (YC S25)',
+                  date: 'Jul 2025',
+                  description:
+                    'End-to-end Fullstack application development, scalable architectures, and real-time systems.',
+                  link: '#',
+                  ruta: '#',
+                },
+                {
+                  title:
+                    'Understanding the OWASP® Top 10 Security Threats (SKF100) — The Linux Foundation.',
+                  date: 'Jun 2025',
+                  description:
+                    'Identification, critical analysis, and mitigation of the most critical web application security threats (Secure Coding).',
+                  link: '#',
+                  ruta: '#',
+                },
+                {
+                  title: 'Introduction to MongoDB — MongoDB',
+                  date: 'Jun 2025',
+                  description:
+                    'NoSQL database fundamentals, querying, and indexing strategies.',
+                  link: '#',
+                  ruta: '#',
                 },
                 {
                   title: 'Introduction to SQL — Sololearn',
                   date: '2023',
                   description:
-                    'Relational database management and structured querying.',
+                    'Relational database fundamentals, data analytics, and structured querying.',
+                  link: '#',
+                  ruta: '#',
+                },
+                {
+                  title: 'Programming from Scratch Latam — Egg',
+                  date: 'Dec 2022',
+                  description:
+                    'Programming fundamentals, algorithms, computational logic, and collaborative problem solving.',
+                  link: '#',
+                  ruta: '#',
+                },
+                {
+                  title: 'Power BI & Business Intelligence — UNIMINUTO',
+                  date: 'Aug 2021 — Dec 2021',
+                  description:
+                    'Building interactive dashboards, data modeling, and database administration for strategic analytics.',
+                  link: '#',
+                  ruta: '#',
                 },
               ],
             },
@@ -308,6 +398,8 @@ export const useI18nStore = defineStore('i18n', {
         portfolio: {
           title: 'Portfolio',
           selectCategory: 'Select category',
+          showMore: 'Show more',
+          showLess: 'Show less',
           filterButtons: [
             'All',
             'Fullstack Web',
@@ -552,6 +644,10 @@ export const useI18nStore = defineStore('i18n', {
           emailPlaceholder: 'Email address',
           messagePlaceholder: 'Your Message',
           sendBtn: 'Send Message',
+          sendingBtn: 'Sending...',
+          successMessage: 'Message sent successfully!',
+          errorMessage:
+            'There was an error sending your message. Please try again.',
           alertMessage:
             'The submission feature is currently unavailable. Please send an email to MontielFlorezDiego@gmail.com.',
           socials: sharedSocials,
@@ -574,6 +670,9 @@ export const useI18nStore = defineStore('i18n', {
           birthday: 'Cumpleaños',
           birthdayDate: '12 Ago',
           location: 'Ubicación',
+          linkedinAria: 'Ir a mi perfil de LinkedIn',
+          githubAria: 'Ir a mi perfil de GitHub',
+          kaggleAria: 'Ir a mi perfil de Kaggle',
         },
         about: {
           title: 'Sobre mí',
@@ -614,6 +713,8 @@ export const useI18nStore = defineStore('i18n', {
         resume: {
           title: 'Currículum',
           skillsTitle: 'Mis habilidades',
+          showMore: 'Ver más',
+          showLess: 'Ver menos',
           resumeSections: [
             {
               title: 'Experiencia',
@@ -778,6 +879,8 @@ export const useI18nStore = defineStore('i18n', {
         portfolio: {
           title: 'Portafolio',
           selectCategory: 'Seleccionar categoría',
+          showMore: 'Ver más',
+          showLess: 'Ver menos',
           filterButtons: [
             'Todos',
             'Web Fullstack',
@@ -1023,6 +1126,10 @@ export const useI18nStore = defineStore('i18n', {
           emailPlaceholder: 'Correo electrónico',
           messagePlaceholder: 'Tu mensaje',
           sendBtn: 'Enviar Mensaje',
+          sendingBtn: 'Enviando...',
+          successMessage: '¡Mensaje enviado correctamente!',
+          errorMessage:
+            'Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.',
           alertMessage:
             'La funcionalidad de envío no está disponible de momento. Por favor, envíe un correo electrónico a MontielFlorezDiego@gmail.com.',
           socials: sharedSocials,

@@ -40,7 +40,9 @@
           :name="showAllItems[index] ? 'chevron-up' : 'chevron-down'"
           aria-hidden="true"
         ></ion-icon>
-        <span>{{ showAllItems[index] ? 'Ver menos' : 'Ver más' }}</span>
+        <span>{{
+          showAllItems[index] ? t('resume.showLess') : t('resume.showMore')
+        }}</span>
       </button>
     </section>
 

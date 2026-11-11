@@ -103,7 +103,9 @@
 
         <button class="form-btn" type="submit" :disabled="isSubmitting">
           <ion-icon name="paper-plane" aria-hidden="true"></ion-icon>
-          <span>{{ isSubmitting ? 'Enviando...' : t('contact.sendBtn') }}</span>
+          <span>{{
+            isSubmitting ? t('contact.sendingBtn') : t('contact.sendBtn')
+          }}</span>
         </button>
 
         <p
@@ -111,7 +113,7 @@
           class="form-feedback form-feedback--success"
           role="status"
         >
-          ¡Mensaje enviado correctamente!
+          {{ t('contact.successMessage') }}
         </p>
 
         <p
@@ -119,7 +121,7 @@
           class="form-feedback form-feedback--error"
           role="alert"
         >
-          Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.
+          {{ t('contact.errorMessage') }}
         </p>
       </form>
     </section>

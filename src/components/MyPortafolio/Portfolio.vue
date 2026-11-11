@@ -96,7 +96,9 @@
           :name="showAllProjects ? 'chevron-up' : 'chevron-down'"
           aria-hidden="true"
         ></ion-icon>
-        <span>{{ showAllProjects ? 'Ver menos' : 'Ver más' }}</span>
+        <span>{{
+          showAllProjects ? t('portfolio.showLess') : t('portfolio.showMore')
+        }}</span>
       </button>
     </section>
   </article>
