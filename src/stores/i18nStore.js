@@ -49,6 +49,11 @@ const createSkills = categories => [
         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg',
         link: 'https://about.gitlab.com/',
       },
+      {
+        name: 'GitHub Actions',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg',
+        link: 'https://github.com/features/actions',
+      },
     ],
   },
   {
@@ -58,6 +63,11 @@ const createSkills = categories => [
         name: 'JavaScript',
         icon: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg',
         link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+      },
+      {
+        name: 'React',
+        icon: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/react-colored.svg',
+        link: 'https://reactjs.org/',
       },
       {
         name: 'Vue.js',
@@ -177,12 +187,15 @@ export const useI18nStore = defineStore('i18n', {
           menu: 'Menu',
         },
         sidebar: {
-          roles: ['Data Science', 'Backend Developer', 'Economist'],
+          roles: ['Fullstack Developer', 'Backend & APIs', 'Data Economist'],
           email: 'Email',
           phone: 'Phone',
           birthday: 'Birthday',
           birthdayDate: 'Aug 12',
           location: 'Location',
+          linkedinAria: 'Go to my LinkedIn profile',
+          githubAria: 'Go to my GitHub profile',
+          kaggleAria: 'Go to my Kaggle profile',
         },
         about: {
           title: 'About me',
@@ -191,66 +204,40 @@ export const useI18nStore = defineStore('i18n', {
           servicesTitle: "What I'm doing",
           services: [
             {
-              icon: 'icon-design.svg',
-              alt: 'Design icon',
-              title: 'Web design',
+              icon: 'icon-api.svg',
+              alt: 'Backend and API development icon',
+              title: 'Backend & API Development',
               description:
-                'Modern, high-quality design crafted at a professional level.',
+                'Design and implementation of scalable architectures, databases (MongoDB/SQL), and high-performance RESTful services.',
             },
             {
               icon: 'icon-dev.svg',
-              alt: 'Web development icon',
-              title: 'Web development',
+              alt: 'Fullstack web development icon',
+              title: 'Fullstack Web Applications',
               description:
-                'High-quality development of web applications at a professional level.',
+                'Building end-to-end digital products and SaaS platforms using modern ecosystems such as Vue.js, Node.js, and Linux containers.',
+            },
+            {
+              icon: 'icon-pipeline.svg',
+              alt: 'Data pipelines icon',
+              title: 'Data Engineering & Pipelines',
+              description:
+                'Developing automated ETL processes, data workflows, and model deployments to drive operational optimization.',
             },
             {
               icon: 'icon-economi.svg',
               alt: 'Econometric modeling icon',
-              title: 'Econometric Modeling',
+              title: 'Analytics & Econometric Modeling',
               description:
-                'Design and analysis of econometric models for forecasting and quantitative data analysis.',
-            },
-            {
-              icon: 'icon-api.svg',
-              alt: 'API development icon',
-              title: 'API Development',
-              description:
-                'Engineering efficient and scalable APIs for web and mobile applications.',
-            },
-            {
-              icon: 'icon-maching.svg',
-              alt: 'Machine learning icon',
-              title: 'Machine Learning',
-              description:
-                'Developing machine learning models to automate and optimize business processes.',
-            },
-            {
-              icon: 'icon-visualization.svg',
-              alt: 'Data visualization icon',
-              title: 'Data Visualization',
-              description:
-                'Building interactive dashboards and visual reports to interpret complex datasets.',
-            },
-            {
-              icon: 'icon-time-serie.svg',
-              alt: 'Time series icon',
-              title: 'Time Series',
-              description:
-                'Developing forecasting models to predict trends and patterns in time-series data.',
-            },
-            {
-              icon: 'icon-pipeline.svg',
-              alt: 'Data pipeline icon',
-              title: 'Creation of Data Pipelines',
-              description:
-                'Building automated pipelines for data extraction, transformation, and loading (ETL).',
+                'Applying time-series forecasting (ARIMA/VAR) and quantitative analysis to transform large data volumes into strategic business decisions.',
             },
           ],
         },
         resume: {
           title: 'Resume',
           skillsTitle: 'My skills',
+          showMore: 'Show more',
+          showLess: 'Show less',
           resumeSections: [
             {
               title: 'Experience',
@@ -260,19 +247,19 @@ export const useI18nStore = defineStore('i18n', {
                   title: 'Fullstack Developer — Okorum',
                   date: 'Jun 2025 — Present',
                   description:
-                    'Engineered an internal analytics package (private NPM library) processing over 200,000 daily interactions across the company’s digital ecosystem. Architected the end-to-end Fullstack solution using Node.js, MongoDB, and React, implementing advanced Plotly.js visualizations to accelerate data-driven decision making.',
-                },
-                {
-                  title: 'Software Developer — YMCA Santander',
-                  date: 'Oct 2024 — Jul 2026',
-                  description:
-                    'Led the migration from legacy WordPress to a custom fullstack architecture (Vue.js, Node.js, MongoDB), delivering both a public-facing web platform and a private internal management system. Orchestrated containerized deployments on Linux servers using Docker, modernizing UX and operational efficiency across the NGO.',
+                    'Engineered an internal analytics package (private NPM library) processing over 200,000 daily interactions. Architected the solution using Node.js, MongoDB, and React, ensuring code reliability through unit and integration testing (Jest/Vitest), and accelerating data-driven decision making with Plotly.js visualizations.',
                 },
                 {
                   title: 'Technical Consultant & Freelance Developer',
                   date: '2023 — Present',
                   description:
-                    'Architecting and delivering custom technology solutions. Building econometric forecasting models (ARIMA in R) for stock market analysis, designing automated ETL data pipelines for enterprise proofs of concept (PoCs), and engineering backend architectures for private management systems.',
+                    'Architecting and delivering custom technology solutions. Building econometric forecasting models, designing automated ETL data pipelines for enterprise proofs of concept (PoCs), and engineering backend architectures for private management systems.',
+                },
+                {
+                  title: 'Software Developer — YMCA Santander',
+                  date: 'Oct 2024 — Jul 2026',
+                  description:
+                    'Led the migration from legacy WordPress to a custom fullstack architecture (Vue.js, Node.js, MongoDB). Orchestrated Linux server infrastructure, implementing automated CI/CD deployment pipelines (GitHub Actions) and Docker containers to ensure high availability across the management system.',
                 },
                 {
                   title: 'Data Analyst — Clavijo & Asociados SAS',
@@ -306,22 +293,107 @@ export const useI18nStore = defineStore('i18n', {
               icon: 'medal-outline',
               items: [
                 {
-                  title: 'Power BI & Business Intelligence — UNIMINUTO',
-                  date: '2021',
+                  title:
+                    'Developing Secure Software (LFD121) — The Linux Foundation',
+                  date: 'May 2026',
                   description:
-                    'Building interactive dashboards, data modeling, and database administration for strategic analytics.',
+                    'Secure software development lifecycle (SDLC), DevSecOps, vulnerability mitigation, and secure coding practices based on OWASP recommendations.',
+                  link: '#',
+                  ruta: '#',
                 },
                 {
-                  title: 'Programming from Scratch Latam — Egg',
-                  date: '2023',
+                  title:
+                    'Building AI-Powered Search with MongoDB Vector Search — MongoDB',
+                  date: 'May 2026',
                   description:
-                    'Programming fundamentals, algorithms, and computational logic.',
+                    'Building AI-powered search experiences using Atlas Vector Search, vector embeddings, and retrieval strategies.',
+                  link: '#',
+                  ruta: '#',
+                },
+                {
+                  title: 'Building AI Agents with MongoDB — MongoDB',
+                  date: 'May 2026',
+                  description:
+                    'Engineering intelligent AI agents and automated Machine Learning (AutoML) workflows.',
+                  link: '#',
+                  ruta: '#',
+                },
+                {
+                  title:
+                    'Gemini Enterprise Essentials for Business and Power Users — Google Cloud',
+                  date: 'May 2026',
+                  description:
+                    'Arki1. Integrating Generative AI and Google Workspace tools for workflow automation and enterprise productivity.',
+                  link: '#',
+                  ruta: '#',
+                },
+                {
+                  title:
+                    "From Relational Model (SQL) to MongoDB's Document Model — MongoDB",
+                  date: 'Apr 2026',
+                  description:
+                    'Data architecture and strategic migration from relational SQL schemas to NoSQL document structures.',
+                  link: '#',
+                  ruta: '#',
+                },
+                {
+                  title:
+                    'MongoDB Overview: Core Concepts and Architecture — MongoDB',
+                  date: 'Mar 2026',
+                  description:
+                    'MongoDB. Data architecture frameworks and core concepts of the MongoDB ecosystem.',
+                  link: '#',
+                  ruta: '#',
+                },
+                {
+                  title:
+                    'Foundations of Full‑Stack Development with Meteor.js — Meteor Labs (YC S25)',
+                  date: 'Jul 2025',
+                  description:
+                    'End-to-end Fullstack application development, scalable architectures, and real-time systems.',
+                  link: '#',
+                  ruta: '#',
+                },
+                {
+                  title:
+                    'Understanding the OWASP® Top 10 Security Threats (SKF100) — The Linux Foundation.',
+                  date: 'Jun 2025',
+                  description:
+                    'Identification, critical analysis, and mitigation of the most critical web application security threats (Secure Coding).',
+                  link: '#',
+                  ruta: '#',
+                },
+                {
+                  title: 'Introduction to MongoDB — MongoDB',
+                  date: 'Jun 2025',
+                  description:
+                    'NoSQL database fundamentals, querying, and indexing strategies.',
+                  link: '#',
+                  ruta: '#',
                 },
                 {
                   title: 'Introduction to SQL — Sololearn',
                   date: '2023',
                   description:
-                    'Relational database management and structured querying.',
+                    'Relational database fundamentals, data analytics, and structured querying.',
+                  link: '#',
+                  ruta: '#',
+                },
+                {
+                  title: 'Programming from Scratch Latam — Egg',
+                  date: 'Dec 2022',
+                  description:
+                    'Programming fundamentals, algorithms, computational logic, and collaborative problem solving.',
+                  link: '#',
+                  ruta: '#',
+                },
+                {
+                  title: 'Power BI & Business Intelligence — UNIMINUTO',
+                  date: 'Aug 2021 — Dec 2021',
+                  description:
+                    'Building interactive dashboards, data modeling, and database administration for strategic analytics.',
+                  link: '#',
+                  ruta: '#',
                 },
               ],
             },
@@ -331,28 +403,202 @@ export const useI18nStore = defineStore('i18n', {
         portfolio: {
           title: 'Portfolio',
           selectCategory: 'Select category',
+          showMore: 'Show more',
+          showLess: 'Show less',
           filterButtons: [
             'All',
-            'Web design',
-            'Web development',
-            'Econometric Modeling',
-            'Backend Developer',
-            'Data Visualization',
-            'Time Series',
-            'Pipelines',
+            'Fullstack Web',
+            'Backend & APIs',
+            'Data & Pipelines',
+            'Econometrics',
           ],
           projects: [
             {
               title: 'MonyMonty — Personal Finance SaaS',
-              category: 'Web development',
+              categories: [
+                'Fullstack Web',
+                'Backend & APIs',
+                'Data & Pipelines',
+              ],
+              date: '2024 - Present',
+              level: 'Production / Senior',
               imgSrc: '/imgProyectos/loguinMonyMonty.png',
               link: 'https://monymonty.monteflor.co/',
+              description:
+                'Comprehensive personal finance management. Fullstack architecture built with Vue 3, Node.js, and automated workflows.',
             },
             {
               title: 'Public Website — YMCA Santander',
-              category: 'Web development',
+              categories: ['Fullstack Web', 'Backend & APIs'],
+              date: '2024',
+              level: 'Production / Freelance',
               imgSrc: '/imgProyectos/ymcaWeb.webp',
               link: 'https://ymcasantander.org/',
+              description:
+                'Optimized institutional web platform with a custom-built content management panel.',
+            },
+            {
+              title: 'Server Infrastructure & Configuration',
+              categories: ['Backend & APIs'],
+              date: '2024',
+              level: 'DevOps / Infrastructure',
+              imgSrc:
+                'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/docker-colored.svg',
+              link: '#',
+              description:
+                'Infrastructure as Code (IaC) management for VPS provisioning, reverse proxies (Nginx), and containerized environments.',
+            },
+            {
+              title: 'Sports Management API (Confidential Code)',
+              categories: ['Backend & APIs'],
+              date: '2024',
+              level: 'Technical Assessment / Advanced',
+              imgSrc:
+                'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nodejs-colored.svg',
+              link: '#',
+              description:
+                'Private backend system engineered for team administration.',
+            },
+            {
+              title: 'ETL Architecture (Technical Assessment)',
+              categories: ['Data & Pipelines'],
+              date: '2024',
+              level: 'Technical Assessment / Mid-Level',
+              imgSrc:
+                'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg',
+              link: '#',
+              description:
+                'Data pipeline engineered for extraction, transformation, and loading (Data Engineering).',
+            },
+            {
+              title: 'ARIMA Stock Market Analysis (Consulting)',
+              categories: ['Econometrics'],
+              date: '2023',
+              level: 'Consulting / Advanced',
+              imgSrc:
+                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg',
+              link: '#',
+              description:
+                'ARIMA econometric models applied to corporate stock market forecasting.',
+            },
+            {
+              title: 'Automation & Reporting (Allied Global)',
+              categories: ['Data & Pipelines'],
+              date: '2023',
+              level: 'Data Analysis',
+              imgSrc:
+                'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg',
+              link: '#',
+              description:
+                'Data cleansing and automation of operational reporting workflows.',
+            },
+            {
+              title: 'CLI Task Manager',
+              categories: ['Backend & APIs'],
+              date: '2023',
+              level: 'Academic Project',
+              imgSrc:
+                'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg',
+              link: 'https://github.com/OugMontiel/Gestor-de-tareas',
+              description:
+                'Foundational programming logic project built in Python.',
+            },
+            {
+              title: 'Administrative Manager — YMCA (Internal System)',
+              categories: ['Fullstack Web', 'Backend & APIs'],
+              date: '2025',
+              level: 'Production / Private',
+              imgSrc:
+                'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg',
+              link: '#',
+              description:
+                'Private control panel and back-office system for managing the YMCA platform. (Restricted access).',
+            },
+            {
+              title: 'Cloud Integration: AWS SDK (Boto3)',
+              categories: ['Backend & APIs', 'Data & Pipelines'],
+              date: '2025',
+              level: 'Cloud Architecture / Private',
+              imgSrc:
+                'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg',
+              link: '#',
+              description:
+                'Cloud services implementation leveraging the Amazon Web Services (AWS) SDK for Python.',
+            },
+            // {
+            //   title: 'RPA Automation (Process Automation)',
+            //   categories: ['Data & Pipelines'],
+            //   date: '2024',
+            //   level: 'Scripts & Automation',
+            //   imgSrc: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg',
+            //   link: 'https://github.com/OugMontiel/RPA_Albion',
+            //   description: 'Development of Robotic Process Automation (RPA) scripts for scheduled task execution.',
+            // },
+            {
+              title: 'Data Engine: Vector CRUD',
+              categories: ['Backend & APIs', 'Data & Pipelines'],
+              date: '2025',
+              level: 'Databases / Backend',
+              imgSrc:
+                'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg',
+              link: 'https://github.com/OugMontiel/CRUD-Vectorial',
+              description:
+                'Design and implementation of optimized CRUD operations for handling vector data structures.',
+            },
+            {
+              title: 'Hexagonal Architecture (Clean Architecture)',
+              categories: ['Backend & APIs'],
+              date: '2024',
+              level: 'Software Architecture',
+              imgSrc:
+                'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg',
+              link: 'https://github.com/OugMontiel/hexagonal',
+              description:
+                'Implementation of Hexagonal Architecture and SOLID principles to build a decoupled, scalable, and testable backend.',
+            },
+            {
+              title: 'Data Analytics: BetrMedia (Case Study)',
+              categories: ['Data & Pipelines', 'Econometrics'],
+              date: '2024',
+              level: 'Data Analysis / Private',
+              imgSrc:
+                'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg',
+              link: '#',
+              description:
+                'Data analysis, cleansing, and statistical modeling applied to media metrics using Jupyter Notebooks.',
+            },
+            {
+              title: 'Database Design: Olympic-DB',
+              categories: ['Backend & APIs', 'Data & Pipelines'],
+              date: '2024',
+              level: 'Technical Assessment / Private',
+              imgSrc:
+                'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mysql-colored.svg',
+              link: '#',
+              description:
+                'Relational modeling, diagramming, and optimized database structuring for a sports metrics system.',
+            },
+            {
+              title: 'Research: Life Saver Ambulance',
+              categories: ['Fullstack Web'],
+              date: '2024',
+              level: 'Systems Design',
+              imgSrc:
+                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/latex/latex-original.svg',
+              link: '#',
+              description:
+                'Technical documentation and functional architecture for an emergency medical management system.',
+            },
+            {
+              title: 'Univariate Statistical Analysis',
+              categories: ['Econometrics', 'Data & Pipelines'],
+              date: '2024',
+              level: 'Data Analysis / Private',
+              imgSrc:
+                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg',
+              link: '#',
+              description:
+                'Descriptive and inferential statistical study using R to evaluate isolated variables across datasets.',
             },
           ],
         },
@@ -403,6 +649,10 @@ export const useI18nStore = defineStore('i18n', {
           emailPlaceholder: 'Email address',
           messagePlaceholder: 'Your Message',
           sendBtn: 'Send Message',
+          sendingBtn: 'Sending...',
+          successMessage: 'Message sent successfully!',
+          errorMessage:
+            'There was an error sending your message. Please try again.',
           alertMessage:
             'The submission feature is currently unavailable. Please send an email to MontielFlorezDiego@gmail.com.',
           socials: sharedSocials,
@@ -419,12 +669,15 @@ export const useI18nStore = defineStore('i18n', {
           menu: 'Menú',
         },
         sidebar: {
-          roles: ['Ciencia de Datos', 'Desarrollador Backend', 'Economista'],
+          roles: ['Fullstack Developer', 'Backend & APIs', 'Data Economist'],
           email: 'Correo',
           phone: 'Teléfono',
           birthday: 'Cumpleaños',
           birthdayDate: '12 Ago',
           location: 'Ubicación',
+          linkedinAria: 'Ir a mi perfil de LinkedIn',
+          githubAria: 'Ir a mi perfil de GitHub',
+          kaggleAria: 'Ir a mi perfil de Kaggle',
         },
         about: {
           title: 'Sobre mí',
@@ -433,66 +686,40 @@ export const useI18nStore = defineStore('i18n', {
           servicesTitle: 'Lo que hago',
           services: [
             {
-              icon: 'icon-design.svg',
-              alt: 'Icono de diseño',
-              title: 'Diseño web',
+              icon: 'icon-api.svg',
+              alt: 'Icono de desarrollo de APIs y Backend',
+              title: 'Desarrollo Backend & APIs',
               description:
-                'Diseño moderno y de alta calidad realizado a nivel profesional.',
+                'Diseño e implementación de arquitecturas escalables, bases de datos (MongoDB/SQL) y servicios RESTful de alto rendimiento.',
             },
             {
               icon: 'icon-dev.svg',
-              alt: 'Icono de desarrollo web',
-              title: 'Desarrollo web',
+              alt: 'Icono de desarrollo web fullstack',
+              title: 'Aplicaciones Web Fullstack',
               description:
-                'Desarrollo de sitios web de alta calidad a nivel profesional.',
-            },
-            {
-              icon: 'icon-economi.svg',
-              alt: 'Icono de modelado econométrico',
-              title: 'Modelado Econométrico',
-              description:
-                'Diseño y análisis de modelos econométricos para pronóstico y análisis de datos.',
-            },
-            {
-              icon: 'icon-api.svg',
-              alt: 'Icono de desarrollo de APIs',
-              title: 'Desarrollo de APIs',
-              description:
-                'Creación de APIs eficientes y escalables para aplicaciones web y móviles.',
-            },
-            {
-              icon: 'icon-maching.svg',
-              alt: 'Icono de aprendizaje automático',
-              title: 'Machine Learning',
-              description:
-                'Desarrollo de modelos de aprendizaje automático para automatizar y optimizar procesos.',
-            },
-            {
-              icon: 'icon-visualization.svg',
-              alt: 'Icono de visualización de datos',
-              title: 'Visualización de Datos',
-              description:
-                'Creación de tableros e informes visuales para interpretar datos complejos.',
-            },
-            {
-              icon: 'icon-time-serie.svg',
-              alt: 'Icono de series de tiempo',
-              title: 'Series de Tiempo',
-              description:
-                'Desarrollo de modelos para predecir tendencias y patrones en datos de series temporales.',
+                'Construcción de productos digitales y plataformas SaaS end-to-end utilizando ecosistemas modernos como Vue.js, Node.js y contenedores Linux.',
             },
             {
               icon: 'icon-pipeline.svg',
               alt: 'Icono de pipelines de datos',
-              title: 'Creación de Pipelines de Datos',
+              title: 'Ingeniería de Datos & Pipelines',
               description:
-                'Construcción de pipelines para automatizar procesos de extracción, transformación y carga de datos (ETL).',
+                'Desarrollo de procesos ETL, automatización de flujos de datos y despliegue de modelos para optimización operativa.',
+            },
+            {
+              icon: 'icon-economi.svg',
+              alt: 'Icono de modelado econométrico',
+              title: 'Analítica y Modelado Econométrico',
+              description:
+                'Aplicación de series de tiempo (ARIMA/VAR) y análisis cuantitativo para transformar grandes volúmenes de datos en decisiones de negocio.',
             },
           ],
         },
         resume: {
           title: 'Currículum',
           skillsTitle: 'Mis habilidades',
+          showMore: 'Ver más',
+          showLess: 'Ver menos',
           resumeSections: [
             {
               title: 'Experiencia',
@@ -502,19 +729,19 @@ export const useI18nStore = defineStore('i18n', {
                   title: 'Fullstack Developer — Okorum',
                   date: 'Jun 2025 — Presente',
                   description:
-                    'Desarrollé un paquete analítico interno (librería privada en NPM) que procesa más de 200,000 interacciones diarias para el ecosistema digital de la compañía. Arquitecté la solución Fullstack con Node.js, MongoDB y React, implementando visualizaciones avanzadas con Plotly.js para agilizar decisiones estratégicas.',
+                    'Desarrollé un paquete analítico interno (librería privada en NPM) que procesa más de 200,000 interacciones diarias. Arquitecté la solución con Node.js, MongoDB y React, asegurando la fiabilidad del código mediante pruebas unitarias y de integración (Jest/Vitest), y agilizando la toma de decisiones con visualizaciones en Plotly.js.',
+                },
+                {
+                  title: 'Consultor Técnico & Desarrollador Freelance',
+                  date: '2023 — Presente',
+                  description:
+                    'Desarrollo de soluciones tecnológicas a medida. Construcción de modelos econométricos, diseño de pipelines de datos para pruebas de concepto empresariales (ETL), y desarrollo de arquitecturas backend para sistemas de gestión privados.',
                 },
                 {
                   title: 'Desarrollador de Software — YMCA Santander',
                   date: 'Oct 2024 — Jul 2026',
                   description:
-                    'Lideré la migración desde WordPress hacia una arquitectura a medida (Vue.js, Node.js, MongoDB), desarrollando una web pública y un sistema de gestión privado. Gestioné el despliegue en servidores Linux con Docker, modernizando la UX y la eficiencia operativa de la ONG.',
-                },
-                {
-                  title: 'Consultor Técnico & Desarrollador Freelance',
-                  date: '2023 — Presente', // Ajusta la fecha según consideres
-                  description:
-                    'Desarrollo de soluciones tecnológicas a medida. Construcción de modelos econométricos (ARIMA en R) para análisis bursátil, diseño de pipelines de datos para pruebas de concepto empresariales (ETL), y desarrollo de arquitecturas backend para sistemas de gestión privados.',
+                    'Lideré la migración desde WordPress hacia una arquitectura a medida (Vue.js, Node.js, MongoDB). Orquesté la infraestructura en servidores Linux, implementando despliegues automatizados (CI/CD con GitHub Actions) y contenedores Docker para garantizar alta disponibilidad en el sistema de gestión.',
                 },
                 {
                   title: 'Analista de Datos — Clavijo & Asociados SAS',
@@ -535,8 +762,7 @@ export const useI18nStore = defineStore('i18n', {
                     'Formación intensiva en ingeniería de software con enfoque en arquitectura backend, creación de APIs RESTful, manejo de bases de datos, tecnologías frontend (Vue) y prácticas DevOps de despliegue.',
                 },
                 {
-                  title:
-                    'Economía — Universidad Industrial de Santander (UIS)',
+                  title: 'Economía — Universidad Industrial de Santander (UIS)',
                   date: '2016 — 2022',
                   description:
                     'Economista especializado en modelado econométrico avanzado, pronósticos y análisis cuantitativo con R, Python y Stata. Enfoque en transformar datos en insights estratégicos.',
@@ -548,22 +774,107 @@ export const useI18nStore = defineStore('i18n', {
               icon: 'medal-outline',
               items: [
                 {
-                  title: 'Power BI & Business Intelligence — UNIMINUTO',
-                  date: '2021',
+                  title:
+                    'Developing Secure Software (LFD121) — The Linux Foundation',
+                  date: 'May 2026',
                   description:
-                    'Creación de dashboards interactivos, modelado y administración de bases de datos para análisis estratégico.',
+                    'Desarrollo seguro de software (SDLC), DevSecOps, mitigación de vulnerabilidades y secure coding basado en recomendaciones OWASP.',
+                  link: '#',
+                  ruta: '#',
+                },
+                {
+                  title:
+                    'Building AI-Powered Search with MongoDB Vector Search — MongoDB',
+                  date: 'May 2026',
+                  description:
+                    'Creación de experiencias de búsqueda impulsadas por IA utilizando Atlas Vector Search, embeddings y estrategias de recuperación.',
+                  link: '#',
+                  ruta: '#',
+                },
+                {
+                  title: 'Building AI Agents with MongoDB — MongoDB',
+                  date: 'May 2026',
+                  description:
+                    'Creación de agentes inteligentes y Machine Learning automatizado (AutoML).',
+                  link: '#',
+                  ruta: '#',
+                },
+                {
+                  title:
+                    'Gemini Enterprise Essentials for Business and Power Users — Google Cloud',
+                  date: 'May 2026',
+                  description:
+                    'Arki1. Integración de Inteligencia Artificial Generativa y herramientas de Google Workspace para automatización y productividad.',
+                  link: '#',
+                  ruta: '#',
+                },
+                {
+                  title:
+                    "From Relational Model (SQL) to MongoDB's Document Model — MongoDB",
+                  date: 'Abr 2026',
+                  description:
+                    'Arquitectura de datos y migración estratégica de modelos SQL relacionales a estructuras de documentos NoSQL.',
+                  link: '#',
+                  ruta: '#',
+                },
+                {
+                  title:
+                    'MongoDB Overview: Core Concepts and Architecture — MongoDB',
+                  date: 'Mar 2026',
+                  description:
+                    'MongoDB. Frameworks de arquitectura de datos y conceptos core del ecosistema MongoDB.',
+                  link: '#',
+                  ruta: '#',
+                },
+                {
+                  title:
+                    'Foundations of Full‑Stack Development with Meteor.js — Meteor Labs (YC S25)',
+                  date: 'Jul 2025',
+                  description:
+                    'Desarrollo integral de aplicaciones Fullstack, arquitecturas escalables y arquitecturas en tiempo real.',
+                  link: '#',
+                  ruta: '#',
+                },
+                {
+                  title:
+                    'Understanding the OWASP® Top 10 Security Threats (SKF100) — The Linux Foundation.',
+                  date: 'Jun 2025',
+                  description:
+                    'Identificación, pensamiento crítico y mitigación de las amenazas de seguridad más críticas (Secure Coding).',
+                  link: '#',
+                  ruta: '#',
+                },
+                {
+                  title: 'Introduction to MongoDB — MongoDB',
+                  date: 'Jun 2025',
+                  description:
+                    'Fundamentos de bases de datos NoSQL, consultas e indexación.',
+                  link: '#',
+                  ruta: '#',
+                },
+                {
+                  title: 'Introduction to SQL — Sololearn',
+                  date: '2023',
+                  description:
+                    'Fundamentos de bases de datos relacionales, analítica de datos y consultas estructuradas.',
+                  link: '#',
+                  ruta: '#',
                 },
                 {
                   title: 'Programación Desde Cero Latam — Egg',
-                  date: '2023',
+                  date: 'Dic 2022',
                   description:
-                    'Fundamentos de programación, algoritmos y lógica computacional.',
+                    'Fundamentos de programación, algoritmos, lógica computacional y resolución colaborativa de problemas.',
+                  link: '#',
+                  ruta: '#',
                 },
                 {
-                  title: 'Introducción a SQL — Sololearn',
-                  date: '2023',
+                  title: 'Power BI & Business Intelligence — UNIMINUTO',
+                  date: 'Ago 2021 — Dic 2021',
                   description:
-                    'Manejo de bases de datos relacionales y consultas estructuradas.',
+                    'Creación de dashboards interactivos, modelado y administración de bases de datos para análisis estratégico.',
+                  link: '#',
+                  ruta: '#',
                 },
               ],
             },
@@ -573,28 +884,202 @@ export const useI18nStore = defineStore('i18n', {
         portfolio: {
           title: 'Portafolio',
           selectCategory: 'Seleccionar categoría',
+          showMore: 'Ver más',
+          showLess: 'Ver menos',
           filterButtons: [
             'Todos',
-            'Diseño web',
-            'Desarrollo web',
-            'Modelado Econométrico',
-            'Desarrollador Backend',
-            'Visualización de Datos',
-            'Series de Tiempo',
-            'Pipelines',
+            'Web Fullstack',
+            'Backend & APIs',
+            'Pipelines & Datos',
+            'Econometría',
           ],
           projects: [
             {
               title: 'MonyMonty — SaaS de Finanzas Personales',
-              category: 'Desarrollo web',
+              categories: [
+                'Web Fullstack',
+                'Backend & APIs',
+                'Pipelines & Datos',
+              ],
+              date: '2024 - Presente',
+              level: 'Producción / Senior',
               imgSrc: '/imgProyectos/loguinMonyMonty.png',
               link: 'https://monymonty.monteflor.co/',
+              description:
+                'Gestión integral de finanzas personales. Arquitectura Fullstack con Vue 3, Node.js y flujos automatizados.',
             },
             {
               title: 'Sitio Web Público — YMCA Santander',
-              category: 'Desarrollo web',
+              categories: ['Web Fullstack', 'Backend & APIs'],
+              date: '2024',
+              level: 'Producción / Freelance',
               imgSrc: '/imgProyectos/ymcaWeb.webp',
               link: 'https://ymcasantander.org/',
+              description:
+                'Plataforma institucional optimizada con panel de gestión de contenido a la medida.',
+            },
+            {
+              title: 'Infraestructura & Configuración de Servidores',
+              categories: ['Backend & APIs'],
+              date: '2024',
+              level: 'DevOps / Infraestructura',
+              imgSrc:
+                'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/docker-colored.svg',
+              link: '#',
+              description:
+                'Gestión de infraestructura como código (IaC) para aprovisionamiento de servidores VPS, proxies inversos (Nginx) y contenedores.',
+            },
+            {
+              title: 'API de Gestión Deportiva (Código Confidencial)',
+              categories: ['Backend & APIs'],
+              date: '2024',
+              level: 'Prueba Técnica / Avanzado',
+              imgSrc:
+                'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/nodejs-colored.svg',
+              link: '#',
+              description:
+                'Sistema backend privado para la administración de equipos.',
+            },
+            {
+              title: 'Arquitectura ETL (Prueba Técnica)',
+              categories: ['Pipelines & Datos'],
+              date: '2024',
+              level: 'Prueba Técnica / Mid-Level',
+              imgSrc:
+                'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg',
+              link: '#',
+              description:
+                'Pipeline de datos construido para extracción, transformación y carga (Data Engineering).',
+            },
+            {
+              title: 'Análisis Bursátil ARIMA (Consultoría)',
+              categories: ['Econometría'],
+              date: '2023',
+              level: 'Consultoría / Avanzado',
+              imgSrc:
+                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg',
+              link: '#',
+              description:
+                'Modelos econométricos ARIMA aplicados a acciones de empresas.',
+            },
+            {
+              title: 'Automatización & Reporting (Allied Global)',
+              categories: ['Pipelines & Datos'],
+              date: '2023',
+              level: 'Análisis de Datos',
+              imgSrc:
+                'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg',
+              link: '#',
+              description:
+                'Limpieza de datos y automatización de reportes operativos.',
+            },
+            {
+              title: 'Gestor de Tareas CLI',
+              categories: ['Backend & APIs'],
+              date: '2023',
+              level: 'Proyecto Académico',
+              imgSrc:
+                'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg',
+              link: 'https://github.com/OugMontiel/Gestor-de-tareas',
+              description:
+                'Proyecto fundacional de lógica de programación en Python.',
+            },
+            {
+              title: 'Gestor Administrativo — YMCA (Sistema Interno)',
+              categories: ['Web Fullstack', 'Backend & APIs'],
+              date: '2025',
+              level: 'Producción / Privado',
+              imgSrc:
+                'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg',
+              link: '#',
+              description:
+                'Panel de control privado y back-office para la gestión de la plataforma YMCA. (Acceso restringido).',
+            },
+            {
+              title: 'Integración Cloud: AWS SDK (Boto3)',
+              categories: ['Backend & APIs', 'Pipelines & Datos'],
+              date: '2025',
+              level: 'Arquitectura Cloud / Privado',
+              imgSrc:
+                'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg',
+              link: '#',
+              description:
+                'Implementación de servicios en la nube utilizando el SDK de Amazon Web Services (AWS) para Python.',
+            },
+            // {
+            //   title: 'RPA Automation (Automatización de Procesos)',
+            //   categories: ['Pipelines & Datos'],
+            //   date: '2024',
+            //   level: 'Scripts & Automatización',
+            //   imgSrc: 'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg',
+            //   link: 'https://github.com/OugMontiel/RPA_Albion',
+            //   description: 'Desarrollo de scripts de Automatización Robótica de Procesos (RPA) para la ejecución de tareas programadas.',
+            // },
+            {
+              title: 'Motor de Datos: CRUD Vectorial',
+              categories: ['Backend & APIs', 'Pipelines & Datos'],
+              date: '2025',
+              level: 'Bases de Datos / Backend',
+              imgSrc:
+                'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg',
+              link: 'https://github.com/OugMontiel/CRUD-Vectorial',
+              description:
+                'Diseño e implementación de operaciones CRUD optimizadas para el manejo de estructuras de datos vectoriales.',
+            },
+            {
+              title: 'Arquitectura Hexagonal (Clean Architecture)',
+              categories: ['Backend & APIs'],
+              date: '2024',
+              level: 'Arquitectura de Software',
+              imgSrc:
+                'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg',
+              link: 'https://github.com/OugMontiel/hexagonal',
+              description:
+                'Implementación de Arquitectura Hexagonal y principios SOLID para crear un backend desacoplado, escalable y testeable.',
+            },
+            {
+              title: 'Data Analytics: BetrMedia (Caso de Estudio)',
+              categories: ['Pipelines & Datos', 'Econometría'],
+              date: '2024',
+              level: 'Análisis de Datos / Privado',
+              imgSrc:
+                'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/python-colored.svg',
+              link: '#',
+              description:
+                'Análisis de datos, limpieza y modelado estadístico aplicado a métricas de medios utilizando Jupyter Notebooks.',
+            },
+            {
+              title: 'Diseño de Base de Datos: Olympic-DB',
+              categories: ['Backend & APIs', 'Pipelines & Datos'],
+              date: '2024',
+              level: 'Prueba Técnica / Privado',
+              imgSrc:
+                'https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/mysql-colored.svg',
+              link: '#',
+              description:
+                'Modelado relacional, diagramación y estructuración de base de datos optimizada para un sistema de métricas deportivas.',
+            },
+            {
+              title: 'Investigación: Life Saver Ambulance',
+              categories: ['Web Fullstack'],
+              date: '2024',
+              level: 'Diseño de Sistemas',
+              imgSrc:
+                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/latex/latex-original.svg',
+              link: '#',
+              description:
+                'Documentación técnica y arquitectura funcional para un sistema de gestión de emergencias médicas.',
+            },
+            {
+              title: 'Análisis Estadístico Univariado',
+              categories: ['Econometría', 'Pipelines & Datos'],
+              date: '2024',
+              level: 'Análisis de Datos / Privado',
+              imgSrc:
+                'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg',
+              link: '#',
+              description:
+                'Estudio estadístico descriptivo e inferencial utilizando R para la evaluación de variables aisladas en sets de datos.',
             },
           ],
         },
@@ -646,6 +1131,10 @@ export const useI18nStore = defineStore('i18n', {
           emailPlaceholder: 'Correo electrónico',
           messagePlaceholder: 'Tu mensaje',
           sendBtn: 'Enviar Mensaje',
+          sendingBtn: 'Enviando...',
+          successMessage: '¡Mensaje enviado correctamente!',
+          errorMessage:
+            'Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.',
           alertMessage:
             'La funcionalidad de envío no está disponible de momento. Por favor, envíe un correo electrónico a MontielFlorezDiego@gmail.com.',
           socials: sharedSocials,

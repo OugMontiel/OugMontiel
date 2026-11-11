@@ -19,7 +19,9 @@
       <ol class="timeline-list">
         <li
           class="timeline-item"
-          v-for="(item, idx) in section.items"
+          v-for="(item, idx) in showAllItems[index]
+            ? section.items
+            : section.items.slice(0, 3)"
           :key="idx"
         >
           <h4 class="h4 timeline-item-title">{{ item.title }}</h4>
@@ -27,6 +29,21 @@
           <p class="timeline-text">{{ item.description }}</p>
         </li>
       </ol>
+
+      <button
+        v-if="section.items.length > 3"
+        type="button"
+        class="resum-btn"
+        @click="toggleSection(index)"
+      >
+        <ion-icon
+          :name="showAllItems[index] ? 'chevron-up' : 'chevron-down'"
+          aria-hidden="true"
+        ></ion-icon>
+        <span>{{
+          showAllItems[index] ? t('resume.showLess') : t('resume.showMore')
+        }}</span>
+      </button>
     </section>
 
     <section class="skill">
@@ -74,8 +91,18 @@ import { useI18nStore } from '../../stores/i18nStore'
 
 export default {
   name: 'ResumeMyPortafolio',
+  data() {
+    return {
+      showAllItems: {},
+    }
+  },
   computed: {
     ...mapState(useI18nStore, ['t']),
+  },
+  methods: {
+    toggleSection(index) {
+      this.showAllItems[index] = !this.showAllItems[index]
+    },
   },
 }
 </script>
@@ -153,6 +180,47 @@ export default {
   color: var(--light-gray);
   font-weight: var(--fw-300);
   line-height: 1.6;
+}
+
+.resum-btn {
+  position: relative;
+  width: calc(100% - 45px);
+  margin-top: 20px;
+  margin-left: 45px;
+  padding: 12px 20px;
+  background: var(--border-gradient-onyx);
+  color: var(--orange-yellow-crayola);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 14px;
+  font-size: var(--fs-6);
+  box-shadow: var(--shadow-3);
+  z-index: 1;
+  transition: var(--transition-1);
+}
+
+.resum-btn::before {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  z-index: -1;
+  transition: var(--transition-1);
+}
+
+.resum-btn ion-icon {
+  font-size: 16px;
+}
+
+.resum-btn:hover {
+  background: var(--bg-gradient-yellow-1);
+}
+
+.resum-btn:hover::before {
+  background: var(--bg-gradient-yellow-2);
 }
 
 /**
