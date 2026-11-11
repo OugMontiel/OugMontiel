@@ -465,60 +465,32 @@ export const useI18nStore = defineStore('i18n', {
           servicesTitle: 'Lo que hago',
           services: [
             {
-              icon: 'icon-design.svg',
-              alt: 'Icono de diseño',
-              title: 'Diseño web',
+              icon: 'icon-api.svg',
+              alt: 'Icono de desarrollo de APIs y Backend',
+              title: 'Desarrollo Backend & APIs',
               description:
-                'Diseño moderno y de alta calidad realizado a nivel profesional.',
+                'Diseño e implementación de arquitecturas escalables, bases de datos (MongoDB/SQL) y servicios RESTful de alto rendimiento.',
             },
             {
               icon: 'icon-dev.svg',
-              alt: 'Icono de desarrollo web',
-              title: 'Desarrollo web',
+              alt: 'Icono de desarrollo web fullstack',
+              title: 'Aplicaciones Web Fullstack',
               description:
-                'Desarrollo de sitios web de alta calidad a nivel profesional.',
-            },
-            {
-              icon: 'icon-economi.svg',
-              alt: 'Icono de modelado econométrico',
-              title: 'Modelado Econométrico',
-              description:
-                'Diseño y análisis de modelos econométricos para pronóstico y análisis de datos.',
-            },
-            {
-              icon: 'icon-api.svg',
-              alt: 'Icono de desarrollo de APIs',
-              title: 'Desarrollo de APIs',
-              description:
-                'Creación de APIs eficientes y escalables para aplicaciones web y móviles.',
-            },
-            {
-              icon: 'icon-maching.svg',
-              alt: 'Icono de aprendizaje automático',
-              title: 'Machine Learning',
-              description:
-                'Desarrollo de modelos de aprendizaje automático para automatizar y optimizar procesos.',
-            },
-            {
-              icon: 'icon-visualization.svg',
-              alt: 'Icono de visualización de datos',
-              title: 'Visualización de Datos',
-              description:
-                'Creación de tableros e informes visuales para interpretar datos complejos.',
-            },
-            {
-              icon: 'icon-time-serie.svg',
-              alt: 'Icono de series de tiempo',
-              title: 'Series de Tiempo',
-              description:
-                'Desarrollo de modelos para predecir tendencias y patrones en datos de series temporales.',
+                'Construcción de productos digitales y plataformas SaaS end-to-end utilizando ecosistemas modernos como Vue.js, Node.js y contenedores Linux.',
             },
             {
               icon: 'icon-pipeline.svg',
               alt: 'Icono de pipelines de datos',
-              title: 'Creación de Pipelines de Datos',
+              title: 'Ingeniería de Datos & Pipelines',
               description:
-                'Construcción de pipelines para automatizar procesos de extracción, transformación y carga de datos (ETL).',
+                'Desarrollo de procesos ETL, automatización de flujos de datos y despliegue de modelos para optimización operativa.',
+            },
+            {
+              icon: 'icon-economi.svg',
+              alt: 'Icono de modelado econométrico',
+              title: 'Analítica y Modelado Econométrico',
+              description:
+                'Aplicación de series de tiempo (ARIMA/VAR) y análisis cuantitativo para transformar grandes volúmenes de datos en decisiones de negocio.',
             },
           ],
         },

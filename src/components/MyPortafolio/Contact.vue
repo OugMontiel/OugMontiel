@@ -59,9 +59,9 @@
             <input
               id="contact-fullname"
               type="text"
-              name="fullname"
+              name="fi-sender-fullName"
               autocomplete="name"
-              v-model="form.fullname"
+              v-model="formData.name"
               class="form-input"
               :placeholder="t('contact.fullnamePlaceholder')"
               :aria-label="t('contact.fullnamePlaceholder')"
@@ -75,9 +75,9 @@
             <input
               id="contact-email"
               type="email"
-              name="email"
+              name="fi-sender-email"
               autocomplete="email"
-              v-model="form.email"
+              v-model="formData.email"
               class="form-input"
               :placeholder="t('contact.emailPlaceholder')"
               :aria-label="t('contact.emailPlaceholder')"
@@ -92,8 +92,8 @@
           </label>
           <textarea
             id="contact-message"
-            name="message"
-            v-model="form.message"
+            name="fi-text-message"
+            v-model="formData.message"
             class="form-input"
             :placeholder="t('contact.messagePlaceholder')"
             :aria-label="t('contact.messagePlaceholder')"
@@ -101,51 +101,87 @@
           ></textarea>
         </div>
 
-        <!-- Mostrar alerta si el formulario no está disponible -->
-        <Alert
-          v-if="showAlert"
-          :message="t('contact.alertMessage')"
-          @close="showAlert = false"
-        />
-
-        <button class="form-btn" type="submit">
+        <button class="form-btn" type="submit" :disabled="isSubmitting">
           <ion-icon name="paper-plane" aria-hidden="true"></ion-icon>
-          <span>{{ t('contact.sendBtn') }}</span>
+          <span>{{ isSubmitting ? 'Enviando...' : t('contact.sendBtn') }}</span>
         </button>
+
+        <p
+          v-if="showSuccess"
+          class="form-feedback form-feedback--success"
+          role="status"
+        >
+          ¡Mensaje enviado correctamente!
+        </p>
+
+        <p
+          v-if="showError"
+          class="form-feedback form-feedback--error"
+          role="alert"
+        >
+          Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo.
+        </p>
       </form>
     </section>
   </article>
 </template>
 
-<script>
-import { mapState } from 'pinia'
+<script setup>
+import { reactive, ref } from 'vue'
+import { storeToRefs } from 'pinia'
 import { useI18nStore } from '../../stores/i18nStore'
-import Alert from '../Utils/Alert.vue'
 
-export default {
-  name: 'ContactMyPortafolio',
-  components: {
-    Alert,
-  },
-  data() {
-    return {
-      form: {
-        fullname: '',
-        email: '',
-        message: '',
+const i18nStore = useI18nStore()
+const { t } = storeToRefs(i18nStore)
+
+const GETFORM_ENDPOINT = 'https://forminit.com/f/85i41z8b420'
+
+const formData = reactive({
+  name: '',
+  email: '',
+  message: '',
+})
+
+const isSubmitting = ref(false)
+const showSuccess = ref(false)
+const showError = ref(false)
+
+const resetForm = () => {
+  formData.name = ''
+  formData.email = ''
+  formData.message = ''
+}
+
+const submitForm = async () => {
+  isSubmitting.value = true
+  showSuccess.value = false
+  showError.value = false
+
+  try {
+    const payload = new FormData()
+    payload.append('fi-sender-fullName', formData.name)
+    payload.append('fi-sender-email', formData.email)
+    payload.append('fi-text-message', formData.message)
+
+    const response = await fetch(GETFORM_ENDPOINT, {
+      method: 'POST',
+      body: payload,
+      headers: {
+        Accept: 'application/json',
       },
-      showAlert: false,
+    })
+
+    if (response.status === 200 || response.ok) {
+      resetForm()
+      showSuccess.value = true
+    } else {
+      showError.value = true
     }
-  },
-  computed: {
-    ...mapState(useI18nStore, ['t']),
-  },
-  methods: {
-    submitForm() {
-      // Mostrar alerta en lugar de enviar el formulario
-      this.showAlert = true
-    },
-  },
+  } catch {
+    showError.value = true
+  } finally {
+    isSubmitting.value = false
+  }
 }
 </script>
 
@@ -242,6 +278,31 @@ textarea.form-input::-webkit-resizer {
 
 .form-btn:hover::before {
   background: var(--bg-gradient-yellow-2);
+}
+
+.form-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.form-feedback {
+  margin-top: 15px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  font-size: var(--fs-6);
+  text-align: center;
+}
+
+.form-feedback--success {
+  background: rgba(46, 204, 113, 0.15);
+  border: 1px solid #2ecc71;
+  color: #2ecc71;
+}
+
+.form-feedback--error {
+  background: rgba(231, 76, 60, 0.15);
+  border: 1px solid #e74c3c;
+  color: #e74c3c;
 }
 
 /*  Social  */
