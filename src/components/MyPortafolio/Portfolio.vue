@@ -31,7 +31,7 @@
       <!-- Project List -->
       <ul class="project-list">
         <li
-          v-for="(project, index) in filteredProjects"
+          v-for="(project, index) in displayedProjects"
           :key="index"
           class="project-item active"
           :data-category="
@@ -60,7 +60,21 @@
                 <p>{{ project.description }}</p>
               </div>
             </figure>
+
             <h3 class="project-title">{{ project.title }}</h3>
+
+            <div
+              v-if="project.level || project.date"
+              class="project-meta"
+            >
+              <span v-if="project.level" class="project-badge project-badge--level">
+                {{ project.level }}
+              </span>
+              <span v-if="project.date" class="project-badge project-badge--date">
+                {{ project.date }}
+              </span>
+            </div>
+
             <p class="project-category">
               {{
                 Array.isArray(project.categories)
@@ -71,6 +85,19 @@
           </a>
         </li>
       </ul>
+
+      <button
+        v-if="filteredProjects.length > 5"
+        type="button"
+        class="portfolio-more-btn"
+        @click="showAllProjects = !showAllProjects"
+      >
+        <ion-icon
+          :name="showAllProjects ? 'chevron-up' : 'chevron-down'"
+          aria-hidden="true"
+        ></ion-icon>
+        <span>{{ showAllProjects ? 'Ver menos' : 'Ver más' }}</span>
+      </button>
     </section>
   </article>
 </template>
@@ -103,6 +130,7 @@ export default {
     const { currentLanguage, t } = storeToRefs(i18nStore)
 
     const activeFilter = ref('Todos')
+    const showAllProjects = ref(false)
 
     const categories = computed(() => {
       const projects = t.value('portfolio.projects') || []
@@ -133,6 +161,13 @@ export default {
       )
     })
 
+    const displayedProjects = computed(() => {
+      if (!showAllProjects.value) {
+        return filteredProjects.value.slice(0, 5)
+      }
+      return filteredProjects.value
+    })
+
     const setFilter = category => {
       activeFilter.value = category
     }
@@ -144,8 +179,10 @@ export default {
     return {
       t,
       activeFilter,
+      showAllProjects,
       categories,
       filteredProjects,
+      displayedProjects,
       setFilter,
       getPath,
       isLogo,
@@ -339,6 +376,7 @@ export default {
 }
 
 .project-title,
+.project-meta,
 .project-category {
   margin-left: 10px;
 }
@@ -348,13 +386,83 @@ export default {
   font-size: var(--fs-3);
   font-weight: var(--fw-500);
   line-height: 1.4;
-  margin-bottom: 4px;
+  margin-bottom: 6px;
+}
+
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.project-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--fs-8);
+  font-weight: var(--fw-400);
+  padding: 2px 10px;
+  border-radius: 8px;
+  line-height: 1.5;
+  border: 1px solid var(--jet);
+}
+
+.project-badge--level {
+  background: var(--onyx);
+  color: var(--light-gray);
+}
+
+.project-badge--date {
+  background: hsla(45, 100%, 72%, 0.08);
+  color: var(--vegas-gold);
+  border-color: hsla(45, 100%, 72%, 0.25);
 }
 
 .project-category {
   color: var(--light-gray-70);
   font-size: var(--fs-6);
   font-weight: var(--fw-400);
+}
+
+.portfolio-more-btn {
+  position: relative;
+  width: 100%;
+  margin-top: 25px;
+  padding: 12px 20px;
+  background: var(--border-gradient-onyx);
+  color: var(--orange-yellow-crayola);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 14px;
+  font-size: var(--fs-6);
+  box-shadow: var(--shadow-3);
+  z-index: 1;
+  transition: var(--transition-1);
+}
+
+.portfolio-more-btn::before {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  background: var(--bg-gradient-jet);
+  border-radius: inherit;
+  z-index: -1;
+  transition: var(--transition-1);
+}
+
+.portfolio-more-btn ion-icon {
+  font-size: 16px;
+}
+
+.portfolio-more-btn:hover {
+  background: var(--bg-gradient-yellow-1);
+}
+
+.portfolio-more-btn:hover::before {
+  background: var(--bg-gradient-yellow-2);
 }
 
 .project-overlay {
