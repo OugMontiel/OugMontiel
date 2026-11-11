@@ -129,10 +129,14 @@ export default {
     const i18nStore = useI18nStore()
     const { currentLanguage, t } = storeToRefs(i18nStore)
 
-    const activeFilter = ref('Todos')
+    const activeFilter = ref(currentLanguage.value === 'es' ? 'Todos' : 'All')
     const showAllProjects = ref(false)
 
     const categories = computed(() => {
+      const configuredButtons = t.value('portfolio.filterButtons')
+      if (Array.isArray(configuredButtons) && configuredButtons.length > 0) {
+        return configuredButtons
+      }
       const projects = t.value('portfolio.projects') || []
       const allLabel = currentLanguage.value === 'es' ? 'Todos' : 'All'
       const uniqueCategories = [
