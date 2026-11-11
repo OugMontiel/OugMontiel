@@ -63,14 +63,17 @@
 
             <h3 class="project-title">{{ project.title }}</h3>
 
-            <div
-              v-if="project.level || project.date"
-              class="project-meta"
-            >
-              <span v-if="project.level" class="project-badge project-badge--level">
+            <div v-if="project.level || project.date" class="project-meta">
+              <span
+                v-if="project.level"
+                class="project-badge project-badge--level"
+              >
                 {{ project.level }}
               </span>
-              <span v-if="project.date" class="project-badge project-badge--date">
+              <span
+                v-if="project.date"
+                class="project-badge project-badge--date"
+              >
                 {{ project.date }}
               </span>
             </div>
