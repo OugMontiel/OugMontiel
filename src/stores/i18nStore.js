@@ -49,6 +49,11 @@ const createSkills = categories => [
         icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg',
         link: 'https://about.gitlab.com/',
       },
+      {
+        name: 'GitHub Actions',
+        icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg',
+        link: 'https://github.com/features/actions',
+      },
     ],
   },
   {
@@ -182,7 +187,7 @@ export const useI18nStore = defineStore('i18n', {
           menu: 'Menu',
         },
         sidebar: {
-          roles: ['Data Science', 'Backend Developer', 'Economist'],
+          roles: ['Fullstack Developer', 'Backend & APIs', 'Data Economist'],
           email: 'Email',
           phone: 'Phone',
           birthday: 'Birthday',
@@ -242,7 +247,7 @@ export const useI18nStore = defineStore('i18n', {
                   title: 'Fullstack Developer — Okorum',
                   date: 'Jun 2025 — Present',
                   description:
-                    'Engineered an internal analytics package (private NPM library) processing over 200,000 daily interactions across the company’s digital ecosystem. Architected the end-to-end Fullstack solution using Node.js, MongoDB, and React, implementing advanced Plotly.js visualizations to accelerate data-driven decision making.',
+                    'Engineered an internal analytics package (private NPM library) processing over 200,000 daily interactions. Architected the solution using Node.js, MongoDB, and React, ensuring code reliability through unit and integration testing (Jest/Vitest), and accelerating data-driven decision making with Plotly.js visualizations.',
                 },
                 {
                   title: 'Technical Consultant & Freelance Developer',
@@ -254,7 +259,7 @@ export const useI18nStore = defineStore('i18n', {
                   title: 'Software Developer — YMCA Santander',
                   date: 'Oct 2024 — Jul 2026',
                   description:
-                    'Led the migration from legacy WordPress to a custom fullstack architecture (Vue.js, Node.js, MongoDB), delivering both a public-facing web platform and a private internal management system. Orchestrated containerized deployments on Linux servers using Docker, modernizing UX and operational efficiency across the NGO.',
+                    'Led the migration from legacy WordPress to a custom fullstack architecture (Vue.js, Node.js, MongoDB). Orchestrated Linux server infrastructure, implementing automated CI/CD deployment pipelines (GitHub Actions) and Docker containers to ensure high availability across the management system.',
                 },
                 {
                   title: 'Data Analyst — Clavijo & Asociados SAS',
@@ -664,7 +669,7 @@ export const useI18nStore = defineStore('i18n', {
           menu: 'Menú',
         },
         sidebar: {
-          roles: ['Ciencia de Datos', 'Desarrollador Backend', 'Economista'],
+          roles: ['Fullstack Developer', 'Backend & APIs', 'Data Economist'],
           email: 'Correo',
           phone: 'Teléfono',
           birthday: 'Cumpleaños',
@@ -724,7 +729,7 @@ export const useI18nStore = defineStore('i18n', {
                   title: 'Fullstack Developer — Okorum',
                   date: 'Jun 2025 — Presente',
                   description:
-                    'Desarrollé un paquete analítico interno (librería privada en NPM) que procesa más de 200,000 interacciones diarias para el ecosistema digital de la compañía. Arquitecté la solución Fullstack con Node.js, MongoDB y React, implementando visualizaciones avanzadas con Plotly.js para agilizar decisiones estratégicas.',
+                    'Desarrollé un paquete analítico interno (librería privada en NPM) que procesa más de 200,000 interacciones diarias. Arquitecté la solución con Node.js, MongoDB y React, asegurando la fiabilidad del código mediante pruebas unitarias y de integración (Jest/Vitest), y agilizando la toma de decisiones con visualizaciones en Plotly.js.',
                 },
                 {
                   title: 'Consultor Técnico & Desarrollador Freelance',
@@ -736,7 +741,7 @@ export const useI18nStore = defineStore('i18n', {
                   title: 'Desarrollador de Software — YMCA Santander',
                   date: 'Oct 2024 — Jul 2026',
                   description:
-                    'Lideré la migración desde WordPress hacia una arquitectura a medida (Vue.js, Node.js, MongoDB), desarrollando una web pública y un sistema de gestión privado. Gestioné el despliegue en servidores Linux con Docker, modernizando la UX y la eficiencia operativa de la ONG.',
+                    'Lideré la migración desde WordPress hacia una arquitectura a medida (Vue.js, Node.js, MongoDB). Orquesté la infraestructura en servidores Linux, implementando despliegues automatizados (CI/CD con GitHub Actions) y contenedores Docker para garantizar alta disponibilidad en el sistema de gestión.',
                 },
                 {
                   title: 'Analista de Datos — Clavijo & Asociados SAS',
