@@ -1,5 +1,5 @@
 <template>
-  <aside>
+  <aside class="sidebarInner">
     <div class="sidebarInfo">
       <figure class="siderAvatarBox">
         <img :src="getPath('/my-avatar.png')" alt="Diego Montiel" />
@@ -161,22 +161,29 @@ export default {
 </script>
 
 <style>
+.sidebarInner {
+  width: 100%;
+  height: fit-content;
+}
+
 /* parte Superior Foto, Nombre y titulos */
 .sidebarInfo {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
-  overflow: hidden;
+  gap: 14px;
 }
 
 .siderAvatarBox {
+  width: clamp(128px, 13vw, 160px);
+  aspect-ratio: 1 / 1;
   background: var(--bg-gradient-onyx);
   border-radius: 1rem;
   overflow: hidden;
 }
 .siderAvatarBox img {
   width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
@@ -214,10 +221,16 @@ export default {
 }
 
 /* parte intermedia, info de contacto  */
+.sidebarMoreInfo {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
 .sidebarContacts {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.85rem;
   color: var(--light-gray-70);
 }
 
@@ -225,7 +238,11 @@ export default {
   display: flex;
   align-items: center;
   gap: 1rem;
-  min-height: 3.5rem;
+  min-height: 2.75rem;
+}
+
+.sidebarContactItem > div:last-child {
+  min-width: 0;
 }
 
 .sidebarContactIcon {
@@ -248,6 +265,7 @@ export default {
   color: var(--white-1);
   font-size: var(--fs-6);
   word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 /* parte final, Link de paguinas donde me encuentras  */

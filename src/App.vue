@@ -15,6 +15,7 @@
 .appLayout {
   display: grid; /* Habilitamos el grid */
   grid-template-columns: 1fr; /* Una columna por defecto (para pantallas pequeñas) */
+  align-items: start; /* Evita estiramiento vertical de las columnas */
   gap: 2rem; /* Espacio entre las columnas */
   width: 100%;
   max-width: 100%;
@@ -22,9 +23,13 @@
   padding: 0 2rem;
 }
 
-/* Estilo de la barra lateral */
+/* Estilo de la barra lateral (móvil y tablet por defecto) */
 .sidebar {
   grid-column: 1 / 2; /* Ocupa la primera columna */
+  position: static;
+  height: fit-content;
+  max-height: none;
+  overflow-y: visible;
 }
 
 /* Estilo para el contenido principal */
@@ -47,14 +52,30 @@
   }
 }
 
-/* Para pantallas grandes, aplicamos dos columnas */
+/* Para pantallas grandes, aplicamos dos columnas y comportamiento sticky */
 @media (min-width: 800px) {
   .appLayout {
     grid-template-columns: 320px 1fr; /* Dos columnas: sidebar y contenido principal fluido */
+    align-items: start;
   }
 
   .sidebar {
     grid-column: 1 / 2; /* Colocamos la barra lateral en la primera columna */
+    align-self: start;
+    position: sticky;
+    top: 2rem;
+    height: fit-content;
+    max-height: calc(100vh - 4rem);
+    max-height: calc(100dvh - 4rem);
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: clamp(1.5rem, 2vw, 2rem);
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE / Edge legacy */
+  }
+
+  .sidebar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari y Edge moderno */
   }
 
   .mainContent {
